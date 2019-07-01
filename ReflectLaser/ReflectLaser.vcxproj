@@ -20,14 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MenuOperate.cpp" />
     <ClCompile Include="Picture.cpp" />
     <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="button.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuOperate.h" />
     <ClInclude Include="Picture.h" />
