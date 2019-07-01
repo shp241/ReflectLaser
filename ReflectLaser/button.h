@@ -4,10 +4,9 @@
 
 class Button {
 private:
-  Point a, b;//按钮矩形区域的两个对角顶点（顺时针）
+	Point* p1, *p2;//按钮矩形区域的两个对角顶点（顺时针）
 public:
-  Button(Point* a_, Point* b);
+	Button(Point* p1, Point* p2);
 
-  bool if_click(int x__,int y__ );
-
+	bool if_click(int x, int y);
 };

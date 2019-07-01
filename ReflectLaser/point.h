@@ -1,10 +1,11 @@
 #pragma once
-class Point{
+class Point {
 private:
-  int x, y;
+	int x, y;
 public:
-  int getx();
-  int gety();
-  Point(int x_, int y_);
-  Point() = default;
+	int getX();
+	int getY();
+	Point(int x = 0, int y = 0);
+	void setX(int x);
+	void setY(int y);
 };

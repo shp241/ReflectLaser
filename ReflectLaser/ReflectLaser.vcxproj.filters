@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="h">
+      <UniqueIdentifier>{f603771b-3ec1-47c6-ba1a-6c47048c3036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{1ff1c6ae-0e57-429d-aca7-79515f606449}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="button.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_operate.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Picture.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="point.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="button.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="menu_operate.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Picture.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="point.h">
+      <Filter>h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
