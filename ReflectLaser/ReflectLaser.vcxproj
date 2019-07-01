@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuOperate.cpp" />
+    <ClCompile Include="Picture.cpp" />
+    <ClCompile Include="Point.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="button.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuOperate.h" />
+    <ClInclude Include="Picture.h" />
+    <ClInclude Include="Point.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A17E9EF8-D37A-4465-B810-0DEFF9A47A82}</ProjectGuid>
@@ -114,21 +129,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="button.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="menu.cpp" />
-    <ClCompile Include="menu_operate.cpp" />
-    <ClCompile Include="Picture.cpp" />
-    <ClCompile Include="point.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="button.h" />
-    <ClInclude Include="menu.h" />
-    <ClInclude Include="menu_operate.h" />
-    <ClInclude Include="Picture.h" />
-    <ClInclude Include="point.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

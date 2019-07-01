@@ -9,37 +9,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="button.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="menu_operate.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Picture.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="point.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuOperate.cpp" />
+    <ClCompile Include="Picture.cpp" />
+    <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="button.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="menu.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="menu_operate.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="Picture.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="point.h">
-      <Filter>h</Filter>
-    </ClInclude>
+    <ClInclude Include="button.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuOperate.h" />
+    <ClInclude Include="Picture.h" />
+    <ClInclude Include="Point.h" />
   </ItemGroup>
 </Project>

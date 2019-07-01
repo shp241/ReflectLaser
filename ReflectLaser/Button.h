@@ -1,5 +1,5 @@
 #pragma once
-#include"point.h"
+#include"Point.h"
 #include<graphics.h>
 
 class Button {

@@ -3,4 +3,4 @@ void start();
 void option();
 void help();
 void exit();
-void choose_chapter();
+void chooseChapter();

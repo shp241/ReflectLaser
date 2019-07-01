@@ -1,5 +1,5 @@
 #include <easyx.h>
-#include"menu.h"
+#include"Menu.h"
 
 int main() {
 	menu();

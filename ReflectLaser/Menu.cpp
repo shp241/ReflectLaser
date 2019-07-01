@@ -1,8 +1,8 @@
-#include"menu.h"
+#include"Menu.h"
 #include<easyx.h>
 #include<graphics.h>
-#include"button.h"
-#include"menu_operate.h"
+#include"Button.h"
+#include"MenuOperate.h"
 
 void menu() {
 	Picture p1;

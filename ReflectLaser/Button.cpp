@@ -1,4 +1,4 @@
-#include"button.h"
+#include"Button.h"
 #include<graphics.h>
 
 Button::Button(Point* p1, Point* p2) {

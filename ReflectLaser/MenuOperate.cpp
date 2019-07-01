@@ -1,4 +1,4 @@
-#include"menu_operate.h"
+#include"MenuOperate.h"
 
 void start() {
 }
@@ -12,5 +12,5 @@ void help() {
 void exit() {
 }
 
-void choose_chapter() {
+void chooseChapter() {
 }
