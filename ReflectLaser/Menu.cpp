@@ -5,9 +5,9 @@
 #include"MenuOperate.h"
 
 void menu() {
-	Picture p1;
+	Picture p0;
 
-	p1.initgraph();
+	p0.initgraph();
 
 	Button* BStart = new Button(new Point(, ), new Point(, ));
 	Button* BOption = new Button(new Point(, ), new Point(, ));
@@ -17,16 +17,16 @@ void menu() {
 	for (;;) {
 		MOUSEMSG m;
 		m = GetMouseMsg();
-		if (BStart->if_click(m.x, m.y)) {
+		if (BStart->ifClick(m.x, m.y)) {
 			start();
 		}//鼠标点击开始游戏
-		if (BOption->if_click(m.x, m.y)) {
+		if (BOption->ifClick(m.x, m.y)) {
 			option();
 		}//选项
-		if (BHelp->if_click(m.x, m.y)) {
+		if (BHelp->ifClick(m.x, m.y)) {
 			help();
 		}//帮助
-		if (BExit->if_click(m.x, m.y)) {
+		if (BExit->ifClick(m.x, m.y)) {
 			exit();
 		}//退出
 	}

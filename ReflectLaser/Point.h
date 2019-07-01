@@ -3,9 +3,11 @@ class Point {
 private:
 	int x, y;
 public:
+	Point(int x = 0, int y = 0);
+	Point(Point& p);
 	int getX();
 	int getY();
-	Point(int x = 0, int y = 0);
 	void setX(int x);
 	void setY(int y);
+	Point& operator=(Point& p);
 };

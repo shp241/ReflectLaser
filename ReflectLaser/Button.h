@@ -4,9 +4,13 @@
 
 class Button {
 private:
-	Point* p1, *p2;//按钮矩形区域的两个对角顶点（顺时针）
+	Point* p0, *p1;//按钮矩形区域的两个对角顶点（顺时针）
 public:
-	Button(Point* p1, Point* p2);
-
-	bool if_click(int x, int y);
+	Button(Point* p0, Point* p1);
+	Button(Button& b);
+	bool ifClick(int x, int y);
+	Point* getP(int n);
+	void setP(int n,Point* p);
+	Button& operator=(Button b);
+	~Button();
 };
