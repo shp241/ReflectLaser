@@ -28,6 +28,9 @@
     <ClCompile Include="Colour.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">

@@ -7,10 +7,10 @@ using std::string;
 using std::map;
 
 class Picture {
- private:
-	 static map<string, IMAGE*> loaded;
- public:
-	 Picture(int w = 800, int h = 600);
-	 void putPicture(Point a, string picture);
-	 void loadPictrue(IMAGE *pImg, string filename);
+private:
+	static map<string, IMAGE*> loaded;
+public:
+	Picture(int w = 800, int h = 600);
+	void putPicture(Point a, string picture);
+	void loadPictrue(IMAGE *pImg, string filename);
 };

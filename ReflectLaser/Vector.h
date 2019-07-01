@@ -5,5 +5,6 @@ class Vector {
 private:
 	Colour* c;
 	Point* p;
-
+public:
+	Vector(Direction* p, Colour* c);
 };

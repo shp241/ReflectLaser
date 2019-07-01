@@ -1,16 +1,16 @@
 #include"MenuOperate.h"
 
-void start() {
+void start(Picture p) {
 }
 
-void option() {
+void option(Picture p) {
 }
 
-void help() {
+void help(Picture p) {
 }
 
-void exit() {
+void exit(Picture p) {
 }
 
-void chooseChapter() {
+void chooseChapter(Picture p) {
 }
