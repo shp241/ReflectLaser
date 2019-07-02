@@ -1,11 +1,12 @@
 #pragma once
 #include "Colour.h"
 #include "Point.h"
-
 class Vector {
 private:
 	Colour* c;
-	Point* p;
+	Direction* d;
 public:
-	Vector(Direction* p, Colour* c);
+	Vector(Direction* d, Colour* c);
+    Direction* getDirection();
+    Colour* getColour();
 };

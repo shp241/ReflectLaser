@@ -23,6 +23,12 @@ Colour Colour::operator+(Colour c) {
 	return Colour(c.R || this->R, c.G || this->G, c.B || this->B);
 }
 
+void Colour::operator+=(Colour c) {
+	 this->R=c.R || this->R;
+     this->G=c.G || this->G;
+     this->B=c.B || this->B;
+}
+
 int Colour::getComplexity() {
 	return R + G + B;
 }

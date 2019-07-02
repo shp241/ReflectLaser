@@ -77,3 +77,7 @@ Direction Direction::rotate(int angle){
     this->x=x*cos(angle)-y*sin(angle);
     this->y=x*sin(angle)+y*cos(angle);
 }    
+
+bool Direction:operator==(Direction& d){
+    return d.getX()==this->x&&d.getY()==this.y;
+}
