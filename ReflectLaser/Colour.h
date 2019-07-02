@@ -7,6 +7,6 @@ public:
 	Colour(bool r = false, bool g = false, bool b = false);
 	bool operator==(Colour c);
 	Colour operator+(Colour c);
-    void operator+=(Colour c);
+        void operator+=(Colour c);
 	int getComplexity();
 };

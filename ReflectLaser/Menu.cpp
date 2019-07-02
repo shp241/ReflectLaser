@@ -2,7 +2,6 @@
 #include<easyx.h>
 #include<graphics.h>
 #include"Button.h"
-#include"MenuOperate.h"
 #include"Picture.h"
 #include"Chapter.h"
 
