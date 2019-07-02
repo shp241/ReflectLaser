@@ -9,7 +9,14 @@ void start(Picture p) {
 }
 
 void option(Picture p) {
+  Button* Bmusic = new Button(new Point(, ), new Point(, ));//选项一：音乐开关
+  
+  MOUSEMSG m;
+  m = GetMouseMsg();
 
+  if (Bmusic->ifClick(m.x, m.y)) {
+    
+  }
 
 }
 

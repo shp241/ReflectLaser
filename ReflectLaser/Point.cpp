@@ -32,10 +32,6 @@ Point& Point::operator=(const Point& p) {
 	return *this;
 }
 
-Point Point::operator*(Direction d) {
-	return Point(this->x += d.getX(), this->y += d.getY());
-}
-
 Direction Direction::UP = Direction(0, 1);
 Direction Direction::UP_RIGHT = Direction(1, 1);
 Direction Direction::RIGHT = Direction(1, 0);
@@ -65,11 +61,11 @@ int Direction::getY() {
 
 int cos(int angle){
     if(angle%180==90){
-        return 0;
+	return 0;
     }else if((angle-90)%360<=180){
-        return -1;
+	return -1;
     }else {
-        return 1;
+	return 1;
     }
 }
 

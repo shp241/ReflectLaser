@@ -10,7 +10,6 @@ public:
 	void setX(int x);
 	void setY(int y);
 	Point& operator=(const Point& p);
-	Point operator*(Direction d);
 };
 
 class Direction {

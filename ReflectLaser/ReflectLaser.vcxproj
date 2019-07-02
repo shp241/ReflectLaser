@@ -27,6 +27,7 @@
     <ClCompile Include="MenuOperate.cpp" />
     <ClCompile Include="Picture.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="RelativePoint.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +38,7 @@
     <ClInclude Include="MenuOperate.h" />
     <ClInclude Include="Picture.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="RelativePoint.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
