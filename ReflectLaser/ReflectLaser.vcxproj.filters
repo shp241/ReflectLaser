@@ -19,9 +19,6 @@
     <ClCompile Include="Menu.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
-    <ClCompile Include="MenuOperate.cpp">
-      <Filter>cpp</Filter>
-    </ClCompile>
     <ClCompile Include="Picture.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
@@ -49,9 +46,6 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuOperate.h">
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Picture.h">
