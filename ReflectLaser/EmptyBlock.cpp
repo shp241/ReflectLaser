@@ -1,46 +1,51 @@
 #include "EmptyBlock.h"
 
-EmptyBlock::EmptyBlock(RelativePoint* p):Block(p){}
+EmptyBlock::EmptyBlock(RelativePoint* p) :Block(p) {}
 
-void EmptyBlock::draw(){
-    //
+void EmptyBlock::draw() {
+	//
 }
 
-Vector& EmptyBlock::operator[](int n){
-    return vectors[n];
+Colour& EmptyBlock::operator[](int n) {
+	return vectors[n];
 }
 
-int getDirectionNumber(Direction d){
-    switch(d){
-    case UP:
-        return 0;
-    case UP_RIGHT:
-        return 1;
-    case RIGHT:
-        return 2;
-    case DOWN_RIGHT:
-        return 3;
-    case DOWN:
-        return 4;
-    case DOWN_LEFT:
-        return 5;
-    case LEFT:
-        return 6;
-    case UP_LEFT:
-        return 7;
-    }
-    return 0;
+int getDirectionNumber(Direction d) {
+	if (d == Direction::UP) {
+		return 0;
+	}
+	if (d == Direction::UP_RIGHT) {
+		return 1;
+	}
+	if (d == Direction::RIGHT) {
+		return 2;
+	}
+	if (d == Direction::DOWN_RIGHT) {
+		return 3;
+	}
+	if (d == Direction::DOWN) {
+		return 4;
+	}
+	if (d == Direction::DOWN_LEFT) {
+		return 5;
+	}
+	if (d == Direction::LEFT) {
+		return 6;
+	}
+	if (d == Direction::UP_LEFT) {
+		return 7;
+	}
 }
 
-void EmptyBlock::addVector(Vector* v){
-    vectors[getDirectionNumber(*v->getDirection())]+=*v->getColour();
-    lines[getDirectionNumber(*v->getDirection())%4]+=*v->getColour();
+void EmptyBlock::addVector(Vector* v) {
+	vectors[getDirectionNumber(*v->getDirection())] += *v->getColour();
+	lines[getDirectionNumber(*v->getDirection()) % 4] += *v->getColour();
 }
 
-void EmptyBlock::clear(){
-    for(int i=0;i<4;i++){
-        vectors[i]=Colour::BLACK;
-        Vectors[i+4]=Colour::BLACK;
-        lines[i]=Colour::BLACK;
-    }
+void EmptyBlock::clear() {
+	for (int i = 0; i < 4; i++) {
+		vectors[i] = Colour::BLACK;
+		vectors[i + 4] = Colour::BLACK;
+		lines[i] = Colour::BLACK;
+	}
 }

@@ -21,6 +21,6 @@ public:
 	Direction(const Direction& d);
 	int getX();
 	int getY();
-    Direction rotate(int angle=45);
-    bool operator==(Direction& d);
+	Direction rotate(int angle = 45);
+	bool operator==(Direction& d);
 };

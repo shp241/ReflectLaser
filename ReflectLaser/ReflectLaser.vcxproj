@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ButtonMenu.cpp" />
     <ClCompile Include="Chapter.cpp" />
     <ClCompile Include="Colour.cpp" />
+    <ClCompile Include="EmptyBlock.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Picture.cpp" />
@@ -31,9 +33,11 @@
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Chapter.h" />
     <ClInclude Include="Colour.h" />
+    <ClInclude Include="EmptyBlock.h" />
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Picture.h" />
@@ -42,8 +46,8 @@
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="photo\bit.bmp" />
-    <Image Include="photo\mirror.bmp" />
+    <Image Include="images\bit.bmp" />
+    <Image Include="images\mirror.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

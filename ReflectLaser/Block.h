@@ -5,8 +5,8 @@ private:
 	RelativePoint* p;
 public:
 	Block(RelativePoint* p);
-    RelativePoint* getPosition();
-    Virtual bool isEmpty();
-    Vittual bool canMove();
-    Virtual void draw();
+	RelativePoint* getPosition();
+	virtual bool isEmpty();
+	virtual bool canMove();
+	virtual void draw();
 };

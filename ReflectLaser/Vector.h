@@ -7,6 +7,6 @@ private:
 	Direction* d;
 public:
 	Vector(Direction* d, Colour* c);
-    Direction* getDirection();
-    Colour* getColour();
+	Direction* getDirection();
+	Colour* getColour();
 };

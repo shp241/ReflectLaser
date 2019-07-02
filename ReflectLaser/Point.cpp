@@ -1,4 +1,4 @@
-#include"Point.h"
+#include "Point.h"
 
 Point::Point(int x, int y) {
 	this->x = x;
@@ -59,25 +59,27 @@ int Direction::getY() {
 	return y;
 }
 
-int cos(int angle){
-    if(angle%180==90){
-	return 0;
-    }else if((angle-90)%360<=180){
-	return -1;
-    }else {
-	return 1;
-    }
+int cos(int angle) {
+	if (angle % 180 == 90) {
+		return 0;
+	}
+	else if ((angle - 90) % 360 <= 180) {
+		return -1;
+	}
+	else {
+		return 1;
+	}
 }
 
-int sin(int angle){
-    return cos(angle+90);
+int sin(int angle) {
+	return cos(angle + 90);
 }
 
-Direction Direction::rotate(int angle){
-    this->x=x*cos(angle)-y*sin(angle);
-    this->y=x*sin(angle)+y*cos(angle);
-}    
+Direction Direction::rotate(int angle) {
+	this->x = x * cos(angle) - y * sin(angle);
+	this->y = x * sin(angle) + y * cos(angle);
+}
 
-bool Direction:operator==(Direction& d){
-    return d.getX()==this->x&&d.getY()==this.y;
+bool Direction::operator==(Direction& d) {
+	return d.getX() == this->x&&d.getY() == this.y;
 }
