@@ -6,9 +6,7 @@
 #include"Picture.h"
 
 void menu() {
-	Picture p0;
-
-	p0.initgraph();
+	Picture p = Picture();
 
 	Button* BStart = new Button(new Point(, ), new Point(, ));
 	Button* BOption = new Button(new Point(, ), new Point(, ));
@@ -19,16 +17,16 @@ void menu() {
 		MOUSEMSG m;
 		m = GetMouseMsg();
 		if (BStart->ifClick(m.x, m.y)) {
-			start();
+			start(p);
 		}//鼠标点击开始游戏
 		if (BOption->ifClick(m.x, m.y)) {
-			option();
+			option(p);
 		}//选项
 		if (BHelp->ifClick(m.x, m.y)) {
-			help();
+			help(p);
 		}//帮助
 		if (BExit->ifClick(m.x, m.y)) {
-			exit();
+			exit(p);
 		}//退出
 	}
 }

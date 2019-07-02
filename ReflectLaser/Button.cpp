@@ -6,7 +6,7 @@ Button::Button(Point* p0, Point* p1) {
 	this->p1 = p1;
 }
 
-Button::Button(Button& b){ 
+Button::Button(Button& b) {
 	this->p0 = new Point(*b.p0);
 	this->p1 = new Point(*b.p1);
 }
@@ -24,7 +24,7 @@ Point* Button::getP(int n) {
 	}
 }
 
-void Button::setP(int n,Point* p) {
+void Button::setP(int n, Point* p) {
 	if (n == 0) {
 		p0 = p;
 	}
@@ -36,6 +36,7 @@ void Button::setP(int n,Point* p) {
 Button& Button::operator=(Button b) {
 	this->p0 = new Point(*b.p0);
 	this->p1 = new Point(*b.p1);
+	return *this;
 }
 
 Button::~Button() {

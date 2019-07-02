@@ -25,6 +25,12 @@
     <ClCompile Include="Point.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Colour.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -40,6 +46,12 @@
       <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Point.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>h</Filter>
+    </ClInclude>
+    <ClInclude Include="Colour.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
