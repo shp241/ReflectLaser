@@ -9,11 +9,12 @@ Picture::Picture(int w = 800, int h = 600) {
 
 void Picture::putPicture(Point a, string picture) {
 	putimage(a.getX(), a.getY(), loaded[picture]);
-}
+}//»­Í¼º¯Êý
 
 void Picture::loadPictrue(string name) {
-        string filename = name+".png";
-        IMAGE* pImg=new IMAGE();
+	string filename = name + ".png";
+	IMAGE* pImg=new IMAGE();
 	loadimage(pImg, filename.c_str());
 	loaded.insert(map<string, IMAGE*>::value_type(name, pImg));
-}
+}//¼ÓÔØÍ¼Æ¬º¯Êý
+

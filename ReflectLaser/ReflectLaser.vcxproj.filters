@@ -7,6 +7,9 @@
     <Filter Include="cpp">
       <UniqueIdentifier>{1ff1c6ae-0e57-429d-aca7-79515f606449}</UniqueIdentifier>
     </Filter>
+    <Filter Include="bmp">
+      <UniqueIdentifier>{ab51e268-6a36-427d-aaf9-8794db2a86ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
@@ -35,6 +38,9 @@
       <Filter>cpp</Filter>
     </ClCompile>
     <ClCompile Include="RelativePoint.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonMenu.cpp">
       <Filter>cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,5 +72,16 @@
     <ClInclude Include="RelativePoint.h">
       <Filter>h</Filter>
     </ClInclude>
+    <ClInclude Include="Laser.h">
+      <Filter>h</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="photo\bit.bmp">
+      <Filter>bmp</Filter>
+    </Image>
+    <Image Include="photo\mirror.bmp">
+      <Filter>bmp</Filter>
+    </Image>
   </ItemGroup>
 </Project>

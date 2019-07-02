@@ -1,9 +1,9 @@
 #include <conio.h>
 #include <graphics.h>  // 引用图形库头文件4-444
 #include <easyx.h>
-//#include "Picture.h"
 #include <iostream>
 #include <string>
+
 using std::string;
 
 IMAGE* ButtonStart() {   //返回200*100的按钮图数组
@@ -26,17 +26,6 @@ IMAGE* ButtonStart() {   //返回200*100的按钮图数组
   cleardevice();
   }
 
-  getchar();
   closegraph();
   return pImg;
 }
-
-int main() { 
-  IMAGE *a = ButtonStart();
-  initgraph(800, 600);
- 
-  putimage(200, 200, &a[0] );
-  getchar();
-  closegraph();
-}
-

@@ -7,13 +7,18 @@
 
 void menu() {
 	Picture p = Picture();
-
+        //加载图片
 	p.loadPictrue("Background");
 	p.loadPictrue("Start");
 	p.loadPictrue("Option");
 	p.loadPictrue("Exit");
+        p.loadPictrue("ChapterOne");
+        p.loadPictrue("ChapterTwo");
+        p.loadPictrue("ChapterThree");
+        p.loadPictrue("ChapterFour"); 
+        p.loadPictrue("ChapterFive");
 
-	p.putPicture(*(new Point(0,0),"background");//绘制主页面的背景
+	p.putPicture(*(new Point(0,0)),"background");//绘制主页面的背景
 
 	Button* BStart = new Button(new Point( , ), new Point( , ));
 	Button* BOption = new Button(new Point( , ), new Point( , ));

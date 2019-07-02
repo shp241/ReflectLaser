@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ButtonMenu.cpp" />
     <ClCompile Include="Chapter.cpp" />
     <ClCompile Include="Colour.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -34,12 +35,17 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Chapter.h" />
     <ClInclude Include="Colour.h" />
+    <ClInclude Include="Laser.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuOperate.h" />
     <ClInclude Include="Picture.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="RelativePoint.h" />
     <ClInclude Include="Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="photo\bit.bmp" />
+    <Image Include="photo\mirror.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
