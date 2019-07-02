@@ -1,6 +1,7 @@
 #include"MenuOperate.h"
 #include"Button.h"
 #include"Chapter.h"
+#include"Picture.h"
 
 void start(Picture p) {
   chooseChapter(p);
@@ -31,11 +32,19 @@ void exit(Picture p) {
 }
 
 void chooseChapter(Picture p) {
+
+
   Button* BChapterOne = new Button(new Point(, ), new Point(, ));
   Button* BChapterTwo = new Button(new Point(, ), new Point(, ));
   Button* BChapterThree = new Button(new Point(, ), new Point(, ));
   Button* BChapterFour = new Button(new Point(, ), new Point(, ));
   Button* BChapterFive = new Button(new Point(, ), new Point(, ));
+  
+  p.putPicture(*(BChapterOne->getP(0)),          );//在按钮处贴图
+  p.putPicture(*(BChapterTwo->getP(0)),          );
+  p.putPicture(*(BChapterThree->getP(0)),        );
+  p.putPicture(*(BChapterFour->getP(0)),         );
+  p.putPicture(*(BChapterFive->getP(0)),         );
 
   MOUSEMSG m;
   m = GetMouseMsg();
@@ -58,6 +67,5 @@ void chooseChapter(Picture p) {
   
   if (BChapterFive->ifClick(m.x, m.y)) {
     chapterFive(p);
-  
   }//第五关
 }

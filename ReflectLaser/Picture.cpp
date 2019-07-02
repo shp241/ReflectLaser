@@ -11,7 +11,9 @@ void Picture::putPicture(Point a, string picture) {
 	putimage(a.getX(), a.getY(), loaded[picture]);
 }
 
-void Picture::loadPictrue(IMAGE *pImg, string filename) {
+void Picture::loadPictrue(string name) {
+        string filename = name+".png";
+        IMAGE* pImg=new IMAGE();
 	loadimage(pImg, filename.c_str());
-	loaded.insert(map<string, IMAGE*>::value_type(filename, pImg));
+	loaded.insert(map<string, IMAGE*>::value_type(name, pImg));
 }

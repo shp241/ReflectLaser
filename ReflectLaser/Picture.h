@@ -12,5 +12,6 @@ private:
 public:
 	Picture(int w = 800, int h = 600);
 	void putPicture(Point a, string picture);
-	void loadPictrue(IMAGE *pImg, string filename);
+	void loadPictrue(string filename);
+
 };

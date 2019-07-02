@@ -8,10 +8,24 @@
 void menu() {
 	Picture p = Picture();
 
-	Button* BStart = new Button(new Point(, ), new Point(, ));
-	Button* BOption = new Button(new Point(, ), new Point(, ));
-	Button* BHelp = new Button(new Point(, ), new Point(, ));
-	Button* BExit = new Button(new Point(, ), new Point(, ));
+	p.loadPictrue("Background");
+	p.loadPictrue("Start");
+	p.loadPictrue("Option");
+	p.loadPictrue("Exit");
+
+	p.putPicture(*(new Point(0,0),"background");//绘制主页面的背景
+
+	Button* BStart = new Button(new Point( , ), new Point( , ));
+	Button* BOption = new Button(new Point( , ), new Point( , ));
+	Button* BHelp = new Button(new Point( , ), new Point( , ));
+	Button* BExit = new Button(new Point( , ), new Point( , ));
+
+	p.putPicture(*(BStart->getP(0)),"Start");//绘制按钮
+	p.putPicture(*(BOption->getP(0)),"Option");
+	p.putPicture(*(BHelp->getP(0)),"Help");
+	p.putPicture(*(BExit->getP(0)),"Exit");
+	
+
 
 	for (;;) {
 		MOUSEMSG m;
