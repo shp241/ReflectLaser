@@ -3,6 +3,7 @@
 #include<graphics.h>
 #include"Button.h"
 #include"MenuOperate.h"
+#include"Picture.h"
 
 void menu() {
 	Picture p0;
