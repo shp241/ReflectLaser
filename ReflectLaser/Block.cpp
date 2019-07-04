@@ -1,21 +1,21 @@
 #include "Block.h"
 
-Block::	Block(RelativePoint* p){
-    this->p=p;
+Block::Block(RelativePoint* p) {
+	this->p = p;
 }
 
-RelativePoint* Block::getPosition(){
-    return this->p;
+RelativePoint* Block::getPosition() {
+	return this->p;
 }
 
-Block::bool isEmpty(){
-    return true;
+bool Block::isEmpty() {
+	return true;
 }
 
-Block::bool canMove(){
-    return false;
+bool Block::canMove() {
+	return false;
 }
 
-Block::void draw(){
-    //
+void Block::draw() {
+	//
 }

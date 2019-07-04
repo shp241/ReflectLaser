@@ -24,9 +24,9 @@ Colour Colour::operator+(Colour c) {
 }
 
 void Colour::operator+=(Colour c) {
-	 this->R=c.R || this->R;
-     this->G=c.G || this->G;
-     this->B=c.B || this->B;
+	this->R = c.R || this->R;
+	this->G = c.G || this->G;
+	this->B = c.B || this->B;
 }
 
 int Colour::getComplexity() {

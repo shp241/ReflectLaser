@@ -1,5 +1,5 @@
 #pragma once
-#include"Point.h"
+#include "Point.h"
 #include<graphics.h>
 
 class Button {
@@ -10,7 +10,7 @@ public:
 	Button(Button& b);
 	bool ifClick(int x, int y);
 	Point* getP(int n);
-	void setP(int n,Point* p);
+	void setP(int n, Point* p);
 	Button& operator=(Button b);
 	~Button();
 };
