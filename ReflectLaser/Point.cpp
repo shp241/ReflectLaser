@@ -81,5 +81,5 @@ Direction Direction::rotate(int angle) {
 }
 
 bool Direction::operator==(Direction& d) {
-	return d.getX() == this->x&&d.getY() == this.y;
+	return d.getX() == this->x&&d.getY() == this->y;
 }

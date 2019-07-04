@@ -9,10 +9,12 @@ using std::string;
 
 void menu() {
 	Picture p = Picture();
+
 	//加载图片
 	p.loadPictrue("Background");
 	p.loadPictrue("Start");
 	p.loadPictrue("Option");
+	p.loadPictrue("Help");
 	p.loadPictrue("Exit");
 	p.loadPictrue("ChapterOne");
 	p.loadPictrue("ChapterTwo");
@@ -20,13 +22,12 @@ void menu() {
 	p.loadPictrue("ChapterFour");
 	p.loadPictrue("ChapterFive");
 
-	p.putPicture(*(new Point(0, 0)), "background");//绘制主页面的背景
-
 	Button* BStart = new Button(new Point(, ), new Point(, ));
 	Button* BOption = new Button(new Point(, ), new Point(, ));
 	Button* BHelp = new Button(new Point(, ), new Point(, ));
 	Button* BExit = new Button(new Point(, ), new Point(, ));
 
+	p.putPicture(*(new Point(0, 0)), "background");//绘制主页面的背景
 	p.putPicture(*(BStart->getP(0)), "Start");//绘制按钮
 	p.putPicture(*(BOption->getP(0)), "Option");
 	p.putPicture(*(BHelp->getP(0)), "Help");
@@ -61,6 +62,7 @@ void option(Picture p) {
 	m = GetMouseMsg();
 
 	if (Bmusic->ifClick(m.x, m.y)) {
+	  //设置音乐开关的函数
 	}
 }
 
@@ -68,6 +70,7 @@ void help(Picture p) {
 }
 
 void exit(Picture p) {
+  closegraph();
 }
 
 void chooseChapter(Picture p) {
@@ -86,6 +89,7 @@ void chooseChapter(Picture p) {
 	p.putPicture(*(BChapterFive->getP(0)), "ChapterFive");
 
 	FlushMouseMsgBuffer();//清空鼠标输入缓冲区
+
 	MOUSEMSG m;
 	m = GetMouseMsg();//获取鼠标输入信息
 

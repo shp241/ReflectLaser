@@ -47,7 +47,31 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="images\bit.bmp" />
+    <Image Include="images\bit.png" />
+    <Image Include="images\DispenserBlue.png" />
+    <Image Include="images\DispenserGreen.png" />
+    <Image Include="images\DispenserRed.png" />
+    <Image Include="images\DoubleMirror.png" />
+    <Image Include="images\Exit.png" />
+    <Image Include="images\Help.png" />
     <Image Include="images\mirror.bmp" />
+    <Image Include="images\Mirror.png" />
+    <Image Include="images\Option.png" />
+    <Image Include="images\Start.png" />
+    <Image Include="images\TargetBlue.png" />
+    <Image Include="images\TargetBlueSuccess.png" />
+    <Image Include="images\TargetCyan.png" />
+    <Image Include="images\TargetCyanSuccess.png" />
+    <Image Include="images\TargetGreen.png" />
+    <Image Include="images\TargetGreenSuccess.png" />
+    <Image Include="images\TargetMagenta.png" />
+    <Image Include="images\TargetMagentaSuccess.png" />
+    <Image Include="images\TargetRed.png" />
+    <Image Include="images\TargetRedSuccess.png" />
+    <Image Include="images\TargetWhite.png" />
+    <Image Include="images\TargetWhiteSuccess.png" />
+    <Image Include="images\TargetYellow.png" />
+    <Image Include="images\TargetYellowSuccess.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
