@@ -5,8 +5,10 @@ private:
 	RelativePoint* p;
 public:
 	Block(RelativePoint* p);
-	RelativePoint* getPosition();
+	RelativePoint* getPosition()const;
+	void setPosition(RelativePoint* p);
 	virtual bool isEmpty();
 	virtual bool canMove();
 	virtual void draw();
+	virtual ~Block();
 };

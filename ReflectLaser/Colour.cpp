@@ -29,6 +29,6 @@ void Colour::operator+=(Colour c) {
 	this->B = c.B || this->B;
 }
 
-int Colour::getComplexity() {
+int Colour::getComplexity()const {
 	return R + G + B;
 }

@@ -17,3 +17,7 @@ void Picture::loadPictrue(string name) {
 	loadimage(pImg, filename.c_str());
 	loaded.insert(map<string, IMAGE*>::value_type(name, pImg));
 }//¼ÓÔØÍ¼Æ¬º¯Êı
+
+Picture::~Picture() {
+	delete &loaded;
+}

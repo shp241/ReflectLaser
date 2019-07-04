@@ -5,8 +5,8 @@ private:
 public:
 	Point(int x = 0, int y = 0);
 	Point(const Point& p);
-	int getX();
-	int getY();
+	int getX()const;
+	int getY()const;
 	void setX(int x);
 	void setY(int y);
 	Point& operator=(const Point& p);
@@ -19,8 +19,8 @@ public:
 	static Direction UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT;
 	Direction(int x, int y);
 	Direction(const Direction& d);
-	int getX();
-	int getY();
+	int getX()const;
+	int getY()const;
 	Direction rotate(int angle = 45);
 	bool operator==(Direction& d);
 };

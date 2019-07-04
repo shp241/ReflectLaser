@@ -49,3 +49,8 @@ void EmptyBlock::clear() {
 		lines[i] = Colour::BLACK;
 	}
 }
+
+EmptyBlock::~EmptyBlock() {
+	delete lines;
+	delete vectors;
+}

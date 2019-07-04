@@ -8,5 +8,5 @@ public:
 	bool operator==(Colour c);
 	Colour operator+(Colour c);
 	void operator+=(Colour c);
-	int getComplexity();
+	int getComplexity()const;
 };

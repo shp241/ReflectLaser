@@ -9,7 +9,7 @@ public:
 	Button(Point* p0, Point* p1);
 	Button(Button& b);
 	bool ifClick(int x, int y);
-	Point* getP(int n);
+	Point* getP(int n)const;
 	void setP(int n, Point* p);
 	Button& operator=(Button b);
 	~Button();

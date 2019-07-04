@@ -5,10 +5,10 @@ Vector::Vector(Direction* d, Colour* c) {
 	this->c = c;
 }
 
-Direction* Vector::getDirection() {
+Direction* Vector::getDirection()const {
 	return this->d;
 }
 
-Colour* Vector::getColour() {
+Colour* Vector::getColour()const {
 	return this->c;
 }

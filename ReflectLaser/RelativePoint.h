@@ -5,5 +5,6 @@
 class RelativePoint : public Point {
 public:
 	RelativePoint(int x = 0, int y = 0);
+	RelativePoint(const RelativePoint& p);
 	RelativePoint operator*(Direction d);
 };

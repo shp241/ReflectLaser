@@ -4,8 +4,12 @@ Block::Block(RelativePoint* p) {
 	this->p = p;
 }
 
-RelativePoint* Block::getPosition() {
+RelativePoint* Block::getPosition()const {
 	return this->p;
+}
+
+void Block::setPosition(RelativePoint* p) {
+	this->p = new RelativePoint(p);
 }
 
 bool Block::isEmpty() {
@@ -18,4 +22,8 @@ bool Block::canMove() {
 
 void Block::draw() {
 	//
+}
+
+Block::~Block() {
+	delete p;
 }

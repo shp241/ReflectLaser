@@ -15,7 +15,7 @@ bool Button::ifClick(int x, int y) {
 	return x >= p0->getX() && x <= p1->getX() && y >= p0->getY() && y <= p1->getY;
 }
 
-Point* Button::getP(int n) {
+Point* Button::getP(int n)const {
 	if (n == 0) {
 		return p0;
 	}

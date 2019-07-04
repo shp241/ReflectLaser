@@ -10,11 +10,11 @@ Point::Point(const Point& p) {
 	this->y = p.y;
 }
 
-int Point::getX() {
+int Point::getX()const {
 	return x;
 }
 
-int Point::getY() {
+int Point::getY()const {
 	return y;
 }
 
@@ -51,11 +51,11 @@ Direction::Direction(int x, int y) {
 	this->y = y;
 }
 
-int Direction::getX() {
+int Direction::getX()const {
 	return x;
 }
 
-int Direction::getY() {
+int Direction::getY()const {
 	return y;
 }
 
@@ -81,5 +81,5 @@ Direction Direction::rotate(int angle) {
 }
 
 bool Direction::operator==(Direction& d) {
-	return d.getX() == this->x&&d.getY() == this.y;
+	return d.getX() == this->x&&d.getY() == this->y;
 }
