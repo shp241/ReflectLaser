@@ -161,5 +161,77 @@
     <Image Include="images\TargetYellowSuccess.png">
       <Filter>Resources</Filter>
     </Image>
+    <Image Include="images\bit.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\DispenserBlue.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\DispenserGreen.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\DispenserRed.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\DoubleMirror.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\Exit.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\Help.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\Mirror.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\Option.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\Start.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetBlue.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetBlueSuccess.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetCyan.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetCyanSuccess.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetGreen.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetGreenSuccess.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetMagenta.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetMagentaSuccess.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetRed.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetRedSuccess.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetWhite.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetWhiteSuccess.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetYellow.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="images\TargetYellowSuccess.png">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
 </Project>
