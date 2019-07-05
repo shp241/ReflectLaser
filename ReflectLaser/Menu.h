@@ -12,6 +12,7 @@ void chooseChapter(Picture p);
 class Menu :public Button {
 public:
   void role();
+  Menu() = default;
 };
 class Start :public Button {
 public:

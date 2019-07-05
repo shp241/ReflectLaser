@@ -7,3 +7,4 @@ std::list<Button*>::iterator i;
 
 void add(Button* x);
 void clear();
+void forbuttons();
