@@ -1,12 +1,14 @@
 #include "EmptyBlock.h"
 
-EmptyBlock::EmptyBlock(RelativePoint* p) :Block(p) {}
-
-void EmptyBlock::draw() {
-	//
+EmptyBlock::EmptyBlock(RelativePoint* p) :Block(p) {
+	clear();
 }
 
-Colour& EmptyBlock::operator[](int n)const {
+string EmptyBlock::getImage() {
+	return "emptyBlock";
+}
+
+Colour& EmptyBlock::operator[](int n) {
 	return vectors[n];
 }
 

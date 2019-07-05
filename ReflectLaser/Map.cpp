@@ -21,4 +21,5 @@ Block* Map::operator[](RelativePoint p)const {
 }
 
 void Map::change(RelativePoint* p, Block* b) {
+	game[p->getX()][p->getY()] = new Block(*b);
 }
