@@ -5,13 +5,13 @@
 
 class EmptyBlock :public Block {
 private:
-	Colour lines[4] = { Colour::BLACK,Colour::BLACK,Colour::BLACK,Colour::BLACK };
+	Colour lines[4];
 public:
-	Colour vectors[8] = { Colour::BLACK,Colour::BLACK,Colour::BLACK,Colour::BLACK,Colour::BLACK,Colour::BLACK,Colour::BLACK,Colour::BLACK };
+	Colour vectors[8];
 	EmptyBlock(RelativePoint* p);
-	void draw();
+	string getImage();
 	void addVector(Vector* v);
 	void clear();
-	Colour& operator[](int n)const;
+	Colour& operator[](int n);
 	~EmptyBlock();
 };
