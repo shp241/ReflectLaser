@@ -55,6 +55,12 @@
     <ClCompile Include="Item.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Buttons.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -97,6 +103,12 @@
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="Buttons.h">
       <Filter>H</Filter>
     </ClInclude>
   </ItemGroup>

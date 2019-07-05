@@ -22,6 +22,7 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ButtonMenu.cpp" />
+    <ClCompile Include="Buttons.cpp" />
     <ClCompile Include="Chapter.cpp" />
     <ClCompile Include="Colour.cpp" />
     <ClCompile Include="EmptyBlock.cpp" />
@@ -33,11 +34,13 @@
     <ClCompile Include="Picture.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="RelativePoint.cpp" />
+    <ClCompile Include="System.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Buttons.h" />
     <ClInclude Include="Chapter.h" />
     <ClInclude Include="Colour.h" />
     <ClInclude Include="EmptyBlock.h" />
@@ -49,6 +52,7 @@
     <ClInclude Include="Picture.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="RelativePoint.h" />
+    <ClInclude Include="System.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>

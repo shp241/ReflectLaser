@@ -12,5 +12,6 @@ public:
 	Point* getP(int n)const;
 	void setP(int n, Point* p);
 	Button& operator=(Button b);
-	~Button();
+        virtual void role();
+        ~Button();
 };

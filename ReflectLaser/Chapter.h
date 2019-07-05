@@ -1,7 +1,23 @@
 #pragma once
-#include "Picture.h"
-void chapterOne(Picture p);
-void chapterTwo(Picture p);
-void chapterThree(Picture p);
-void chapterFour(Picture p);
-void chapterFive(Picture p);
+#include"Button.h"
+
+class ChapterOne :public Button {
+public:
+  void role();
+};
+class ChapterTwo :public Button {
+public:
+  void role();
+};
+class ChapterThree :public Button{
+public:
+  void role();
+};
+class ChapterFour :public Button {
+public:
+  void role();
+};
+class ChapterFive :public Button {
+public:
+  void role();
+};

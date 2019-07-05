@@ -1,31 +1,28 @@
 #include "Chapter.h"
-#include "Picture.h"
 
-void chapterOne(Picture p) {
-  p.loadPictrue("Background");//ªÊ÷∆±≥æ∞Õº
+void ChapterOne::role() {
+  
 
+}
 
-
+void ChapterTwo::role() {
 
 
 }
 
-void chapterTwo(Picture p) {
-  p.loadPictrue("Background");
+void ChapterThree::role() {
+
 
 }
 
-void chapterThree(Picture p) {
-  p.loadPictrue("Background");
+void ChapterFour::role() {
+
 
 }
 
-void chapterFour(Picture p) {
-  p.loadPictrue("Background");
+void ChapterFive::role() {
+
 
 }
 
-void chapterFive(Picture p) {
-  p.loadPictrue("Background");
 
-}

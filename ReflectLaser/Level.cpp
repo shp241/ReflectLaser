@@ -25,3 +25,4 @@ Item* Level::getItem(int i)const {
 void Level::setItem(int i, Item* it) {
 	items[i] = new Item(*it);
 }
+
