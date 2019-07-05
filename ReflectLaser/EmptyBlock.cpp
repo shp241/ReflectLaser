@@ -6,7 +6,7 @@ void EmptyBlock::draw() {
 	//
 }
 
-Colour& EmptyBlock::operator[](int n) {
+Colour& EmptyBlock::operator[](int n)const {
 	return vectors[n];
 }
 

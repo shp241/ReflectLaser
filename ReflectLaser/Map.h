@@ -6,6 +6,7 @@ private:
 	Block* game[15][15];
 public:
 	Map();
-	Block* operator[](RelativePoint p);//返回Block指针
+	Map(const Map& m);
+	Block* operator[](RelativePoint p)const;//返回Block指针
 	void change(RelativePoint* p, Block* b);
 };

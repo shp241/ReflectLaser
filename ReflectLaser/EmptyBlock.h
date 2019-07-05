@@ -12,6 +12,6 @@ public:
 	void draw();
 	void addVector(Vector* v);
 	void clear();
-	Colour& operator[](int n);
+	Colour& operator[](int n)const;
 	~EmptyBlock();
 };
