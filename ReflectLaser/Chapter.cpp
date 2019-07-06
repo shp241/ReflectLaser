@@ -1,16 +1,9 @@
 #include "Chapter.h"
 
-void ChapterOne::role() {
+Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
+	this->chapters = chapters;
 }
 
-void ChapterTwo::role() {
-}
+void Chapter::role() {
 
-void ChapterThree::role() {
-}
-
-void ChapterFour::role() {
-}
-
-void ChapterFive::role() {
 }
