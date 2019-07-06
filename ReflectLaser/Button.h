@@ -1,7 +1,6 @@
 #pragma once
-#include "Point.h"
 #include "Picture.h"
-#include <graphics.h>
+#include "Point.h"
 
 class Button {
 private:

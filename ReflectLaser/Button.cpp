@@ -1,5 +1,4 @@
 #include "Button.h"
-#include <graphics.h>
 
 Button::Button(Point* p0, Point* p1) {
 	this->p0 = p0;

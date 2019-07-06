@@ -1,6 +1,6 @@
 #pragma once
-#include "RelativePoint.h"
 #include <string>
+#include "RelativePoint.h"
 using std::string;
 
 class Block {//单一地图块类

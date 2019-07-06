@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 #include "Button.h"
+#include "Menu.h"
 using std::list;
 
 namespace System {

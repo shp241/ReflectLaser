@@ -1,4 +1,3 @@
-#include <graphics.h>
 #include "Picture.h"
 
 map<string, IMAGE*> Picture::loaded = {};

@@ -1,6 +1,8 @@
 #pragma once
-#include"Button.h"
-#include"Picture.h"
+#include "Button.h"
+#include "Chapter.h"
+#include "Picture.h"
+#include "System.h"
 using std::string;
 
 namespace Menu {

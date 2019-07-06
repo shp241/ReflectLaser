@@ -1,6 +1,6 @@
 #pragma once
-#include "Colour.h"
 #include "Block.h"
+#include "Colour.h"
 #include "Vector.h"
 
 class EmptyBlock :public Block {//用于表示空的地图块

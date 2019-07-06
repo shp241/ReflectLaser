@@ -1,5 +1,4 @@
 #pragma once
-#include "RelativePoint.h"
 #include "Point.h"
 
 class RelativePoint : public Point {//用于表示地图中块的相对位置(0,0)~(14,14)

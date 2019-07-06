@@ -1,6 +1,5 @@
 #include "Menu.h"
-#include "System.h"
-#include "Chapter.h"
+
 //MainMenuÀà
 MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0, p1) {}
 

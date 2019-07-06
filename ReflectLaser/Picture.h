@@ -1,10 +1,10 @@
 #pragma once
 #include <easyx.h>
-#include "Point.h"
-#include <string>
 #include <map>
-using std::string;
+#include <string>
+#include "Point.h"
 using std::map;
+using std::string;
 
 class Picture {//用于加载图片和放置图片
 private:

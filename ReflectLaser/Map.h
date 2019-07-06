@@ -1,5 +1,5 @@
 #pragma once
-#include "EmptyBlock.h"
+#include "Block.h"
 
 class Map {//用于存放地图块数组
 private:
