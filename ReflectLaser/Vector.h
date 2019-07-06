@@ -10,4 +10,5 @@ public:
 	Vector(Direction* d, Colour* c);
 	Direction* getDirection()const;
 	Colour* getColour()const;
+	~Vector();
 };

@@ -22,7 +22,6 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ButtonMenu.cpp" />
-    <ClCompile Include="Buttons.cpp" />
     <ClCompile Include="Chapter.cpp" />
     <ClCompile Include="Colour.cpp" />
     <ClCompile Include="EmptyBlock.cpp" />
@@ -40,7 +39,6 @@
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="Buttons.h" />
     <ClInclude Include="Chapter.h" />
     <ClInclude Include="Colour.h" />
     <ClInclude Include="EmptyBlock.h" />

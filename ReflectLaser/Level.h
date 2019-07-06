@@ -21,6 +21,7 @@ public:
 	Item* getItem(int i)const;
 	void setItem(int i, Item* it);
 	void saveFile(string name);
+	~Level();
 };
 
 class FileException : public exception

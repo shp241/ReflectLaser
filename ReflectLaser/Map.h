@@ -9,4 +9,5 @@ public:
 	Map(const Map& m);
 	Block* operator[](RelativePoint p)const;//∑µªÿBlock÷∏’Î
 	void change(RelativePoint* p, Block* b);
+	~Map();
 };

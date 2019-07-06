@@ -23,3 +23,12 @@ Block* Map::operator[](RelativePoint p)const {
 void Map::change(RelativePoint* p, Block* b) {
 	game[p->getX()][p->getY()] = new Block(*b);
 }
+
+Map::~Map() {
+	for (int i = 0; i < 15; i++) {
+		for (int j = 0; j < 15; j++) {
+			delete game[i][j];
+		}
+	}
+	delete game;
+}
