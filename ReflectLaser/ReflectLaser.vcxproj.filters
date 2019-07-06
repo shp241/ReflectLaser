@@ -104,57 +104,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Images\DoubleMirror.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Help.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Option.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetBlue.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetBlueSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetCyan.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetCyanSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetGreen.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetGreenSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetMagenta.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetMagentaSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetRed.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetRedSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetWhite.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetWhiteSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetYellow.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\TargetYellowSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
     <Image Include="Images\Menu\ChapterChoose.png">
       <Filter>Resources</Filter>
     </Image>
@@ -174,48 +123,6 @@
       <Filter>Resources</Filter>
     </Image>
     <Image Include="Images\Block\EmptyBlock.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Succeeded__1.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Succeeded__2.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Succeeded__4.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Succeeded__5.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Succeeded__6.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Succeeded_3.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Succeeded_7.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Target_1.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Target_2.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Target_3.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Target_4.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Target_5.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Target_6.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="Images\Block\Target\Target_7.png">
       <Filter>Resources</Filter>
     </Image>
     <Image Include="Images\Block\Item\Mirror\Mirror_0.png">
@@ -315,6 +222,54 @@
       <Filter>Resources</Filter>
     </Image>
     <Image Include="Images\Block\Emitter\Emitter_3_7.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_0.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_5.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_6.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Succeeded_7.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_0.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_2.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_5.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_6.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Target\Target_7.png">
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
