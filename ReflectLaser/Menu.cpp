@@ -1,29 +1,42 @@
 #include "Menu.h"
 #include "System.h"
 #include "Chapter.h"
-
+//MainMenu类
 MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0,p1) {}
 
 void MainMenu::role(Picture* p) {
 	Menu::menu(p);
 }
 
+//Start类
+Start::Start(Point* p0, Point* p1) :Button(p0, p1) {}
+
 void Start::role(Picture* p) {
 	Menu::start(p);
 }
+
+//Option类
+Option::Option(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Option::role(Picture* p) {
 	Menu::option(p);
 }
 
+//Help类
+Help::Help(Point* p0, Point* p1) : Button(p0, p1) {}
+
 void Help::role(Picture* p) {
 	Menu::help(p);
 }
+
+//Exit类
+Exit::Exit(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Exit::role(Picture* p) {
 	Menu::exit(p);
 }
 
+//menu命名空间中的函数
 Picture* Menu::menu(Picture* p) {
 	System::clear();
 	p->putPicture("MainWindow");//绘制主页面的背景

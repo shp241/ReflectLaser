@@ -3,7 +3,7 @@
 
 class Chapter :public Button {
 private:
-	int chapters;//指定为第几关
+	int chapters;//关卡编号
 public:
 	Chapter(Point* p0, Point* p1, int chapters);
 	void role(Picture* p);
