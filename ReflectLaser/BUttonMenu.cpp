@@ -3,7 +3,6 @@
 #include <easyx.h>
 #include <iostream>
 #include <string>
-
 using std::string;
 
 IMAGE* ButtonStart() {   //返回200*100的按钮图数组

@@ -1,10 +1,10 @@
-#include"Button.h"
+#include "Button.h"
 #include "Menu.h"
-#include<easyx.h>
-#include<graphics.h>
+#include <easyx.h>
+#include <graphics.h>
 #include "Picture.h"
-#include<iostream>
-#include"System.h"
+#include <iostream>
+#include "System.h"
 
 using std::string;
 

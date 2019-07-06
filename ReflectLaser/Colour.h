@@ -1,4 +1,5 @@
 #pragma once
+
 class Colour {
 private:
 	bool R, G, B;

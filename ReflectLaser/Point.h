@@ -1,4 +1,5 @@
 #pragma once
+
 class Point {
 private:
 	int x, y;

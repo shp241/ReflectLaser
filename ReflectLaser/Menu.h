@@ -14,18 +14,22 @@ public:
 	void role();
 	Menu() = default;
 };
+
 class Start :public Button {
 public:
 	void role(Picture p);
 };
+
 class Option :public Button {
 public:
 	void role(Picture p);
 };
+
 class Help :public Button {
 public:
 	void role(Picture p);
 };
+
 class Exit :public Button {
 public:
 	void role(Picture p);

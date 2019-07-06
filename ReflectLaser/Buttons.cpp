@@ -10,7 +10,7 @@ void clear() {
 	buttons.clear();
 }
 
-void forbuttons() {
+void forButtons() {
 	for (;;) {
 		MOUSEMSG m;
 		m = GetMouseMsg();

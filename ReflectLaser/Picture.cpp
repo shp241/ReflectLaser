@@ -1,4 +1,4 @@
-#include <graphics.h>  // 引用图形库头文件4-444
+#include <graphics.h>
 #include "Picture.h"
 
 map<string, IMAGE*> Picture::loaded = {};

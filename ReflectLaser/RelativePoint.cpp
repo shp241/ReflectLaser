@@ -1,4 +1,5 @@
 #include "RelativePoint.h"
+
 RelativePoint::RelativePoint(int x, int y) :Point(x, y) {}
 
 RelativePoint RelativePoint::operator*(Direction d) {
