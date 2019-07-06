@@ -1,7 +1,7 @@
 #pragma once
 #include "Block.h"
 
-class Item :public Block {
+class Item :public Block {//所有道具的基类
 private:
 	bool isUsed;
 	int angle;

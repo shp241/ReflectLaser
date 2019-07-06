@@ -15,7 +15,7 @@ Level::Level(Map* m, Item* it[]) {
 }
 
 Level::Level(string name) {
-	ifstream file(name + ".dat", ios::in | ios::binary);
+	ifstream file("Level\\" + name + ".dat", ios::in | ios::binary);
 	if (!file) {
 		throw FileException(true);
 		new(this)Level();
@@ -48,7 +48,7 @@ void Level::setItem(int i, Item* it) {
 }
 
 void Level::saveFile(string name) {
-	ofstream file(name + ".dat", ios::out | ios::binary);
+	ofstream file("Level\\" + name + ".dat", ios::out | ios::binary);
 	if (!file) {
 		throw FileException(false);
 	}

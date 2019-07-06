@@ -1,7 +1,9 @@
 #include "Block.h"
 
-Block::Block(RelativePoint* p) {
+Block::Block(RelativePoint* p, bool empty, bool moving) {
 	this->p = new RelativePoint(*p);
+	this->empty = empty;
+	this->moving = moving;
 }
 
 RelativePoint* Block::getPosition()const {
@@ -17,11 +19,11 @@ void Block::setPosition(RelativePoint* p) {
 }
 
 bool Block::isEmpty() {
-	return true;
+	return empty;
 }
 
 bool Block::canMove() {
-	return false;
+	return moving;
 }
 
 string Block::getImage() {

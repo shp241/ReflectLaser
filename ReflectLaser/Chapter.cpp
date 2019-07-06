@@ -5,5 +5,4 @@ Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
 }
 
 void Chapter::role(Picture* p) {
-
 }

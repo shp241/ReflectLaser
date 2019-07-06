@@ -19,24 +19,24 @@ public:
 
 class Start :public Button {
 public:
-  Start(Point* p0, Point* p1);
-  void role(Picture* p);
+	Start(Point* p0, Point* p1);
+	void role(Picture* p);
 };//开始游戏按钮
 
 class Option :public Button {
 public:
-  Option(Point* p0, Point* p1);
-  void role(Picture* p);
+	Option(Point* p0, Point* p1);
+	void role(Picture* p);
 };//选项按钮
 
 class Help :public Button {
 public:
-  Help(Point* p0, Point* p1);
-  void role(Picture* p);
+	Help(Point* p0, Point* p1);
+	void role(Picture* p);
 };//帮助按钮
 
 class Exit :public Button {
 public:
-  Exit(Point* p0, Point* p1);
-  void role(Picture* p);
+	Exit(Point* p0, Point* p1);
+	void role(Picture* p);
 };//退出按钮

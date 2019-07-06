@@ -2,7 +2,7 @@
 #include "System.h"
 #include "Chapter.h"
 //MainMenuÀà
-MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0,p1) {}
+MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void MainMenu::role(Picture* p) {
 	Menu::menu(p);
@@ -61,7 +61,7 @@ void Menu::start(Picture* p) {
 	int height = 100;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 4; j++) {
-			BChapter[i * 4 + j] = new Chapter(new Point(ChapterX[j], ChapterY[i]), 
+			BChapter[i * 4 + j] = new Chapter(new Point(ChapterX[j], ChapterY[i]),
 				new Point(ChapterX[j] + width, ChapterY[i] + height), i * 4 + j);
 		}
 	}
@@ -80,7 +80,6 @@ void Menu::option(Picture* p) {
 
 void Menu::help(Picture* p) {
 	System::clear();
-
 }
 
 void Menu::exit(Picture* p) {

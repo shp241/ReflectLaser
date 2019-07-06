@@ -40,6 +40,7 @@ Direction Direction::DOWN = Direction(0, -1);
 Direction Direction::DOWN_LEFT = Direction(-1, -1);
 Direction Direction::LEFT = Direction(-1, 0);
 Direction Direction::UP_LEFT = Direction(-1, 1);
+Direction Direction::directions[] = { UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT };
 
 Direction::Direction(const Direction& d) {
 	this->x = d.x;
@@ -84,28 +85,13 @@ bool Direction::operator==(Direction& d) {
 }
 
 int Direction::getDirectionNumber(Direction d) {
-	if (d == Direction::UP) {
-		return 0;
+	for (int i = 0; i < 8; i++) {
+		if (directions[i] == d) {
+			return i;
+		}
 	}
-	if (d == Direction::UP_RIGHT) {
-		return 1;
-	}
-	if (d == Direction::RIGHT) {
-		return 2;
-	}
-	if (d == Direction::DOWN_RIGHT) {
-		return 3;
-	}
-	if (d == Direction::DOWN) {
-		return 4;
-	}
-	if (d == Direction::DOWN_LEFT) {
-		return 5;
-	}
-	if (d == Direction::LEFT) {
-		return 6;
-	}
-	if (d == Direction::UP_LEFT) {
-		return 7;
-	}
+	return 0;
+}
+Direction Direction::getNumberDirection(int i) {
+	return directions[i % 8];
 }
