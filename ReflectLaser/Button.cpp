@@ -40,7 +40,6 @@ Button& Button::operator=(Button b) {
 }
 
 void Button::role() {
-
 }
 
 Button::~Button() {

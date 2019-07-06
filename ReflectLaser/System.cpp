@@ -4,9 +4,9 @@
 #include"System.h"
 
 void system() {
-  Menu* menu_first=new Menu();
-  
-  menu_first->role();
-  
-  forbuttons();
+	Menu* menu_first = new Menu();
+
+	menu_first->role();
+
+	forbuttons();
 }

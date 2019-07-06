@@ -6,7 +6,7 @@ class Button {
 private:
 	Point* p0, *p1;//按钮矩形区域的两个对角顶点（顺时针）
 public:
-  Button() = default;
+	Button() = default;
 	Button(Point* p0, Point* p1);
 	Button(Button& b);
 	bool ifClick(int x, int y);

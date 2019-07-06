@@ -4,8 +4,5 @@
 #include"Button.h"
 
 int main() {
-  void system();
-
-
-
+	void system();
 }
