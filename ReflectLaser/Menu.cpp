@@ -5,7 +5,7 @@
 #include "Picture.h"
 #include <iostream>
 #include "System.h"
-
+#include"Buttons.h"
 using std::string;
 
 void Menu::role() {
@@ -14,6 +14,7 @@ void Menu::role() {
 
 void Start::role(Picture p) {
 	start(p);
+
 }
 
 void Option::role(Picture p) {

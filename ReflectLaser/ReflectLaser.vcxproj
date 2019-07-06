@@ -81,6 +81,9 @@
     <Image Include="images\TargetYellow.png" />
     <Image Include="images\TargetYellowSuccess.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A17E9EF8-D37A-4465-B810-0DEFF9A47A82}</ProjectGuid>
