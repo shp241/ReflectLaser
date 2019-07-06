@@ -82,3 +82,30 @@ Direction Direction::rotate(int angle) {
 bool Direction::operator==(Direction& d) {
 	return d.getX() == this->x&&d.getY() == this->y;
 }
+
+int Direction::getDirectionNumber(Direction d) {
+	if (d == Direction::UP) {
+		return 0;
+	}
+	if (d == Direction::UP_RIGHT) {
+		return 1;
+	}
+	if (d == Direction::RIGHT) {
+		return 2;
+	}
+	if (d == Direction::DOWN_RIGHT) {
+		return 3;
+	}
+	if (d == Direction::DOWN) {
+		return 4;
+	}
+	if (d == Direction::DOWN_LEFT) {
+		return 5;
+	}
+	if (d == Direction::LEFT) {
+		return 6;
+	}
+	if (d == Direction::UP_LEFT) {
+		return 7;
+	}
+}

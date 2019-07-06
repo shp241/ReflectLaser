@@ -37,9 +37,6 @@
     <ClCompile Include="RelativePoint.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
-    <ClCompile Include="ButtonMenu.cpp">
-      <Filter>CPP</Filter>
-    </ClCompile>
     <ClCompile Include="Block.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
@@ -177,9 +174,6 @@
       <Filter>Resources</Filter>
     </Image>
     <Image Include="images\TargetYellowSuccess.png">
-      <Filter>Resources</Filter>
-    </Image>
-    <Image Include="images\bit.png">
       <Filter>Resources</Filter>
     </Image>
     <Image Include="images\DispenserBlue.png">

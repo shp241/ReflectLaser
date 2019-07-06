@@ -24,4 +24,5 @@ public:
 	int getY()const;
 	Direction rotate(int angle = 45);//将方向旋转angle度数后得到的方向
 	bool operator==(Direction& d);
+	static int getDirectionNumber(Direction d);
 };

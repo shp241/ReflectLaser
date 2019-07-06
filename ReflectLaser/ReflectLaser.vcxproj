@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="ButtonMenu.cpp" />
     <ClCompile Include="Chapter.cpp" />
     <ClCompile Include="Colour.cpp" />
     <ClCompile Include="EmptyBlock.cpp" />
@@ -85,7 +84,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A17E9EF8-D37A-4465-B810-0DEFF9A47A82}</ProjectGuid>
-    <RootNamespace>Project1</RootNamespace>
+    <RootNamespace>ReflectLaser</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
