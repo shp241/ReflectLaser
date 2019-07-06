@@ -58,6 +58,14 @@ void Level::saveFile(string name) {
 	file.close();
 }
 
+Level::~Level() {
+	delete game;
+	for (int i = 0; i < 24; i++) {
+		delete items[i];
+	}
+	delete items;
+}
+
 FileException::FileException(bool in) {
 	this->isIn = in;
 }

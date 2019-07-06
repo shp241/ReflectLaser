@@ -9,7 +9,7 @@ const Colour Colour::MAGENTA = Colour(true, false, true);
 const Colour Colour::BLACK = Colour(false, false, false);
 const Colour Colour::WHITE = Colour(true, true, true);
 
-Colour::Colour(bool r = false, bool g = false, bool b = false) {
+Colour::Colour(bool r, bool g, bool b) {
 	this->R = r;
 	this->G = g;
 	this->B = b;

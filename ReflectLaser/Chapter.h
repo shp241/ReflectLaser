@@ -1,27 +1,10 @@
 #pragma once
 #include"Button.h"
 
-class ChapterOne :public Button {
+class Chapter :public Button {
+private:
+	int chapters;//指定为第几关
 public:
-	void role();
-};
-
-class ChapterTwo :public Button {
-public:
-	void role();
-};
-
-class ChapterThree :public Button {
-public:
-	void role();
-};
-
-class ChapterFour :public Button {
-public:
-	void role();
-};
-
-class ChapterFive :public Button {
-public:
-	void role();
+	Chapter(Point* p0, Point* p1, int chapters);
+	void role(Picture* p);
 };

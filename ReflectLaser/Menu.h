@@ -1,36 +1,38 @@
 #pragma once
 #include"Button.h"
 #include"Picture.h"
+using std::string;
 
-void menu();
-void start(Picture p);
-void option(Picture p);
-void help(Picture p);
-void exit(Picture p);
-void chooseChapter(Picture p);
+namespace Menu {
+	Picture* menu(Picture* p = new Picture());
+	void start(Picture* p);
+	void option(Picture* p);
+	void help(Picture* p);
+	void exit(Picture* p);
+}
 
-class Menu :public Button {
+class MainMenu :public Button {
 public:
-	void role();
-	Menu() = default;
+	MainMenu(Point* p0, Point* p1);
+	void role(Picture* p);
 };
 
 class Start :public Button {
 public:
-	void role(Picture p);
+	void role(Picture* p);
 };
 
 class Option :public Button {
 public:
-	void role(Picture p);
+	void role(Picture* p);
 };
 
 class Help :public Button {
 public:
-	void role(Picture p);
+	void role(Picture* p);
 };
 
 class Exit :public Button {
 public:
-	void role(Picture p);
+	void role(Picture* p);
 };

@@ -1,5 +1,6 @@
 #pragma once
 #include "Point.h"
+#include "Picture.h"
 #include <graphics.h>
 
 class Button {
@@ -13,6 +14,6 @@ public:
 	Point* getP(int n)const;
 	void setP(int n, Point* p);
 	Button& operator=(Button b);
-	virtual void role();
+	virtual void role(Picture* p);
 	~Button();
 };

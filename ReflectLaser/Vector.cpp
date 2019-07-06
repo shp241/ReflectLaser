@@ -12,3 +12,8 @@ Direction* Vector::getDirection()const {
 Colour* Vector::getColour()const {
 	return this->c;
 }
+
+Vector::~Vector() {
+	delete c;
+	delete d;
+}

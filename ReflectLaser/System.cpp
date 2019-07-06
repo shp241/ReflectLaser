@@ -1,11 +1,30 @@
-#include <easyx.h>
-#include "Buttons.h"
 #include "Menu.h"
 #include "System.h"
 
-void system() {
-	Menu* menuFirst = new Menu();
-	menuFirst->role();
-	forButtons();
+void System::add(Button* x) {
+	buttons.push_back(x);
 }
-4
+
+void System::clear() {
+	buttons.clear();
+}
+
+void System::system() {
+	Picture* p = Menu::menu();
+	forButtons(p);
+}
+
+void System::forButtons(Picture* p) {
+	list<Button*>::iterator it;
+	for (;;) {
+		MOUSEMSG m;
+		m = GetMouseMsg();
+		for (it = buttons.begin(); it != buttons.end(); ++it) {
+			if ((*it)->ifClick(m.x, m.y)) {
+				(*it)->role(p);
+				break;
+			}
+		}
+		FlushMouseMsgBuffer();//清空鼠标输入缓冲区
+	}
+}
