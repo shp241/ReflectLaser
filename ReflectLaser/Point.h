@@ -1,6 +1,6 @@
 #pragma once
 
-class Point {
+class Point {//点类
 private:
 	int x, y;
 public:
@@ -13,15 +13,15 @@ public:
 	Point& operator=(const Point& p);
 };
 
-class Direction {
+class Direction {//方向类
 private:
 	int x, y;
 public:
-	static Direction UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT;
+	static Direction UP, DOWN, LEFT, RIGHT, UP_LEFT, UP_RIGHT, DOWN_LEFT, DOWN_RIGHT;//8个基础方向
 	Direction(int x, int y);
 	Direction(const Direction& d);
 	int getX()const;
 	int getY()const;
-	Direction rotate(int angle = 45);
+	Direction rotate(int angle = 45);//将方向旋转angle度数后得到的方向
 	bool operator==(Direction& d);
 };

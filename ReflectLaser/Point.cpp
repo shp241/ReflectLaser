@@ -76,8 +76,7 @@ int sin(int angle) {
 }
 
 Direction Direction::rotate(int angle) {
-	this->x = x * cos(angle) - y * sin(angle);
-	this->y = x * sin(angle) + y * cos(angle);
+	return Direction(x * cos(angle) - y * sin(angle), x * sin(angle) + y * cos(angle));
 }
 
 bool Direction::operator==(Direction& d) {

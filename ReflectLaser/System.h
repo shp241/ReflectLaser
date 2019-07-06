@@ -1,8 +1,12 @@
 #pragma once
 #include <list>
 #include "Button.h"
+using std::list;
 
-void add(Button* x);
-void clear();
-void system();
-void forButtons();
+namespace System {
+	list<Button*> buttons;//按钮容器
+	void add(Button* x);//向容器中添加按钮
+	void clear();//清空容器中所有按钮
+	void system();//执行程序主功能
+	void forButtons(Picture* p);//检测鼠标点击按钮的主循环
+}

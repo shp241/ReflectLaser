@@ -1,30 +1,27 @@
 #include "Menu.h"
 #include "System.h"
 
-std::list<Button*> buttons;//°´Å¥ÈÝÆ÷
-std::list<Button*>::iterator i;
-
-void add(Button* x) {
+void System::add(Button* x) {
 	buttons.push_back(x);
 }
 
-void clear() {
+void System::clear() {
 	buttons.clear();
 }
 
-void system() {
-	Menu* menuFirst = new Menu();
-	menuFirst->role();
-	forButtons();
+void System::system() {
+	Picture* p = Menu::menu();
+	forButtons(p);
 }
 
-void forButtons() {
+void System::forButtons(Picture* p) {
+	list<Button*>::iterator it;
 	for (;;) {
 		MOUSEMSG m;
 		m = GetMouseMsg();
-		for (i = buttons.begin(); i != buttons.end(); ++i) {
-			if ((*i)->ifClick(m.x, m.y)) {
-				(*i)->role();
+		for (it = buttons.begin(); it != buttons.end(); ++it) {
+			if ((*it)->ifClick(m.x, m.y)) {
+				(*it)->role(p);
 				break;
 			}
 		}

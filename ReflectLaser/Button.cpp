@@ -12,7 +12,7 @@ Button::Button(Button& b) {
 }
 
 bool Button::ifClick(int x, int y) {
-	return x >= p0->getX() && x <= p1->getX() && y >= p0->getY() && y <= p1->getY;
+	return x >= p0->getX() && x <= p1->getX() && y >= p0->getY() && y <= p1->getY();
 }
 
 Point* Button::getP(int n)const {
@@ -39,7 +39,7 @@ Button& Button::operator=(Button b) {
 	return *this;
 }
 
-void Button::role() {
+void Button::role(Picture* p) {
 }
 
 Button::~Button() {

@@ -5,5 +5,5 @@
 #include "System.h"
 
 int main() {
-	system();
+	System::system();
 }

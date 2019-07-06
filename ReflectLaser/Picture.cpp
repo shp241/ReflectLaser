@@ -3,21 +3,25 @@
 
 map<string, IMAGE*> Picture::loaded = {};
 
-Picture::Picture(int w = 800, int h = 600) {
+Picture::Picture(int w, int h) {
 	initgraph(w, h);
 }
 
-void Picture::putPicture(Point a, string picture) {
+void Picture::putPicture(string picture, Point a) {
+	if (loaded.count(picture) == 0) {
+		loadPictrue(picture);
+	}
 	putimage(a.getX(), a.getY(), loaded[picture]);
-}//»­Í¼º¯Êý
+}
 
 void Picture::loadPictrue(string name) {
-	string filename = name + ".png";
+	string filename = "images\\" + name + ".png";
 	IMAGE* pImg = new IMAGE();
 	loadimage(pImg, filename.c_str());
 	loaded.insert(map<string, IMAGE*>::value_type(name, pImg));
-}//¼ÓÔØÍ¼Æ¬º¯Êý
+}
 
 Picture::~Picture() {
 	delete &loaded;
+	closegraph();
 }
