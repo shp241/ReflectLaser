@@ -58,6 +58,15 @@ void Level::saveFile(string name) {
 	file.close();
 }
 
+void Level::clear() {
+	delete game;
+	game = new Map();
+	for (int i = 0; i < 24; i++) {
+		delete items[i];
+		items[i] = new Item(false);
+	}
+}
+
 Level::~Level() {
 	delete game;
 	for (int i = 0; i < 24; i++) {

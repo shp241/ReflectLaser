@@ -55,6 +55,9 @@
     <ClCompile Include="System.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
+    <ClCompile Include="Target.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -100,6 +103,9 @@
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="System.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="Target.h">
       <Filter>H</Filter>
     </ClInclude>
   </ItemGroup>

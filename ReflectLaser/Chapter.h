@@ -1,5 +1,6 @@
 #pragma once
-#include"Button.h"
+#include "Button.h"
+#include "System.h"
 
 class Chapter :public Button {//¹Ø¿¨°´Å¥µã»÷
 private:

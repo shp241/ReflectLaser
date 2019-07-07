@@ -21,6 +21,7 @@ public:
 	Item* getItem(int i)const;
 	void setItem(int i, Item* it);
 	void saveFile(string name);//保存到文件
+	void clear();//清空关卡数据
 	~Level();
 };
 

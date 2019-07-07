@@ -33,6 +33,7 @@
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="RelativePoint.cpp" />
     <ClCompile Include="System.cpp" />
+    <ClCompile Include="Target.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +51,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="RelativePoint.h" />
     <ClInclude Include="System.h" />
+    <ClInclude Include="Target.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>

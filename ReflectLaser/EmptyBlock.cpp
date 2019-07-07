@@ -12,6 +12,10 @@ Colour& EmptyBlock::operator[](int n) {
 	return vectors[n];
 }
 
+Colour EmptyBlock::getVectorColour(int n)const {
+	return vectors[n];
+}
+
 void EmptyBlock::addVector(Vector* v) {
 	vectors[Direction::getDirectionNumber(*v->getDirection())] += *v->getColour();
 }

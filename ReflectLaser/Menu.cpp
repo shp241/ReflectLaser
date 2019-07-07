@@ -38,6 +38,7 @@ void Exit::role(Picture* p) {
 //menu命名空间中的函数
 Picture* Menu::menu(Picture* p) {
 	System::clear();
+	System::game->clear();
 	p->putPicture("Menu\\MainWindow");//绘制主页面的背景
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));

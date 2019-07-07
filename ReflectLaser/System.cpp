@@ -5,6 +5,10 @@ void System::add(Button* x) {
 }
 
 void System::clear() {
+	list<Button*>::iterator it;
+	for (it = buttons.begin(); it != buttons.end(); ++it) {
+		delete *it;
+	}
 	buttons.clear();
 }
 
