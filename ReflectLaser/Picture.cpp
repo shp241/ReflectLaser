@@ -2,8 +2,9 @@
 
 map<string, IMAGE*> Picture::loaded = {};
 
-Picture::Picture(int w, int h) {
+void Picture::open(int w, int h) {
 	initgraph(w, h);
+	opening = true;
 }
 
 void Picture::putPicture(string picture, Point a) {
@@ -20,7 +21,8 @@ void Picture::loadPictrue(string name) {
 	loaded.insert(map<string, IMAGE*>::value_type(name, pImg));
 }
 
-Picture::~Picture() {
+void Picture::close() {
 	delete &loaded;
 	closegraph();
+	opening = false;
 }

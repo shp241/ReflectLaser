@@ -40,7 +40,7 @@ Direction Direction::DOWN = Direction(0, -1);
 Direction Direction::DOWN_LEFT = Direction(-1, -1);
 Direction Direction::LEFT = Direction(-1, 0);
 Direction Direction::UP_LEFT = Direction(-1, 1);
-Direction Direction::directions[] = { UP, UP_RIGHT, RIGHT, DOWN_RIGHT, DOWN, DOWN_LEFT, LEFT, UP_LEFT }; 
+Direction Direction::directions[] = { UP, UP_RIGHT, RIGHT, DOWN_RIGHT, DOWN, DOWN_LEFT, LEFT, UP_LEFT };
 
 Direction::Direction(const Direction& d) {
 	this->x = d.x;

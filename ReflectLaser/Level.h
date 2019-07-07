@@ -12,6 +12,7 @@ class Level {//用于存放关卡数据（包括地图和道具）
 private:
 	Map* game;
 	Item* items[24];
+	Item* cache;
 public:
 	Level();
 	Level(Map* m, Item* it[]);
@@ -19,7 +20,9 @@ public:
 	Level(const Level& l);
 	Map* getMap()const;
 	Item* getItem(int i)const;
+	Item* getCache()const;
 	void setItem(int i, Item* it);
+	void setCache(Item* it);
 	void saveFile(string name);//保存到文件
 	void clear();//清空关卡数据
 	~Level();

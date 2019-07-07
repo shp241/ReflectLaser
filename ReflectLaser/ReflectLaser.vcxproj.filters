@@ -31,9 +31,6 @@
     <ClCompile Include="Vector.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter.cpp">
-      <Filter>CPP</Filter>
-    </ClCompile>
     <ClCompile Include="RelativePoint.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
@@ -76,9 +73,6 @@
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="Colour.h">
-      <Filter>H</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter.h">
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="RelativePoint.h">

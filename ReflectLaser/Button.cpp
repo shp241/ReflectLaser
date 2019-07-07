@@ -38,8 +38,7 @@ Button& Button::operator=(Button b) {
 	return *this;
 }
 
-void Button::role(Picture* p) {
-}
+void Button::role() {}
 
 Button::~Button() {
 	delete p0;

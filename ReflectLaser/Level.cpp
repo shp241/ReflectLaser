@@ -3,15 +3,17 @@
 Level::Level() {
 	game = new Map();
 	for (int i = 0; i < 24; i++) {
-		items[i] = new Item(false);
+		items[i] = new Item(new RelativePoint(15, i));
 	}
+	cache = new Item(new RelativePoint(16, 0));
 }
 
 Level::Level(Map* m, Item* it[]) {
 	game = new Map(*m);
 	for (int i = 0; i < 24; i++) {
-		items[i] = new Item(it[i]);
+		items[i] = new Item(*it[i], new RelativePoint(15, i));
 	}
+	cache = new Item(new RelativePoint(16, 0));
 }
 
 Level::Level(string name) {
@@ -33,6 +35,7 @@ Level::Level(const Level& l) {
 	for (int i = 0; i < 24; i++) {
 		items[i] = new Item(*l.getItem(i));
 	}
+	this->cache = new Item(*l.getCache());
 }
 
 Map* Level::getMap()const {
@@ -43,8 +46,16 @@ Item* Level::getItem(int i)const {
 	return items[i];
 }
 
+Item* Level::getCache()const {
+	return cache;
+}
+
 void Level::setItem(int i, Item* it) {
 	items[i] = new Item(*it);
+}
+
+void Level::setCache(Item* it) {
+	cache = new Item(*it);
 }
 
 void Level::saveFile(string name) {

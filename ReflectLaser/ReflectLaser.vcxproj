@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="Chapter.cpp" />
     <ClCompile Include="Colour.cpp" />
     <ClCompile Include="EmptyBlock.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -39,7 +38,6 @@
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="Chapter.h" />
     <ClInclude Include="Colour.h" />
     <ClInclude Include="EmptyBlock.h" />
     <ClInclude Include="Item.h" />

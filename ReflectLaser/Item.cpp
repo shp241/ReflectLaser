@@ -1,9 +1,12 @@
 #include "Item.h"
 
-Item::Item(bool empty) :Block(new RelativePoint(0,0),empty){
+Item::Item(RelativePoint* p, bool empty) :Block(p, empty) {}
+
+Item::Item(const Item& it) : Block(it.getPosition(), it.isEmpty(), it.canMove()) {
+	this->angle = it.angle;
 }
 
-Item::Item(const Item& it) : Block(it.getPosition(),it.isEmpty(),it.canMove()) {
+Item::Item(const Item& it, RelativePoint* p) : Block(p, it.isEmpty(), it.canMove()) {
 	this->angle = it.angle;
 }
 

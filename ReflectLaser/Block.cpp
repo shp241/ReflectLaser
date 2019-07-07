@@ -1,6 +1,6 @@
 #include "Block.h"
 
-Block::Block(RelativePoint* p, bool empty, bool moving) {
+Block::Block(RelativePoint* p, bool empty, bool moving) :Button(new Point(*p->getActualPoint()), new Point(p->getActualPoint()->getX() + 40, p->getActualPoint()->getY() + 40)) {
 	this->p = new RelativePoint(*p);
 	this->empty = empty;
 	this->moving = moving;
@@ -29,6 +29,8 @@ bool Block::canMove()const {
 string Block::getImage()const {
 	return "emptyBlock";
 }
+
+void Block::role() {}
 
 Block::~Block() {
 	delete p;

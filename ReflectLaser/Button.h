@@ -13,6 +13,6 @@ public:
 	Point* getP(int n)const;//getter
 	void setP(int n, Point* p);//setter
 	Button& operator=(Button b);
-	virtual void role(Picture* p);//虚函数role，由Start、Option、Help等等子类覆写
+	virtual void role();//虚函数role，由Start、Option、Help等等子类覆写
 	~Button();
 };
