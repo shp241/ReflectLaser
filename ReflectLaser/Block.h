@@ -13,8 +13,8 @@ public:
 	Block(const Block& b);
 	RelativePoint* getPosition()const;
 	void setPosition(RelativePoint* p);
-	bool isEmpty();//判断该地图块是否为空
-	bool canMove();//判断该地图块是否能移动
-	virtual string getImage();//获取该地图块上道具的图片名
+	bool isEmpty()const;//判断该地图块是否为空
+	bool canMove()const;//判断该地图块是否能移动
+	virtual string getImage()const;//获取该地图块上道具的图片名
 	virtual ~Block();
 };

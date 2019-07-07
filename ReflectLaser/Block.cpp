@@ -18,15 +18,15 @@ void Block::setPosition(RelativePoint* p) {
 	this->p = new RelativePoint(*p);
 }
 
-bool Block::isEmpty() {
+bool Block::isEmpty()const {
 	return empty;
 }
 
-bool Block::canMove() {
+bool Block::canMove()const {
 	return moving;
 }
 
-string Block::getImage() {
+string Block::getImage()const {
 	return "emptyBlock";
 }
 

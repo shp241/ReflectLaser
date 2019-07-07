@@ -4,7 +4,7 @@ EmptyBlock::EmptyBlock(RelativePoint* p) :Block(p) {
 	clear();
 }
 
-string EmptyBlock::getImage() {
+string EmptyBlock::getImage()const {
 	return "Block\\EmptyBlock";
 }
 
