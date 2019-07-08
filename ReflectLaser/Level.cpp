@@ -5,7 +5,7 @@ Level::Level() {
 	for (int i = 0; i < 24; i++) {
 		items[i] = new Item(new RelativePoint(15, i));
 	}
-	cache = new Item(new RelativePoint(16, 0));
+	cache = new Item(new RelativePoint(-1, 0));
 }
 
 Level::Level(Map* m, Item* it[]) {
@@ -13,7 +13,7 @@ Level::Level(Map* m, Item* it[]) {
 	for (int i = 0; i < 24; i++) {
 		items[i] = new Item(*it[i], new RelativePoint(15, i));
 	}
-	cache = new Item(new RelativePoint(16, 0));
+	cache = new Item(new RelativePoint(-1, 0));
 }
 
 Level::Level(string name) {
@@ -55,7 +55,7 @@ void Level::setItem(int i, Item* it) {
 }
 
 void Level::setCache(Item* it) {
-	cache = new Item(*it, new RelativePoint(16, 0));
+	cache = new Item(*it, new RelativePoint(-1, 0));
 }
 
 void Level::saveFile(string name) {
@@ -80,7 +80,7 @@ void Level::clear() {
 
 void Level::clearCache() {
 	delete cache;
-	cache = new Item(new RelativePoint(16, 0));
+	cache = new Item(new RelativePoint(-1, 0));
 }
 
 Level::~Level() {
