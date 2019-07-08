@@ -64,6 +64,35 @@ void Option::role() {
 //Music类
 Music::Music(Point* p0, Point* p1) :Button(p0, p1) {}
 
+void Music::role() {
+  char buf[128];
+  char str[128] = { 0 };
+  int i = 0;
+  //use mciSendCommand
+  MCI_OPEN_PARMS mciOpen;
+  MCIERROR mciError;
+  //SetWindowText(NULL,"12345");
+  mciOpen.lpstrDeviceType = "mpegvideo";
+  mciOpen.lpstrElementName = "Music\\MenuMusic.wav";
+  mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
+  if (mciError)
+  {
+    mciGetErrorString(mciError, buf, 128);
+    printf("send MCI_OPEN command failed:%s\n", buf);
+    return;
+  }
+  UINT DeviceID = mciOpen.wDeviceID;
+  MCI_PLAY_PARMS mciPlay;
+  mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
+  if (mciError)
+  {
+    printf("send MCI_PLAY command failed\n");
+    return;
+  }
+  PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+}//该函数仅在游戏进入主菜单时调用一次
+
+
 //MusicOpen按钮
 MusicOpen::MusicOpen(Point* p0, Point* p1) :Music(p0, p1) {}
 void MusicOpen::role() {
