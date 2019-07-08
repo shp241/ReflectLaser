@@ -1,35 +1,36 @@
 #include "Menu.h"
 #include "System.h"
 #include "Chapter.h"
-//MainMenu类
+
+//主菜单按钮
 MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0,p1) {}
 
 void MainMenu::role(Picture* p) {
 	Menu::menu(p);
 }
 
-//Start类
+//Start按钮
 Start::Start(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Start::role(Picture* p) {
 	Menu::start(p);
 }
 
-//Option类
+//Option按钮
 Option::Option(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Option::role(Picture* p) {
 	Menu::option(p);
 }
 
-//Help类
+//Help按钮
 Help::Help(Point* p0, Point* p1) : Button(p0, p1) {}
 
 void Help::role(Picture* p) {
 	Menu::help(p);
 }
 
-//Exit类
+//Exit按钮
 Exit::Exit(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Exit::role(Picture* p) {
@@ -79,11 +80,13 @@ void Menu::option(Picture* p) {
 }
 
 void Menu::help(Picture* p) {
-	System::clear();
-
+	System::clear();//清空按钮容器
+	p->putPicture("Help");
 }
 
 void Menu::exit(Picture* p) {
-	System::clear();
+	System::clear();//清空按钮容器
+
+	closegraph();
 	delete &p;
 }
