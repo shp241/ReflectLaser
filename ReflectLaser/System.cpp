@@ -10,7 +10,7 @@ void System::add(Button* x) {
 void System::rid(Button x) {
 	list<Button*>::iterator it;
 	for (it = buttons.begin(); it != buttons.end(); ++it) {
-		if ((**it) == x) {
+		if (typeid(**it) == typeid(x)) {
 			buttons.erase(it);
 		}
 	}
