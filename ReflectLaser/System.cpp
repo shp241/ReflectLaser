@@ -2,6 +2,22 @@
 
 list<Button*> System::buttons = {};//按钮容器
 Level* System::game = new Level();//指示当前进行的游戏
+bool System::musicOn = true;
+
+void System::initialize() {
+	System::clear();
+	System::game->clear();
+	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
+	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
+	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
+	Button* BHelp = new Help(new Point(400, 380), new Point(400 + 250, 380 + 80));
+	Button* BExit = new Exit(new Point(400, 480), new Point(400 + 250, 480 + 80));
+	System::add(BStart);//将上述四个按钮放入buttons容器中
+	System::add(BOption);
+	System::add(BHelp);
+	System::add(BExit);
+	System::music("Music\\MenuMusic.wav");
+}
 
 void System::add(Button* x) {
 	buttons.push_back(x);
@@ -25,7 +41,7 @@ void System::clear() {
 }
 
 void System::system() {
-	MainMenu(new Point(), new Point()).role();
+	initialize();
 	forButtons();
 }
 
@@ -52,4 +68,8 @@ void System::refresh() {
 		Button* BClose = new Close(new Point(489, 368), new Point(489 + 54, 368 + 25));
 		add(BClose);
 	}
+}
+
+void System::music(string m) {
+	PlaySound(m == "" ? nullptr : m.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 }

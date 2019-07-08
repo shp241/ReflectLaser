@@ -23,22 +23,12 @@ public:
 };//Ñ¡Ïî°´Å¥
 
 class Music :public Button {
+private:
+	string music;//¸Ã°´Å¥´æ·ÅµÄÒôÀÖ
 public:
-	Music(Point* p0, Point* p1);
+	Music(Point* p0, Point* p1, string music);
 	virtual void role();
 };//ÒôÀÖ°´Å¥
-
-class MusicOpen :public Music {
-public:
-	MusicOpen(Point* p0, Point* p1);
-	void role();
-};//¿ªÒôÀÖ°´Å¥
-
-class MusicClose :public Music {
-public:
-	MusicClose(Point* p0, Point* p1);
-	void role();
-};//¹ØÒôÀÖ°´Å¥
 
 class Help :public Button {
 public:
