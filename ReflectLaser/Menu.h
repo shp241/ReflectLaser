@@ -24,20 +24,20 @@ public:
 
 class Music :public Button {
 public:
-  Music(Point* p0, Point* p1);
-  virtual void role();
+	Music(Point* p0, Point* p1);
+	virtual void role();
 };//音乐按钮
 
 class MusicOpen :public Music {
 public:
-  MusicOpen(Point* p0, Point* p1);
-  void role();
+	MusicOpen(Point* p0, Point* p1);
+	void role();
 };//开音乐按钮
 
 class MusicClose :public Music {
 public:
-  MusicClose(Point* p0, Point* p1);
-  void role();
+	MusicClose(Point* p0, Point* p1);
+	void role();
 };//关音乐按钮
 
 class Help :public Button {
@@ -65,5 +65,11 @@ private:
 	bool clocked;//是否是顺时针
 public:
 	Rotate(Point* p0, Point* p1, bool clocked);
+	void role();
+};
+
+class Close :public Button {
+public:
+	Close(Point* p0, Point* p1);
 	void role();
 };

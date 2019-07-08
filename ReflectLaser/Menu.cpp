@@ -1,5 +1,4 @@
 #include "Menu.h"
-
 #include<windows.h>
 #include "mmsystem.h"//导入声音头文件
 #pragma comment(lib,"winmm.lib")//导入声音头文件库
@@ -65,105 +64,102 @@ void Option::role() {
 Music::Music(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Music::role() {
-  char buf[128];
-  char str[128] = { 0 };
-  int i = 0;
-  //use mciSendCommand
-  MCI_OPEN_PARMS mciOpen;
-  MCIERROR mciError;
-  //SetWindowText(NULL,"12345");
-  mciOpen.lpstrDeviceType = "mpegvideo";
-  mciOpen.lpstrElementName = "Music\\MenuMusic.wav";
-  mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
-  if (mciError)
-  {
-    mciGetErrorString(mciError, buf, 128);
-    printf("send MCI_OPEN command failed:%s\n", buf);
-    return;
-  }
-  UINT DeviceID = mciOpen.wDeviceID;
-  MCI_PLAY_PARMS mciPlay;
-  mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
-  if (mciError)
-  {
-    printf("send MCI_PLAY command failed\n");
-    return;
-  }
-  PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	char buf[128];
+	char str[128] = { 0 };
+	int i = 0;
+	//use mciSendCommand
+	MCI_OPEN_PARMS mciOpen;
+	MCIERROR mciError;
+	//SetWindowText(NULL,"12345");
+	mciOpen.lpstrDeviceType = "mpegvideo";
+	mciOpen.lpstrElementName = "Music\\MenuMusic.wav";
+	mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
+	if (mciError)
+	{
+		mciGetErrorString(mciError, buf, 128);
+		printf("send MCI_OPEN command failed:%s\n", buf);
+		return;
+	}
+	UINT DeviceID = mciOpen.wDeviceID;
+	MCI_PLAY_PARMS mciPlay;
+	mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
+	if (mciError)
+	{
+		printf("send MCI_PLAY command failed\n");
+		return;
+	}
+	PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 }//该函数仅在游戏进入主菜单时调用一次
-
 
 //MusicOpen按钮
 MusicOpen::MusicOpen(Point* p0, Point* p1) :Music(p0, p1) {}
 void MusicOpen::role() {
-  char buf[128];
-  char str[128] = { 0 };
-  int i = 0;
-  //use mciSendCommand
-  MCI_OPEN_PARMS mciOpen;
-  MCIERROR mciError;
-  //SetWindowText(NULL,"12345");
-  mciOpen.lpstrDeviceType = "mpegvideo";
-  mciOpen.lpstrElementName = "Music\\MenuMusic.wav";
-  mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
-  if (mciError)
-  {
-    mciGetErrorString(mciError, buf, 128);
-    printf("send MCI_OPEN command failed:%s\n", buf);
-    return;
-  }
-  UINT DeviceID = mciOpen.wDeviceID;
-  MCI_PLAY_PARMS mciPlay;
-  mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
-  if (mciError)
-  {
-    printf("send MCI_PLAY command failed\n");
-    return;
-  }
-  PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	char buf[128];
+	char str[128] = { 0 };
+	int i = 0;
+	//use mciSendCommand
+	MCI_OPEN_PARMS mciOpen;
+	MCIERROR mciError;
+	//SetWindowText(NULL,"12345");
+	mciOpen.lpstrDeviceType = "mpegvideo";
+	mciOpen.lpstrElementName = "Music\\MenuMusic.wav";
+	mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
+	if (mciError)
+	{
+		mciGetErrorString(mciError, buf, 128);
+		printf("send MCI_OPEN command failed:%s\n", buf);
+		return;
+	}
+	UINT DeviceID = mciOpen.wDeviceID;
+	MCI_PLAY_PARMS mciPlay;
+	mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
+	if (mciError)
+	{
+		printf("send MCI_PLAY command failed\n");
+		return;
+	}
+	PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
-
-  System::clear();//清空容器
-  MusicClose* BMusicClose = new MusicClose(new Point(450, 100), new Point(450 + 250, 100 + 80));//在刚刚的开音乐按钮位置实例化一个关音乐按钮
-  Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
-  System::add(BMenu);//放入容器
-  System::add(BMusicClose);
+	System::clear();//清空容器
+	MusicClose* BMusicClose = new MusicClose(new Point(450, 100), new Point(450 + 250, 100 + 80));//在刚刚的开音乐按钮位置实例化一个关音乐按钮
+	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
+	System::add(BMenu);//放入容器
+	System::add(BMusicClose);
 }
 
 //MusicClose按钮
 void MusicClose::role() {
-  char buf[128];
-  char str[128] = { 0 };
-  int i = 0;
-  //use mciSendCommand
-  MCI_OPEN_PARMS mciOpen;
-  MCIERROR mciError;
-  //SetWindowText(NULL,"12345");
-  mciOpen.lpstrDeviceType = "mpegvideo";
-  mciOpen.lpstrElementName =nullptr;
-  mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
-  if (mciError)
-  {
-    mciGetErrorString(mciError, buf, 128);
-    printf("send MCI_OPEN command failed:%s\n", buf);
-    return;
-  }
-  UINT DeviceID = mciOpen.wDeviceID;
-  MCI_PLAY_PARMS mciPlay;
-  mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
-  if (mciError)
-  {
-    printf("send MCI_PLAY command failed\n");
-    return;
-  }
-  PlaySound(nullptr, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	char buf[128];
+	char str[128] = { 0 };
+	int i = 0;
+	//use mciSendCommand
+	MCI_OPEN_PARMS mciOpen;
+	MCIERROR mciError;
+	//SetWindowText(NULL,"12345");
+	mciOpen.lpstrDeviceType = "mpegvideo";
+	mciOpen.lpstrElementName = nullptr;
+	mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
+	if (mciError)
+	{
+		mciGetErrorString(mciError, buf, 128);
+		printf("send MCI_OPEN command failed:%s\n", buf);
+		return;
+	}
+	UINT DeviceID = mciOpen.wDeviceID;
+	MCI_PLAY_PARMS mciPlay;
+	mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
+	if (mciError)
+	{
+		printf("send MCI_PLAY command failed\n");
+		return;
+	}
+	PlaySound(nullptr, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
-
-  System::clear();//清空容器
-  MusicOpen* BMusicOpen = new MusicOpen(new Point(450, 100), new Point(450 + 250, 100 + 80));//实例化一个开音乐按钮
-  Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
-  System::add(BMenu);//放入容器
-  System::add(BMusicOpen);
+	System::clear();//清空容器
+	MusicOpen* BMusicOpen = new MusicOpen(new Point(450, 100), new Point(450 + 250, 100 + 80));//实例化一个开音乐按钮
+	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
+	System::add(BMenu);//放入容器
+	System::add(BMusicOpen);
 }
 
 //Help类
@@ -172,7 +168,7 @@ Help::Help(Point* p0, Point* p1) : Button(p0, p1) {}
 void Help::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
 	Picture::putPicture("Menu\\Help");//绘制关卡选择界面的背景
-	Button* BMenu = new MainMenu(new Point(450,480), new Point(450+250,480+80));//实例化主菜单按钮
+	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化主菜单按钮
 	System::add(BMenu);
 }
 
@@ -192,7 +188,7 @@ Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
 void Chapter::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
 	Picture::putPicture("Menu\\PlayingWindow");//绘制“游戏”界面
-	System::game = new Level("Level_" + chapters);
+	System::game = new Level("Level_" + to_string(chapters));
 	Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (chapters + 1) % 12);
 	Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
 	Button* BAntiClocked = new Rotate(new Point(640, 320), new Point(640 + 40, 320 + 40), false);
@@ -223,4 +219,13 @@ Rotate::Rotate(Point* p0, Point* p1, bool clocked) :Button(p0, p1) {
 void Rotate::role() {
 	System::game->getCache()->rotate(clocked);
 	System::refresh();
+}
+
+//Close类
+Close::Close(Point* p0, Point* p1) :Button(p0, p1) {}
+
+void Close::role() {
+	System::rid(*this);
+	Picture::putPicture("Menu\\PlayingWindow");
+	System::game->draw();
 }
