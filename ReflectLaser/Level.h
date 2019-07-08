@@ -1,31 +1,34 @@
 #pragma once
-#include "Map.h"
-#include "Item.h"
-#include <fstream>
 #include <exception>
-using std::ofstream;
+#include <fstream>
+#include "Item.h"
+#include "Map.h"
+using std::exception;
 using std::ifstream;
 using std::ios;
-using std::exception;
+using std::ofstream;
 
-class Level {
+class Level {//用于存放关卡数据（包括地图和道具）
 private:
 	Map* game;
 	Item* items[24];
+	Item* cache;
 public:
 	Level();
 	Level(Map* m, Item* it[]);
-	Level(string name);
+	Level(string name);//从文件中加载
 	Level(const Level& l);
 	Map* getMap()const;
 	Item* getItem(int i)const;
+	Item* getCache()const;
 	void setItem(int i, Item* it);
-	void saveFile(string name);
+	void setCache(Item* it);
+	void saveFile(string name);//保存到文件
+	void clear();//清空关卡数据
 	~Level();
 };
 
-class FileException : public exception
-{
+class FileException : public exception {//用于文件报错
 private:
 	bool isIn;
 public:

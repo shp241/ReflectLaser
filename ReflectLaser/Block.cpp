@@ -1,7 +1,9 @@
 #include "Block.h"
 
-Block::Block(RelativePoint* p) {
+Block::Block(RelativePoint* p, bool empty, bool moving) :Button(new Point(*p->getActualPoint()), new Point(p->getActualPoint()->getX() + 40, p->getActualPoint()->getY() + 40)) {
 	this->p = new RelativePoint(*p);
+	this->empty = empty;
+	this->moving = moving;
 }
 
 RelativePoint* Block::getPosition()const {
@@ -16,17 +18,19 @@ void Block::setPosition(RelativePoint* p) {
 	this->p = new RelativePoint(*p);
 }
 
-bool Block::isEmpty() {
-	return true;
+bool Block::isEmpty()const {
+	return empty;
 }
 
-bool Block::canMove() {
-	return false;
+bool Block::canMove()const {
+	return moving;
 }
 
-string Block::getImage() {
+string Block::getImage()const {
 	return "emptyBlock";
 }
+
+void Block::role() {}
 
 Block::~Block() {
 	delete p;

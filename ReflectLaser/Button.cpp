@@ -1,5 +1,4 @@
 #include "Button.h"
-#include <graphics.h>
 
 Button::Button(Point* p0, Point* p1) {
 	this->p0 = p0;
@@ -39,8 +38,7 @@ Button& Button::operator=(Button b) {
 	return *this;
 }
 
-void Button::role(Picture* p) {
-}
+void Button::role() {}
 
 Button::~Button() {
 	delete p0;

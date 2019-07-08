@@ -3,19 +3,21 @@
 Level::Level() {
 	game = new Map();
 	for (int i = 0; i < 24; i++) {
-		items[i] = new Item(false);
+		items[i] = new Item(new RelativePoint(15, i));
 	}
+	cache = new Item(new RelativePoint(16, 0));
 }
 
 Level::Level(Map* m, Item* it[]) {
 	game = new Map(*m);
 	for (int i = 0; i < 24; i++) {
-		items[i] = new Item(it[i]);
+		items[i] = new Item(*it[i], new RelativePoint(15, i));
 	}
+	cache = new Item(new RelativePoint(16, 0));
 }
 
 Level::Level(string name) {
-	ifstream file(name + ".dat", ios::in | ios::binary);
+	ifstream file("Level\\" + name + ".dat", ios::in | ios::binary);
 	if (!file) {
 		throw FileException(true);
 		new(this)Level();
@@ -33,6 +35,7 @@ Level::Level(const Level& l) {
 	for (int i = 0; i < 24; i++) {
 		items[i] = new Item(*l.getItem(i));
 	}
+	this->cache = new Item(*l.getCache());
 }
 
 Map* Level::getMap()const {
@@ -43,12 +46,20 @@ Item* Level::getItem(int i)const {
 	return items[i];
 }
 
+Item* Level::getCache()const {
+	return cache;
+}
+
 void Level::setItem(int i, Item* it) {
 	items[i] = new Item(*it);
 }
 
+void Level::setCache(Item* it) {
+	cache = new Item(*it);
+}
+
 void Level::saveFile(string name) {
-	ofstream file(name + ".dat", ios::out | ios::binary);
+	ofstream file("Level\\" + name + ".dat", ios::out | ios::binary);
 	if (!file) {
 		throw FileException(false);
 	}
@@ -56,6 +67,15 @@ void Level::saveFile(string name) {
 		file.write((char*)this, sizeof(*this));
 	}
 	file.close();
+}
+
+void Level::clear() {
+	delete game;
+	game = new Map();
+	for (int i = 0; i < 24; i++) {
+		delete items[i];
+		items[i] = new Item(false);
+	}
 }
 
 Level::~Level() {
