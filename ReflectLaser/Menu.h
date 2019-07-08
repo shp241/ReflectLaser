@@ -22,6 +22,12 @@ public:
 	void role();
 };//选项按钮
 
+class Music :public Button {
+public:
+  Music(Point* p0, Point* p1);
+  void role();
+};//音乐按钮
+
 class Help :public Button {
 public:
 	Help(Point* p0, Point* p1);
