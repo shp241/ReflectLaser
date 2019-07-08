@@ -1,5 +1,9 @@
 #include "Menu.h"
 
+#include<windows.h>
+#include<stdio.h>
+#pragma comment(lib,"WinMM.Lib")
+
 //MainMenu类
 MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0, p1) {}
 
@@ -23,7 +27,7 @@ Start::Start(Point* p0, Point* p1) :Button(p0, p1) {}
 void Start::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
 	Picture::putPicture("Menu\\ChapterChoose");//绘制关卡选择界面的背景
-	Button* BChapter[12];//实例化五个关卡选择按钮
+	Button* BChapter[12];//实例化十二个关卡选择按钮
 	Button* BMenu = new MainMenu(new Point(0, 0), new Point(150, 100));
 	System::add(BMenu);
 	int ChapterY[3] = { 160,290,430 };
@@ -46,15 +50,28 @@ Option::Option(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Option::role() {
 	System::clear();
-	!!//待补充
+	Button* BMusic = new Button(new Point(450, 100), new Point(450 + 250, 100 + 80));
+	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));
+	System::add(BMenu);
+	System::add(BMusic);
+}
+//Music按钮
+Music::Music(Point* p0, Point* p1) :Button(p0, p1) {}
+
+void Music::role() {
+
+  PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC);
+
 }
 
 //Help类
 Help::Help(Point* p0, Point* p1) : Button(p0, p1) {}
 
 void Help::role() {
-	System::clear();
-	!!//待补充
+	System::clear();//进入该函数后，将容器中已有的按钮删除
+	Picture::putPicture("Menu\\Help");//绘制关卡选择界面的背景
+	Button* BMenu = new MainMenu(new Point(450,480), new Point(450+250,480+80));
+	System::add(BMenu);
 }
 
 //Exit类
