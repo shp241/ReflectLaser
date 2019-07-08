@@ -2,7 +2,7 @@
 
 Emitter::Emitter(RelativePoint* p, Colour* colour, int angle) :Block(p, false) {
 	this->angle = angle;
-	this->colour = new Colour(*colour);
+	this->vector = new Vector(new Direction(angle), new Colour(*colour), p);
 }
 
 void Emitter::role() {}
@@ -12,13 +12,21 @@ int Emitter::getAngle()const {
 }
 
 Colour* Emitter::getColour()const {
-	return colour;
+	return vector->getColour();
+}
+
+Vector* Emitter::getVector()const {
+	return vector;
 }
 
 string Emitter::getImage()const {
 	return "Block\\Emitter\\Emitter_" + to_string(Colour::getColourNumber(colour)) + "_" + to_string(angle);
 }
 
+list<Vector*> Emitter::getLight(Vector* from) {
+	return list<Vector*>{};
+}
+
 Emitter::~Emitter() {
-	delete colour;
+	delete vector;
 }

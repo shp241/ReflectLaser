@@ -12,5 +12,6 @@ public:
 	void change(RelativePoint* p, Block* b);//改变某一块的内容（不改变坐标）
 	void clearBlock(RelativePoint* p);
 	void draw();
+	list<Vector*> light(list<Vector*> from);//光线传导
 	~Map();
 };

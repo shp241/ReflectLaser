@@ -12,5 +12,6 @@ public:
 	int getAngle()const;
 	void setAngle(int angle);
 	virtual string getImage()const;
+	virtual list<Vector*> getLight(Vector* from);
 	~Item();
 };

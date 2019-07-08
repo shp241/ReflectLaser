@@ -12,5 +12,6 @@ public:
 	void clear();//清空所有向量
 	Colour& operator[](int n);//获取向量组中的元素
 	Colour getVectorColour(int n)const;//获取向量组中的元素
+	list<Vector*> getLight(Vector* from);
 	virtual ~EmptyBlock() = default;
 };

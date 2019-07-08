@@ -29,6 +29,10 @@ string Block::getImage()const {
 	return "emptyBlock";
 }
 
+list<Vector*> Block::getLight(Vector* from) {
+	return list<Vector*>{};
+}
+
 Block::~Block() {
 	delete p;
 }

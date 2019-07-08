@@ -23,6 +23,7 @@ public:
 	static Direction getNumberDirection(int i);
 	Direction(int x, int y);
 	Direction(const Direction& d);
+	Direction(int angle);
 	int getX()const;
 	int getY()const;
 	Direction rotate(int angle = 45);//将方向旋转angle度数后得到的方向

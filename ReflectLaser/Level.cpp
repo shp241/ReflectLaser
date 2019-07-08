@@ -83,6 +83,10 @@ void Level::clearCache() {
 }
 
 void Level::draw() {
+	list<Emitter*>::iterator it;
+	for (it = emitters.begin(); it != emitters.end(); ++it) {
+		game->light(list<Vector*>{(*it)->getVector()});
+	}
 	game->draw();
 	for (int i = 0; i < 24; i++) {
 		Picture::putPicture(items[i]->getImage(), *items[i]->getPosition()->getActualPoint());
@@ -91,7 +95,13 @@ void Level::draw() {
 }
 
 void Level::addTarget(Target* t) {
+	game->change(t->getPosition(), t);
 	targets.push_back(t);
+}
+
+void Level::addEmitter(Emitter* e) {
+	game->change(e->getPosition(), e);
+	emitters.push_back(e);
 }
 
 bool Level::isWin() {

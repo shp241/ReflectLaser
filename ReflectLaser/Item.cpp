@@ -28,4 +28,8 @@ string Item::getImage()const {
 	return "Block\\EmptyBlock";
 }
 
+list<Vector*> Item::getLight(Vector* from) {
+	return list<Vector*>{};
+}
+
 Item::~Item() {}

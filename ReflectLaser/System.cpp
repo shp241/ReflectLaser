@@ -217,7 +217,7 @@ Rotate::Rotate(Point* p0, Point* p1, bool clocked) :Button(p0, p1) {
 
 void Rotate::role() {
 	System::game->getCache()->rotate(clocked);
-	System::refresh();
+	Picture::putPicture(System::game->getCache()->getImage(), *System::game->getCache()->getPosition()->getActualPoint());
 }
 
 //Close¿‡

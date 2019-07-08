@@ -38,6 +38,13 @@ void Map::draw() {
 	}
 }
 
+list<Vector*> Map::light(list<Vector*> from) {
+	list<Vector*>::iterator it;
+	for (it = from.begin(); it != from.end(); ++it) {
+		light(game[(*it)->getPosition()->getX()][(*it)->getPosition()->getY()]->getLight(*it));
+	}
+}
+
 Map::~Map() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 15; j++) {

@@ -52,6 +52,11 @@ Direction::Direction(int x, int y) {
 	this->y = y;
 }
 
+Direction::Direction(int angle) {
+	this->x = getNumberDirection(angle).x;
+	this->y = getNumberDirection(angle).y;
+}
+
 int Direction::getX()const {
 	return x;
 }

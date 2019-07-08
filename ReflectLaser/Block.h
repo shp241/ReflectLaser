@@ -1,7 +1,10 @@
 #pragma once
+#include <list>
 #include <iostream>
 #include <string>
 #include "RelativePoint.h"
+#include "Vector.h"
+using std::list;
 using std::string;
 using std::to_string;
 
@@ -18,5 +21,6 @@ public:
 	bool isEmpty()const;//判断该地图块是否为空
 	bool canMove()const;//判断该地图块是否可移动
 	virtual string getImage()const;//获取该地图块上道具的图片名
+	virtual list<Vector*> getLight(Vector* from);
 	virtual ~Block();
 };

@@ -2,6 +2,7 @@
 #include <exception>
 #include <fstream>
 #include <list>
+#include "Emitter.h"
 #include "Item.h"
 #include "Map.h"
 #include "Target.h"
@@ -16,7 +17,8 @@ private:
 	Map* game;
 	Item* items[24];
 	Item* cache;
-	list<Target*> targets;
+	list<Target*> targets = {};
+	list<Emitter*> emitters = {};
 public:
 	Level();
 	Level(Map* m, Item* it[]);
@@ -32,6 +34,7 @@ public:
 	void clearCache();//清空缓存
 	void draw();//绘制关卡
 	void addTarget(Target* t);//添加目标
+	void addEmitter(Emitter* e);//添加发射器
 	bool isWin();//检测是否获胜
 	~Level();
 };
