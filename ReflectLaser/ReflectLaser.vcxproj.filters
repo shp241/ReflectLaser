@@ -55,6 +55,15 @@
     <ClCompile Include="Target.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
+    <ClCompile Include="Emitter.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Mirror.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleMirror.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -100,6 +109,15 @@
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="Target.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="Mirror.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleMirror.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="Emitter.h">
       <Filter>H</Filter>
     </ClInclude>
   </ItemGroup>
