@@ -38,4 +38,7 @@ void System::forButtons() {
 void System::refresh() {
 	Picture::putPicture("Menu\\PlayingWindow");
 	game->draw();
+	if (game->isWin()) {
+		Picture::putPicture("Menu\\SuccessNotice", Point(250, 200));
+	}
 }

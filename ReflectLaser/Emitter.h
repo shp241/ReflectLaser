@@ -11,4 +11,5 @@ public:
 	int getAngle()const;
 	Colour* getColour()const;
 	string getImage()const;
+	~Emitter();
 };

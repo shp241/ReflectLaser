@@ -18,3 +18,7 @@ Colour* Emitter::getColour()const {
 string Emitter::getImage()const {
 	return "Block\\Emitter\\Emitter_" + to_string(Colour::getColourNumber(colour)) + "_" + to_string(angle);
 }
+
+Emitter::~Emitter() {
+	delete colour;
+}

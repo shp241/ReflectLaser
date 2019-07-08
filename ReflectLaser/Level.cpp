@@ -91,6 +91,19 @@ void Level::draw() {
 	Picture::putPicture(cache->getImage(), *cache->getPosition()->getActualPoint());
 }
 
+void Level::addTarget(Target* t) {
+	targets.push_back(t);
+}
+
+bool Level::isWin() {
+	bool wined = true;
+	list<Target*>::iterator it;
+	for (it = targets.begin(); it != targets.end(); ++it) {
+		wined && (*it)->isSucceeded();
+	}
+	return wined;
+}
+
 Level::~Level() {
 	delete game;
 	for (int i = 0; i < 24; i++) {
