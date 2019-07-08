@@ -96,6 +96,9 @@ void Level::addTarget(Target* t) {
 }
 
 bool Level::isWin() {
+	if (targets.size() == 0) {
+		return false;
+	}
 	bool wined = true;
 	list<Target*>::iterator it;
 	for (it = targets.begin(); it != targets.end(); ++it) {

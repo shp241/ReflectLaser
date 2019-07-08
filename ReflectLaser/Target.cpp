@@ -1,6 +1,6 @@
 #include "Target.h"
 
-Target::Target(Colour* colour, RelativePoint* p = new RelativePoint()) :EmptyBlock(p) {
+Target::Target(Colour* colour, RelativePoint* p) :EmptyBlock(p) {
 	this->colour = colour;
 }
 

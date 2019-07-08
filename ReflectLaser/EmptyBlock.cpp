@@ -27,13 +27,6 @@ void EmptyBlock::clear() {
 	}
 }
 
-void EmptyBlock::role() {
-	if (!System::game->getCache()->isEmpty()) {
-		System::game->getMap()->change(this->getPosition(), System::game->getCache());
-		System::game->clearCache();
-	}
-}
-
 EmptyBlock::~EmptyBlock() {
 	delete vectors;
 }

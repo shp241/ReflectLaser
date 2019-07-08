@@ -16,9 +16,6 @@
     <ClCompile Include="Button.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>CPP</Filter>
-    </ClCompile>
     <ClCompile Include="Picture.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
@@ -67,9 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
-      <Filter>H</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="Picture.h">
