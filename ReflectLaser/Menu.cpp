@@ -73,7 +73,7 @@ Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
 void Chapter::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
 	Picture::putPicture("Menu\\PlayingWindow");//绘制关卡界面的背景
-	System::game = new Level("Level_" + to_string(chapters));
+	System::game = new Level("Level_" + chapters);
 	Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (chapters + 1) % 12);
 	Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
 	Button* BAntiClocked = new Rotate(new Point(640, 320), new Point(640 + 40, 320 + 40), false);
