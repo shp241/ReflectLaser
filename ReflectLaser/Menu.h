@@ -25,8 +25,20 @@ public:
 class Music :public Button {
 public:
   Music(Point* p0, Point* p1);
-  void role();
+  virtual void role();
 };//“Ù¿÷∞¥≈•
+
+class MusicOpen :public Music {
+public:
+  MusicOpen(Point* p0, Point* p1);
+  void role();
+};//ø™“Ù¿÷∞¥≈•
+
+class MusicClose :public Music {
+public:
+  MusicClose(Point* p0, Point* p1);
+  void role();
+};//πÿ“Ù¿÷∞¥≈•
 
 class Help :public Button {
 public:
