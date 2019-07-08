@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="Music\MenuMusic.wav" />
+    <Media Include="Music\Null.wav" />
     <Media Include="Music\PlayingMusic.wav" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

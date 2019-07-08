@@ -54,6 +54,7 @@ void System::forButtons() {
 			for (it = buttons.begin(); it != buttons.end(); ++it) {
 				if ((*it)->ifClick(m.x, m.y)) {
 					(*it)->role();
+					Sleep(100);
 					break;
 				}
 			}
@@ -86,7 +87,7 @@ void System::refresh() {
 }
 
 void System::music(string m) {
-	PlaySound(m == "" ? nullptr : m.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	PlaySound(m.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 }
 
 //MainMenu类
@@ -135,7 +136,7 @@ Option::Option(Point* p0, Point* p1) :Button(p0, p1) {}
 void Option::role() {
 	System::clear();
 	Picture::putPicture("Menu\\Option");//绘制“选项”界面
-	Button* BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), System::musicOn ? "Music\\MenuMusic.wav" : "");
+	Button* BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), System::musicOn ? "Music\\MenuMusic.wav" : "Music\\Null.wav");
 	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));
 	System::add(BMenu);
 	System::add(BMusic);
@@ -150,16 +151,10 @@ void Music::role() {
 	System::clear();//清空容器
 	System::musicOn = !System::musicOn;
 	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
-	Button* BMusic;
-	if (music == "") {
-		BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), "Music\\MenuMusic.wav");//在刚刚的音乐按钮位置实例化一个音乐按钮
-	}
-	else {
-		BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), "");//在刚刚的音乐按钮位置实例化一个音乐按钮
-	}
+	Button* BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), System::musicOn ? "Music\\Null.wav" : "Music\\MenuMusic.wav");//在刚刚的音乐按钮位置实例化一个音乐按钮
 	System::add(BMenu);//放入容器
 	System::add(BMusic);
-	System::music(music);
+	System::music(!System::musicOn ? "Music\\Null.wav" : "Music\\MenuMusic.wav");
 }
 
 //Help类

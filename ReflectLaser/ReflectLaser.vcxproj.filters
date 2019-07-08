@@ -313,5 +313,8 @@
     <Media Include="Music\PlayingMusic.wav">
       <Filter>Resources</Filter>
     </Media>
+    <Media Include="Music\Null.wav">
+      <Filter>Resources</Filter>
+    </Media>
   </ItemGroup>
 </Project>

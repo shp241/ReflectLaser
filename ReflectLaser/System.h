@@ -1,5 +1,6 @@
 #pragma once
 #pragma comment(lib,"winmm.lib")//导入声音头文件库
+#include <ctime>
 #include <list>
 #include <stdio.h>
 #include <windows.h>
