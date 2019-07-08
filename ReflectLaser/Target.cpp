@@ -13,7 +13,7 @@ bool Target::isSucceeded()const {
 }
 
 string Target::getImage()const {
-	return "Block\\Target\\" + isSucceeded() ? "Succeeded_" : "Target_" + Colour::getColourNumber(colour);
+	return "Block\\Target\\" + isSucceeded() ? "Succeeded_" : "Target_" + to_string(Colour::getColourNumber(colour));
 }
 
 Colour* Target::getColour()const {
