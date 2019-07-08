@@ -128,6 +128,8 @@ void MusicOpen::role() {
 }
 
 //MusicClose°´Å¥
+MusicClose::MusicClose(Point* p0, Point* p1) :Music(p0, p1) {}
+
 void MusicClose::role() {
 	char buf[128];
 	char str[128] = { 0 };
