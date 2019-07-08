@@ -290,6 +290,27 @@
     <Image Include="Images\Block\Target\Target_7.png">
       <Filter>Resources</Filter>
     </Image>
+    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_0.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_1.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_3.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_4.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_5.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_6.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_7.png">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="Music\MenuMusic.wav">
