@@ -5,8 +5,7 @@ Level* System::game = new Level();//指示当前进行的游戏
 bool System::musicOn = true;
 
 void System::initialize() {
-	System::clear();
-	System::game->clear();
+	Picture::open();
 	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
@@ -47,16 +46,18 @@ void System::system() {
 
 void System::forButtons() {
 	list<Button*>::iterator it;
+	MOUSEMSG m;
 	while (Picture::opening) {
-		MOUSEMSG m;
+		FlushMouseMsgBuffer();//清空鼠标输入缓冲区
 		m = GetMouseMsg();
-		for (it = buttons.begin(); it != buttons.end(); ++it) {
-			if ((*it)->ifClick(m.x, m.y)) {
-				(*it)->role();
-				break;
+		if (m.mkLButton) {
+			for (it = buttons.begin(); it != buttons.end(); ++it) {
+				if ((*it)->ifClick(m.x, m.y)) {
+					(*it)->role();
+					break;
+				}
 			}
 		}
-		FlushMouseMsgBuffer();//清空鼠标输入缓冲区
 	}
 }
 
@@ -93,7 +94,6 @@ MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void MainMenu::role() {
 	System::clear();
-	System::game->clear();
 	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
@@ -176,7 +176,6 @@ void Help::role() {
 Exit::Exit(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Exit::role() {
-	System::clear();//清空容器
 	Picture::close();//关闭窗口
 }
 

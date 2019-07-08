@@ -26,7 +26,3 @@ void EmptyBlock::clear() {
 		vectors[i + 4] = Colour::COLOUR_BLACK;
 	}
 }
-
-EmptyBlock::~EmptyBlock() {
-	delete vectors;
-}

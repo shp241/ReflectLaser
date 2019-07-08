@@ -19,7 +19,6 @@ Level::Level(Map* m, Item* it[]) {
 Level::Level(string name) {
 	ifstream file("Level\\" + name + ".dat", ios::in | ios::binary);
 	if (!file) {
-		throw FileException(true);
 		new(this)Level();
 	}
 	else {
