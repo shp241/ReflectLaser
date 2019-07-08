@@ -1,8 +1,9 @@
 #include "Menu.h"
 
 #include<windows.h>
+#include "mmsystem.h"//导入声音头文件
+#pragma comment(lib,"winmm.lib")//导入声音头文件库
 #include<stdio.h>
-#pragma comment(lib,"WinMM.Lib")
 
 //MainMenu类
 MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0, p1) {}
@@ -11,6 +12,9 @@ void MainMenu::role() {
 	System::clear();
 	System::game->clear();
 	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
+
+	Music(new Point(), new Point()).role();//播放音乐
+
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
 	Button* BHelp = new Help(new Point(400, 380), new Point(400 + 250, 380 + 80));
@@ -26,7 +30,7 @@ Start::Start(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Start::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
-	Picture::putPicture("Menu\\ChapterChoose");//绘制关卡选择界面的背景
+	Picture::putPicture("Menu\\ChapterChoose");//绘制“关卡选择”界面
 	Button* BChapter[12];//实例化十二个关卡选择按钮
 	Button* BMenu = new MainMenu(new Point(0, 0), new Point(150, 100));
 	System::add(BMenu);
@@ -50,18 +54,87 @@ Option::Option(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Option::role() {
 	System::clear();
-	Button* BMusic = new Button(new Point(450, 100), new Point(450 + 250, 100 + 80));
+	Picture::putPicture("Menu\\Option");//绘制“选项”界面
+	MusicClose* BMusicClose = new MusicClose(new Point(450, 100), new Point(450 + 250, 100 + 80));
 	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));
 	System::add(BMenu);
-	System::add(BMusic);
+	System::add(BMusicClose);
 }
-//Music按钮
+
+//Music类
 Music::Music(Point* p0, Point* p1) :Button(p0, p1) {}
 
-void Music::role() {
+//MusicOpen按钮
+MusicOpen::MusicOpen(Point* p0, Point* p1) :Music(p0, p1) {}
+void MusicOpen::role() {
+  char buf[128];
+  char str[128] = { 0 };
+  int i = 0;
+  //use mciSendCommand
+  MCI_OPEN_PARMS mciOpen;
+  MCIERROR mciError;
+  //SetWindowText(NULL,"12345");
+  mciOpen.lpstrDeviceType = "mpegvideo";
+  mciOpen.lpstrElementName = "Music\\MenuMusic.wav";
+  mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
+  if (mciError)
+  {
+    mciGetErrorString(mciError, buf, 128);
+    printf("send MCI_OPEN command failed:%s\n", buf);
+    return;
+  }
+  UINT DeviceID = mciOpen.wDeviceID;
+  MCI_PLAY_PARMS mciPlay;
+  mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
+  if (mciError)
+  {
+    printf("send MCI_PLAY command failed\n");
+    return;
+  }
+  PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
-  PlaySound("Music\\MenuMusic.wav", NULL, SND_FILENAME | SND_ASYNC);
 
+  System::clear();//清空容器
+  MusicClose* BMusicClose = new MusicClose(new Point(450, 100), new Point(450 + 250, 100 + 80));//在刚刚的开音乐按钮位置实例化一个关音乐按钮
+  Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
+  System::add(BMenu);//放入容器
+  System::add(BMusicClose);
+}
+
+//MusicClose按钮
+void MusicClose::role() {
+  char buf[128];
+  char str[128] = { 0 };
+  int i = 0;
+  //use mciSendCommand
+  MCI_OPEN_PARMS mciOpen;
+  MCIERROR mciError;
+  //SetWindowText(NULL,"12345");
+  mciOpen.lpstrDeviceType = "mpegvideo";
+  mciOpen.lpstrElementName =nullptr;
+  mciError = mciSendCommand(0, MCI_OPEN, MCI_OPEN_TYPE | MCI_OPEN_ELEMENT, (DWORD)& mciOpen);
+  if (mciError)
+  {
+    mciGetErrorString(mciError, buf, 128);
+    printf("send MCI_OPEN command failed:%s\n", buf);
+    return;
+  }
+  UINT DeviceID = mciOpen.wDeviceID;
+  MCI_PLAY_PARMS mciPlay;
+  mciError = mciSendCommand(DeviceID, MCI_PLAY, 0, (DWORD)& mciPlay);
+  if (mciError)
+  {
+    printf("send MCI_PLAY command failed\n");
+    return;
+  }
+  PlaySound(nullptr, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+
+
+  System::clear();//清空容器
+  MusicOpen* BMusicOpen = new MusicOpen(new Point(450, 100), new Point(450 + 250, 100 + 80));//实例化一个开音乐按钮
+  Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
+  System::add(BMenu);//放入容器
+  System::add(BMusicOpen);
 }
 
 //Help类
@@ -70,7 +143,7 @@ Help::Help(Point* p0, Point* p1) : Button(p0, p1) {}
 void Help::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
 	Picture::putPicture("Menu\\Help");//绘制关卡选择界面的背景
-	Button* BMenu = new MainMenu(new Point(450,480), new Point(450+250,480+80));
+	Button* BMenu = new MainMenu(new Point(450,480), new Point(450+250,480+80));//实例化主菜单按钮
 	System::add(BMenu);
 }
 
@@ -78,8 +151,8 @@ void Help::role() {
 Exit::Exit(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Exit::role() {
-	System::clear();
-	Picture::close();
+	System::clear();//清空容器
+	Picture::close();//关闭窗口
 }
 
 //Chapter类
@@ -89,7 +162,7 @@ Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
 
 void Chapter::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
-	Picture::putPicture("Menu\\PlayingWindow");//绘制关卡界面的背景
+	Picture::putPicture("Menu\\PlayingWindow");//绘制“游戏”界面
 	System::game = new Level("Level_" + chapters);
 	Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (chapters + 1) % 12);
 	Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
