@@ -55,7 +55,7 @@ void Level::setItem(int i, Item* it) {
 }
 
 void Level::setCache(Item* it) {
-	cache = new Item(*it);
+	cache = new Item(*it, new RelativePoint(16, 0));
 }
 
 void Level::saveFile(string name) {
@@ -76,6 +76,11 @@ void Level::clear() {
 		delete items[i];
 		items[i] = new Item(false);
 	}
+}
+
+void Level::clearCache() {
+	delete cache;
+	cache = new Item(new RelativePoint(16, 0));
 }
 
 Level::~Level() {

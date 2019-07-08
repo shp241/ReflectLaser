@@ -9,5 +9,6 @@ public:
 	bool isSucceeded()const;
 	virtual string getImage()const;
 	Colour* getColour()const;
+	void role();
 	~Target();
 };

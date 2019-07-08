@@ -22,8 +22,15 @@ void EmptyBlock::addVector(Vector* v) {
 
 void EmptyBlock::clear() {
 	for (int i = 0; i < 4; i++) {
-		vectors[i] = Colour::BLACK;
-		vectors[i + 4] = Colour::BLACK;
+		vectors[i] = Colour::COLOUR_BLACK;
+		vectors[i + 4] = Colour::COLOUR_BLACK;
+	}
+}
+
+void EmptyBlock::role() {
+	if (!System::game->getCache()->isEmpty()) {
+		System::game->getMap()->change(this->getPosition(), System::game->getCache());
+		System::game->clearCache();
 	}
 }
 

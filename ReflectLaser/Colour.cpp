@@ -1,14 +1,14 @@
 #include "Colour.h"
 
-Colour Colour::RED = Colour(true, false, false);
-Colour Colour::GREEN = Colour(false, true, false);
-Colour Colour::BLUE = Colour(false, false, true);
-Colour Colour::CYAN = Colour(false, true, true);
-Colour Colour::YELLOW = Colour(true, true, false);
-Colour Colour::MAGENTA = Colour(true, false, true);
-Colour Colour::BLACK = Colour(false, false, false);
-Colour Colour::WHITE = Colour(true, true, true);
-Colour Colour::colours[] = { BLACK, RED, GREEN, BLUE, CYAN, MAGENTA, YELLOW, WHITE };
+Colour Colour::COLOUR_RED = Colour(true, false, false);
+Colour Colour::COLOUR_GREEN = Colour(false, true, false);
+Colour Colour::COLOUR_BLUE = Colour(false, false, true);
+Colour Colour::COLOUR_CYAN = Colour(false, true, true);
+Colour Colour::COLOUR_YELLOW = Colour(true, true, false);
+Colour Colour::COLOUR_MAGENTA = Colour(true, false, true);
+Colour Colour::COLOUR_BLACK = Colour(false, false, false);
+Colour Colour::COLOUR_WHITE = Colour(true, true, true);
+Colour Colour::colours[] = { COLOUR_BLACK, COLOUR_RED, COLOUR_GREEN, COLOUR_BLUE, COLOUR_CYAN, COLOUR_MAGENTA, COLOUR_YELLOW, COLOUR_WHITE };
 
 Colour::Colour(bool r, bool g, bool b) {
 	this->R = r;
