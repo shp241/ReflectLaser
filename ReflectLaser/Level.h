@@ -26,6 +26,7 @@ public:
 	void saveFile(string name);//保存到文件
 	void clear();//清空关卡数据
 	void clearCache();//清空缓存
+	void draw();
 	~Level();
 };
 

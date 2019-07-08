@@ -34,3 +34,8 @@ void System::forButtons() {
 		FlushMouseMsgBuffer();//清空鼠标输入缓冲区
 	}
 }
+
+void System::refresh() {
+	Picture::putPicture("Menu\\PlayingWindow");
+	game->draw();
+}
