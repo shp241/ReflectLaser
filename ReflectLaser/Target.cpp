@@ -5,7 +5,7 @@ Target::Target(Colour* colour, RelativePoint* p = new RelativePoint()) :EmptyBlo
 }
 
 bool Target::isSucceeded()const {
-	Colour c = Colour::BLACK;
+	Colour c = Colour::COLOUR_BLACK;
 	for (int i = 0; i < 8; i++) {
 		c += this->getVectorColour(i);
 	}
@@ -19,6 +19,8 @@ string Target::getImage()const {
 Colour* Target::getColour()const {
 	return colour;
 }
+
+void Target::role() {}
 
 Target::~Target() {
 	delete colour;

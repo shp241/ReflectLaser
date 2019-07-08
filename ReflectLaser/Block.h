@@ -2,6 +2,7 @@
 #include <string>
 #include "Button.h"
 #include "RelativePoint.h"
+#include "System.h"
 using std::string;
 
 class Block :public Button {//单一地图块类

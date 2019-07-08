@@ -17,3 +17,10 @@ void Item::rotate(bool isClock) {
 string Item::getImage()const {
 	return "Block\\EmptyBlock";
 }
+
+void Item::role() {
+	if (System::game->getCache()->isEmpty()) {
+		System::game->setCache(new Item(*this));
+		System::game->getMap()->clearBlock(this->getPosition());
+	}
+}

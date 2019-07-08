@@ -22,6 +22,12 @@ Block* Map::operator[](RelativePoint p)const {
 
 void Map::change(RelativePoint* p, Block* b) {
 	game[p->getX()][p->getY()] = new Block(*b);
+	game[p->getX()][p->getY()]->setPosition(p);
+}
+
+void Map::clearBlock(RelativePoint* p) {
+	delete game[p->getX()][p->getY()];
+	game[p->getX()][p->getY()] = new Block(p);
 }
 
 Map::~Map() {
