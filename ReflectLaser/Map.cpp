@@ -30,6 +30,14 @@ void Map::clearBlock(RelativePoint* p) {
 	game[p->getX()][p->getY()] = new Block(p);
 }
 
+void Map::draw() {
+	for (int i = 0; i < 15; i++) {
+		for (int j = 0; j < 15; j++) {
+			Picture::putPicture(game[i][j]->getImage(), *game[i][j]->getPosition()->getActualPoint());
+		}
+	}
+}
+
 Map::~Map() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 15; j++) {

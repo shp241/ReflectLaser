@@ -291,4 +291,12 @@
       <Filter>Resources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Music\MenuMusic.wav">
+      <Filter>Resources</Filter>
+    </Media>
+    <Media Include="Music\PlayingMusic.wav">
+      <Filter>Resources</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

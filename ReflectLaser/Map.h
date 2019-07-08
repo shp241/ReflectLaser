@@ -10,5 +10,6 @@ public:
 	Block* operator[](RelativePoint p)const;//返回Block指针
 	void change(RelativePoint* p, Block* b);//改变某一块的内容（不改变坐标）
 	void clearBlock(RelativePoint* p);
+	void draw();
 	~Map();
 };

@@ -116,6 +116,10 @@
     <Image Include="Images\Menu\PlayingWindow.png" />
     <Image Include="Images\Menu\SuccessNotice.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="Music\MenuMusic.wav" />
+    <Media Include="Music\PlayingMusic.wav" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A17E9EF8-D37A-4465-B810-0DEFF9A47A82}</ProjectGuid>

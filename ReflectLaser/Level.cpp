@@ -83,6 +83,14 @@ void Level::clearCache() {
 	cache = new Item(new RelativePoint(-1, 0));
 }
 
+void Level::draw() {
+	game->draw();
+	for (int i = 0; i < 24; i++) {
+		Picture::putPicture(items[i]->getImage(), *items[i]->getPosition()->getActualPoint());
+	}
+	Picture::putPicture(cache->getImage(), *cache->getPosition()->getActualPoint());
+}
+
 Level::~Level() {
 	delete game;
 	for (int i = 0; i < 24; i++) {
