@@ -19,7 +19,6 @@ Level::Level(Map* m, Item* it[]) {
 Level::Level(string name) {
 	ifstream file("Level\\" + name + ".dat", ios::in | ios::binary);
 	if (!file) {
-		throw FileException(true);
 		new(this)Level();
 	}
 	else {
@@ -96,6 +95,9 @@ void Level::addTarget(Target* t) {
 }
 
 bool Level::isWin() {
+	if (targets.size() == 0) {
+		return false;
+	}
 	bool wined = true;
 	list<Target*>::iterator it;
 	for (it = targets.begin(); it != targets.end(); ++it) {

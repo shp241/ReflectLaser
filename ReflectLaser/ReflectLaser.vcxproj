@@ -29,7 +29,6 @@
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Mirror.cpp" />
     <ClCompile Include="Picture.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -49,7 +48,6 @@
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="Menu.h" />
     <ClInclude Include="Mirror.h" />
     <ClInclude Include="Picture.h" />
     <ClInclude Include="Point.h" />

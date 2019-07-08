@@ -1,14 +1,14 @@
 #include "Item.h"
 
-Item::Item(RelativePoint* p, bool empty, int angle) :Block(p, empty) {
+Item::Item(RelativePoint* p, bool empty, int angle) :Block(p, empty, true) {
 	this->angle = angle;
 }
 
-Item::Item(const Item& it) : Block(it.getPosition(), it.isEmpty(), it.canMove()) {
+Item::Item(const Item& it) : Block(it.getPosition(), it.isEmpty()) {
 	this->angle = it.angle;
 }
 
-Item::Item(const Item& it, RelativePoint* p) : Block(p, it.isEmpty(), it.canMove()) {
+Item::Item(const Item& it, RelativePoint* p) : Block(p, it.isEmpty()) {
 	this->angle = it.angle;
 }
 
@@ -26,13 +26,6 @@ void Item::setAngle(int angle) {
 
 string Item::getImage()const {
 	return "Block\\EmptyBlock";
-}
-
-void Item::role() {
-	if (System::game->getCache()->isEmpty()) {
-		System::game->setCache(new Item(*this));
-		System::game->getMap()->clearBlock(this->getPosition());
-	}
 }
 
 Item::~Item() {}

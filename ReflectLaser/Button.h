@@ -1,6 +1,5 @@
 #pragma once
 #include "Picture.h"
-#include "Point.h"
 
 class Button {
 private:
@@ -14,5 +13,5 @@ public:
 	void setP(int n, Point* p);//setter
 	Button& operator=(Button b);
 	virtual void role();//虚函数role，由Start、Option、Help等等子类覆写
-	~Button();
+	virtual ~Button();
 };

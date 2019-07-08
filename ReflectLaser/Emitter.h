@@ -1,5 +1,6 @@
 #pragma once
 #include "Block.h"
+#include "Colour.h"
 
 class Emitter :public Block {
 private:

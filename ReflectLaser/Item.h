@@ -12,6 +12,5 @@ public:
 	int getAngle()const;
 	void setAngle(int angle);
 	virtual string getImage()const;
-	virtual void role();
 	~Item();
 };

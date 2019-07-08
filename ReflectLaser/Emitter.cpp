@@ -1,6 +1,6 @@
 #include "Emitter.h"
 
-Emitter::Emitter(RelativePoint* p, Colour* colour, int angle = 0) :Block(p) {
+Emitter::Emitter(RelativePoint* p, Colour* colour, int angle) :Block(p, false) {
 	this->angle = angle;
 	this->colour = new Colour(*colour);
 }

@@ -1,6 +1,7 @@
 #include "Picture.h"
 
 map<string, IMAGE*> Picture::loaded = {};
+bool Picture::opening = false;
 
 void Picture::open(int w, int h) {
 	initgraph(w, h);
@@ -22,7 +23,6 @@ void Picture::loadPictrue(string name) {
 }
 
 void Picture::close() {
-	delete &loaded;
 	closegraph();
 	opening = false;
 }
