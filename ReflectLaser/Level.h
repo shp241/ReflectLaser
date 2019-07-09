@@ -21,7 +21,7 @@ private:
 	list<Emitter*> emitters = {};
 public:
 	Level();
-	Level(Map* m, Item* it[]);
+	Level(Map* m, Item* it[], int n);//n为数组中元素个数
 	Level(string name);//从文件中加载
 	Level(const Level& l);
 	Map* getMap()const;

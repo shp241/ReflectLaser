@@ -8,10 +8,13 @@ Level::Level() {
 	cache = new Item(new RelativePoint(-1, 0));
 }
 
-Level::Level(Map* m, Item* it[]) {
+Level::Level(Map* m, Item* it[], int n) {
 	game = new Map(*m);
-	for (int i = 0; i < 24; i++) {
+	for (int i = 0; i < n; i++) {
 		items[i] = new Item(*it[i], new RelativePoint(15, i));
+	}
+	for (int i = n; i < 24; i++) {
+		items[i] = new Item(new RelativePoint(15, i));
 	}
 	cache = new Item(new RelativePoint(-1, 0));
 }
@@ -22,9 +25,9 @@ Level::Level(string name) {
 		new(this)Level();
 	}
 	else {
-		Level l;
-		file.read((char*)&l, sizeof(l));
-		new(this)Level(l);
+		Level* l=new Level();
+		file.read(reinterpret_cast<char *>(l), sizeof(Level));
+		new(this)Level(*l);
 	}
 	file.close();
 }
@@ -63,7 +66,7 @@ void Level::saveFile(string name) {
 		throw FileException(false);
 	}
 	else {
-		file.write((char*)this, sizeof(*this));
+		file.write(reinterpret_cast<char *>(this), sizeof(Level));
 	}
 	file.close();
 }
@@ -126,7 +129,6 @@ Level::~Level() {
 	for (int i = 0; i < 24; i++) {
 		delete items[i];
 	}
-	delete items;
 }
 
 FileException::FileException(bool in) {

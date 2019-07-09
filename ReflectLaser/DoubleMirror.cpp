@@ -38,7 +38,7 @@ list<Vector*> DoubleMirror::getLight(Vector* from) {
 		addVector((angle2 - 2) % 8, from->getColour());
 		direction = new Direction(from->getDirection()->rotate(-90));
 	}
-	else if (angle1 % 4 == (angle2 + 1) % 4) {
+	else {//if (angle1 % 4 == (angle2 + 1) % 4)
 		addVector((angle2 + 4) % 8, from->getColour());
 		addVector(angle2, from->getColour());
 		addVector((angle2 + 2) % 8, from->getColour());

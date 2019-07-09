@@ -183,7 +183,6 @@ Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
 }
 
 void Chapter::role() {
-	System::clear();//进入该函数后，将容器中已有的按钮删除
 	Picture::putPicture("Menu\\PlayingWindow");//绘制“游戏”界面
 	if (System::musicOn) {
 		System::music("Music\\PlayingMusic.wav");
@@ -193,6 +192,7 @@ void Chapter::role() {
 	Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
 	Button* BAntiClocked = new Rotate(new Point(640, 320), new Point(640 + 40, 320 + 40), false);
 	Button* BClocked = new Rotate(new Point(720, 320), new Point(720 + 40, 320 + 40), false);
+	System::clear();//将容器中已有的按钮删除
 	RelativePoint* p = new RelativePoint();
 	for (int i = 0; i < 15; i++) {
 		p->setX(i);

@@ -38,7 +38,7 @@ void Map::draw() {
 	}
 }
 
-list<Vector*> Map::light(list<Vector*> from) {
+void Map::light(list<Vector*> from) {
 	list<Vector*>::iterator it;
 	for (it = from.begin(); it != from.end(); ++it) {
 		light(game[(*it)->getPosition()->getX()][(*it)->getPosition()->getY()]->getLight(*it));
@@ -51,5 +51,4 @@ Map::~Map() {
 			delete game[i][j];
 		}
 	}
-	delete game;
 }
