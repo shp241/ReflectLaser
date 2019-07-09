@@ -1,7 +1,7 @@
 #pragma once
-#include "EmptyBlock.h"
+#include "Block.h"
 
-class Target :public EmptyBlock {
+class Target :public Block {
 private:
 	Colour* colour;
 public:

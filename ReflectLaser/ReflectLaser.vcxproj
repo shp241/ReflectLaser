@@ -24,7 +24,6 @@
     <ClCompile Include="Colour.cpp" />
     <ClCompile Include="DoubleMirror.cpp" />
     <ClCompile Include="Emitter.cpp" />
-    <ClCompile Include="EmptyBlock.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -43,9 +42,7 @@
     <ClInclude Include="Colour.h" />
     <ClInclude Include="DoubleMirror.h" />
     <ClInclude Include="Emitter.h" />
-    <ClInclude Include="EmptyBlock.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="Laser.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Mirror.h" />

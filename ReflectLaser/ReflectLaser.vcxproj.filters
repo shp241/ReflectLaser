@@ -34,9 +34,6 @@
     <ClCompile Include="Block.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
-    <ClCompile Include="EmptyBlock.cpp">
-      <Filter>CPP</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
@@ -81,13 +78,7 @@
     <ClInclude Include="RelativePoint.h">
       <Filter>H</Filter>
     </ClInclude>
-    <ClInclude Include="Laser.h">
-      <Filter>H</Filter>
-    </ClInclude>
     <ClInclude Include="Block.h">
-      <Filter>H</Filter>
-    </ClInclude>
-    <ClInclude Include="EmptyBlock.h">
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">

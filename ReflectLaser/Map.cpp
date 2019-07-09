@@ -3,7 +3,7 @@
 Map::Map() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 15; j++) {
-			game[i][j] = new EmptyBlock(new RelativePoint(i, j));
+			game[i][j] = new Block(new RelativePoint(i, j));
 		}
 	}
 }
