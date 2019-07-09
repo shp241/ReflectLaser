@@ -66,7 +66,7 @@ int Direction::getY()const {
 }
 
 Direction Direction::rotate(int angle) {
-	return Direction(getDirectionNumber(*this)+angle/45);
+	return Direction(getDirectionNumber(*this) + angle / 45);
 }
 
 bool Direction::operator==(Direction& d) {
@@ -82,5 +82,5 @@ int Direction::getDirectionNumber(Direction d) {
 	return 0;
 }
 Direction Direction::getNumberDirection(int i) {
-	return directions[(i+8) % 8];
+	return directions[(i + 8) % 8];
 }
