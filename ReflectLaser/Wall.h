@@ -3,7 +3,7 @@
 
 class Wall :public Block {
 public:
-	Wall(RelativePoint* p);
+	Wall(RelativePoint* p = new RelativePoint());
 	Wall(const Wall&) = default;
 	void draw()const;
 	list<Vector*> getLight(Vector* from);
