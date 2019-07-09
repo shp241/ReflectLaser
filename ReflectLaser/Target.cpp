@@ -29,7 +29,9 @@ Colour* Target::getColour()const {
 	return colour;
 }
 
-void Target::role() {}
+list<Vector*> Target::getLight(Vector* from) {
+	return Block::getLight(from);
+}
 
 Target::~Target() {
 	delete colour;

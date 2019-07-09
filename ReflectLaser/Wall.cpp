@@ -2,8 +2,8 @@
 
 Wall::Wall(RelativePoint* p) :Block(p) {}
 
-string Wall::getImage()const {
-	return "Block\\Wall";
+void Wall::draw()const {
+	Picture::putPicture("Block\\Wall", *getPosition()->getActualPoint());
 }
 
 list<Vector*> Wall::getLight(Vector* from) {

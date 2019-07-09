@@ -64,6 +64,11 @@ Colour Block::getVectorColour(int n)const {
 
 void Block::addVector(Vector* v) {
 	vectors[Direction::getDirectionNumber(*v->getDirection())] += *v->getColour();
+	vectors[Direction::getDirectionNumber(v->getDirection()->rotate(180))] += *v->getColour();
+}
+
+void Block::addVector(int angle, Colour* colour) {
+	vectors[angle] += *colour;
 }
 
 void Block::clear() {

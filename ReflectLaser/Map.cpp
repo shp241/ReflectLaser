@@ -33,7 +33,7 @@ void Map::clearBlock(RelativePoint* p) {
 void Map::draw() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 15; j++) {
-			Picture::putPicture(game[i][j]->getImage(), *game[i][j]->getPosition()->getActualPoint());
+			game[i][j]->draw();
 		}
 	}
 }

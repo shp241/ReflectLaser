@@ -69,14 +69,17 @@ void System::refresh() {
 		p->setX(i);
 		for (int j = 0; j < 15; j++) {
 			p->setY(j);
+			(*game->getMap())[*p]->clear();
 			Button* BBlock = new BlockButton((*System::game->getMap())[*p]);
 			System::add(BBlock);
 		}
 	}//将225个方块按钮放入容器
 	for (int i = 0; i < 24; i++) {
+		game->getItem(i)->clear();
 		Button* BItem = new BlockButton(System::game->getItem(i));
 		System::add(BItem);
 	}//将24个道具按钮放入容器
+	game->getCache()->clear();
 	Picture::putPicture("Menu\\PlayingWindow");
 	game->draw();
 	if (game->isWin()) {
@@ -217,7 +220,7 @@ Rotate::Rotate(Point* p0, Point* p1, bool clocked) :Button(p0, p1) {
 
 void Rotate::role() {
 	System::game->getCache()->rotate(clocked);
-	Picture::putPicture(System::game->getCache()->getImage(), *System::game->getCache()->getPosition()->getActualPoint());
+	System::game->getCache()->draw();
 }
 
 //Close类

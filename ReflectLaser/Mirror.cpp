@@ -17,12 +17,18 @@ list<Vector*> Mirror::getLight(Vector* from) {
 	int angle1 = this->getAngle();
 	int angle2 = Direction::getDirectionNumber(*from->getDirection());
 	if (angle1 == (angle2 + 4) % 8) {
+		addVector((angle2 + 4) % 8, from->getColour());
+		addVector(angle2, from->getColour());
 		direction = new Direction(from->getDirection()->rotate(180));
 	}
 	else if (angle1 == (angle2 + 3) % 8) {
+		addVector((angle2 + 4) % 8, from->getColour());
+		addVector((angle2 - 2) % 8, from->getColour());
 		direction = new Direction(from->getDirection()->rotate(-90));
 	}
 	else if (angle1 == (angle2 + 5) % 8) {
+		addVector((angle2 + 4) % 8, from->getColour());
+		addVector((angle2 + 2) % 8, from->getColour());
 		direction = new Direction(from->getDirection()->rotate(90));
 	}
 	else {

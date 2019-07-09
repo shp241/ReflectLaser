@@ -85,13 +85,18 @@ void Level::clearCache() {
 void Level::draw() {
 	list<Emitter*>::iterator it;
 	for (it = emitters.begin(); it != emitters.end(); ++it) {
-		game->light(list<Vector*>{(*it)->getVector()});
+		RelativePoint* next = new RelativePoint((*(*it)->getVector()->getPosition())*(*(*it)->getVector()->getDirection()));
+		if (next->getX() <= 15 && next->getX() >= 0 && next->getY() <= 15 && next->getY() >= 0) {
+			Vector * v = new Vector(*(*it)->getVector(), next);
+			game->light(list<Vector*>{v});
+			delete v;
+		}
 	}
 	game->draw();
 	for (int i = 0; i < 24; i++) {
-		Picture::putPicture(items[i]->getImage(), *items[i]->getPosition()->getActualPoint());
+		items[i]->draw();
 	}
-	Picture::putPicture(cache->getImage(), *cache->getPosition()->getActualPoint());
+	cache->draw();
 }
 
 void Level::addTarget(Target* t) {

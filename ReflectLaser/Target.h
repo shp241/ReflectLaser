@@ -9,6 +9,6 @@ public:
 	bool isSucceeded()const;
 	virtual void draw()const;
 	Colour* getColour()const;
-	void role();
+	list<Vector*> getLight(Vector* from);
 	~Target();
 };
