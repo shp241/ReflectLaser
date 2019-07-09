@@ -12,8 +12,17 @@ bool Target::isSucceeded()const {
 	return c == colour;
 }
 
-string Target::getImage()const {
-	return "Block\\Target\\" + isSucceeded() ? "Succeeded_" : "Target_" + to_string(Colour::getColourNumber(colour));
+void Target::draw()const {
+	Picture::putPicture("Block\\Target\\" + isSucceeded() ? "Succeeded_" : "Target_" + to_string(Colour::getColourNumber(colour)),
+		*getPosition()->getActualPoint());
+	for (int i = 0; i < 8; i++) {
+		Vector* v0 = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(getVectorColour(i) + getVectorColour(i + 4)), new RelativePoint(*getPosition()));
+		Vector* v1 = new Vector(new Direction(Direction::getNumberDirection(i).rotate(180)), new Colour(getVectorColour(i) + getVectorColour(i + 4)), new RelativePoint(*getPosition()));
+		Picture::drawVector(v0);
+		Picture::drawVector(v1);
+		delete v0;
+		delete v1;
+	}
 }
 
 Colour* Target::getColour()const {

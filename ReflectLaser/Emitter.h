@@ -13,7 +13,7 @@ public:
 	int getAngle()const;
 	Colour* getColour()const;
 	Vector* getVector()const;
-	string getImage()const;
+	void draw()const;
 	list<Vector*> getLight(Vector* from);
 	~Emitter();
 };

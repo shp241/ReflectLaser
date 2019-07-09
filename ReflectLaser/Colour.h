@@ -1,4 +1,5 @@
 #pragma once
+#include <easyx.h>
 
 class Colour {//ÑÕÉ«Àà
 private:
@@ -10,7 +11,9 @@ public:
 	static Colour getNumberColour(int i);
 	Colour(bool r = false, bool g = false, bool b = false);
 	bool operator==(Colour c);
-	Colour operator+(Colour c);
+	Colour operator+(Colour c)const;
 	void operator+=(Colour c);
 	int getComplexity()const;
+	COLORREF getColor()const;
+	bool isBlack()const;
 };

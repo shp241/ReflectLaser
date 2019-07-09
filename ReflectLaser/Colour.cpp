@@ -33,7 +33,7 @@ bool Colour::operator==(Colour c) {
 	return c.R == this->R && c.G == this->G && c.B == this->B;
 }
 
-Colour Colour::operator+(Colour c) {
+Colour Colour::operator+(Colour c)const {
 	return Colour(c.R || this->R, c.G || this->G, c.B || this->B);
 }
 
@@ -45,4 +45,12 @@ void Colour::operator+=(Colour c) {
 
 int Colour::getComplexity()const {
 	return R + G + B;
+}
+
+COLORREF Colour::getColor()const {
+	return RGB(R ? 255 : 0, G ? 255 : 0, B ? 255 : 0);
+}
+
+bool Colour::isBlack()const {
+	return !(R | G | B);
 }

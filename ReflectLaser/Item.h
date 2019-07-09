@@ -11,7 +11,7 @@ public:
 	void rotate(bool isClock);//true则为顺时针旋转，false则为逆时针
 	int getAngle()const;
 	void setAngle(int angle);
-	virtual string getImage()const;
+	virtual void draw()const;
 	virtual list<Vector*> getLight(Vector* from);
 	~Item();
 };

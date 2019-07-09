@@ -5,6 +5,6 @@ class Mirror :public Item {
 public:
 	Mirror(RelativePoint* p, int angle = 0);
 	Mirror(const Mirror&) = default;
-	string getImage()const;
+	void draw()const;
 	list<Vector*> getLight(Vector* from);
 };

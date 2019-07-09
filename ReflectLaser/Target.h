@@ -7,7 +7,7 @@ private:
 public:
 	Target(Colour* colour, RelativePoint* p = new RelativePoint());
 	bool isSucceeded()const;
-	virtual string getImage()const;
+	virtual void draw()const;
 	Colour* getColour()const;
 	void role();
 	~Target();

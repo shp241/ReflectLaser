@@ -26,8 +26,18 @@ bool Block::canMove()const {
 	return moved;
 }
 
-string Block::getImage()const {
-	return "Block\\EmptyBlock";
+void Block::draw()const {
+	Picture::putPicture("Block\\EmptyBlock", *p->getActualPoint());
+	if (empty) {
+		for (int i = 0; i < 4; i++) {
+			Vector* v0 = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(vectors[i] + vectors[i + 4]), new RelativePoint(*p));
+			Vector* v1 = new Vector(new Direction(Direction::getNumberDirection(i).rotate(180)), new Colour(vectors[i] + vectors[i + 4]), new RelativePoint(*p));
+			Picture::drawVector(v0);
+			Picture::drawVector(v1);
+			delete v0;
+			delete v1;
+		}
+	}
 }
 
 list<Vector*> Block::getLight(Vector* from) {

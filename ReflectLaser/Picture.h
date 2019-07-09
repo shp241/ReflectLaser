@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include "Point.h"
+#include "Vector.h"
 using std::map;
 using std::string;
 
@@ -14,5 +15,6 @@ public:
 	static void open(int w = 800, int h = 600);//打开窗口
 	static void putPicture(string picture, Point p = Point(0, 0));//在p位置放置名称为picture的图片，若未加载则进行加载
 	static void loadPictrue(string filename);//加载名称为picture的图片
+	static void drawVector(Vector* v);//画向量
 	static void close();//关闭窗口
 };

@@ -58,6 +58,12 @@
     <ClCompile Include="DoubleMirror.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="HalfMirror.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -103,6 +109,12 @@
       <Filter>H</Filter>
     </ClInclude>
     <ClInclude Include="Emitter.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>H</Filter>
+    </ClInclude>
+    <ClInclude Include="HalfMirror.h">
       <Filter>H</Filter>
     </ClInclude>
   </ItemGroup>

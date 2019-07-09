@@ -19,8 +19,9 @@ Vector* Emitter::getVector()const {
 	return vector;
 }
 
-string Emitter::getImage()const {
-	return "Block\\Emitter\\Emitter_" + to_string(Colour::getColourNumber(colour)) + "_" + to_string(angle);
+void Emitter::draw()const {
+	Picture::putPicture("Block\\Emitter\\Emitter_" + to_string(Colour::getColourNumber(*vector->getColour())) + "_" + to_string(angle),
+		*getPosition()->getActualPoint());
 }
 
 list<Vector*> Emitter::getLight(Vector* from) {

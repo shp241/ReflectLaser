@@ -24,6 +24,7 @@
     <ClCompile Include="Colour.cpp" />
     <ClCompile Include="DoubleMirror.cpp" />
     <ClCompile Include="Emitter.cpp" />
+    <ClCompile Include="HalfMirror.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -35,6 +36,7 @@
     <ClCompile Include="System.cpp" />
     <ClCompile Include="Target.cpp" />
     <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -42,6 +44,7 @@
     <ClInclude Include="Colour.h" />
     <ClInclude Include="DoubleMirror.h" />
     <ClInclude Include="Emitter.h" />
+    <ClInclude Include="HalfMirror.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Map.h" />
@@ -52,6 +55,7 @@
     <ClInclude Include="System.h" />
     <ClInclude Include="Target.h" />
     <ClInclude Include="Vector.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Images\Block\Emitter\Emitter_1_0.png" />

@@ -2,8 +2,14 @@
 
 DoubleMirror::DoubleMirror(RelativePoint* p, int angle) :Item(p, false, angle) {}
 
-string DoubleMirror::getImage()const {
-	return "Block\\Item\\DoubleMirror\\DoubleMirror_" + to_string(this->getAngle());
+void DoubleMirror::draw()const {
+	Picture::putPicture("Block\\Item\\DoubleMirror\\DoubleMirror_" + to_string(this->getAngle()),
+		*getPosition()->getActualPoint());
+	for (int i = 0; i < 8; i++) {
+		Vector* v = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(getVectorColour(i)), new RelativePoint(*getPosition()));
+		Picture::drawVector(v);
+		delete v;
+	}
 }
 
 list<Vector*> DoubleMirror::getLight(Vector* from) {
