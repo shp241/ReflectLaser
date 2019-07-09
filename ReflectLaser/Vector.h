@@ -13,5 +13,6 @@ public:
 	Direction* getDirection()const;
 	Colour* getColour()const;
 	RelativePoint* getPosition()const;
+	bool operator==(const Vector& v)const;
 	~Vector();
 };

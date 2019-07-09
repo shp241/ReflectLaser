@@ -6,5 +6,6 @@ public:
 	RelativePoint(int x = 0, int y = 0);
 	RelativePoint(const RelativePoint& p);
 	RelativePoint operator*(Direction d);//将点乘以方向以获得该方向上下一个点的坐标
+	bool operator==(const RelativePoint& p)const;
 	Point* getActualPoint();//获取相对点的真实坐标
 };

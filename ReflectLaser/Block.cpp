@@ -3,6 +3,7 @@
 Block::Block(RelativePoint* p, bool empty, bool moved) {
 	this->p = new RelativePoint(*p);
 	this->empty = empty;
+	this->moved = moved;
 	clear();
 }
 
@@ -44,13 +45,11 @@ list<Vector*> Block::getLight(Vector* from) {
 	if (empty) {
 		addVector(from);
 		RelativePoint* next = new RelativePoint((*this->getPosition())*(*from->getDirection()));
-		if (next->getX() <= 15 && next->getX() >= 0 && next->getY() <= 15 && next->getY() >= 0) {
+		if (next->getX() < 15 && next->getX() >= 0 && next->getY() < 15 && next->getY() >= 0) {
 			Vector* v = new Vector(*from, next);
-			delete from;
 			return list<Vector*>{v};
 		}
 	}
-	delete from;
 	return list<Vector*>{};
 }
 

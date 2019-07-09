@@ -9,9 +9,10 @@ Level::Level() {
 }
 
 Level::Level(Map* m, Item* it[], int n) {
-	game = new Map(*m);
+	game = m;
 	for (int i = 0; i < n; i++) {
-		items[i] = new Item(*it[i], new RelativePoint(15, i));
+		items[i] = it[i];
+		items[i]->setPosition(new RelativePoint(15, i));
 	}
 	for (int i = n; i < 24; i++) {
 		items[i] = new Item(new RelativePoint(15, i));
@@ -19,25 +20,14 @@ Level::Level(Map* m, Item* it[], int n) {
 	cache = new Item(new RelativePoint(-1, 0));
 }
 
-Level::Level(string name) {
-	ifstream file("Level\\" + name + ".dat", ios::in | ios::binary);
-	if (!file) {
-		new(this)Level();
-	}
-	else {
-		Level* l=new Level();
-		file.read(reinterpret_cast<char *>(l), sizeof(Level));
-		new(this)Level(*l);
-	}
-	file.close();
-}
-
 Level::Level(const Level& l) {
 	this->game = new Map(*l.getMap());
 	for (int i = 0; i < 24; i++) {
-		items[i] = new Item(*l.getItem(i));
+		items[i] = l.getItem(i);
 	}
-	this->cache = new Item(*l.getCache());
+	this->cache = l.getCache();
+	this->emitters = l.emitters;
+	this->targets = l.targets;
 }
 
 Map* Level::getMap()const {
@@ -52,23 +42,18 @@ Item* Level::getCache()const {
 	return cache;
 }
 
+Block* Level::getBlock(RelativePoint p)const {
+	return (*game)[p];
+}
+
 void Level::setItem(int i, Item* it) {
-	items[i] = new Item(*it);
+	items[i] = it;
+	it->setPosition(new RelativePoint(15, i));
 }
 
 void Level::setCache(Item* it) {
-	cache = new Item(*it, new RelativePoint(-1, 0));
-}
-
-void Level::saveFile(string name) {
-	ofstream file("Level\\" + name + ".dat", ios::out | ios::binary);
-	if (!file) {
-		throw FileException(false);
-	}
-	else {
-		file.write(reinterpret_cast<char *>(this), sizeof(Level));
-	}
-	file.close();
+	cache = it;
+	cache->setPosition(new RelativePoint(-1, 0));
 }
 
 void Level::clear() {
@@ -81,7 +66,6 @@ void Level::clear() {
 }
 
 void Level::clearCache() {
-	delete cache;
 	cache = new Item(new RelativePoint(-1, 0));
 }
 
@@ -89,12 +73,12 @@ void Level::draw() {
 	list<Emitter*>::iterator it;
 	for (it = emitters.begin(); it != emitters.end(); ++it) {
 		RelativePoint* next = new RelativePoint((*(*it)->getVector()->getPosition())*(*(*it)->getVector()->getDirection()));
-		if (next->getX() <= 15 && next->getX() >= 0 && next->getY() <= 15 && next->getY() >= 0) {
+		if (next->getX() < 15 && next->getX() >= 0 && next->getY() < 15 && next->getY() >= 0) {
 			Vector * v = new Vector(*(*it)->getVector(), next);
 			game->light(list<Vector*>{v});
-			delete v;
 		}
 	}
+	game->clearUsed();
 	game->draw();
 	for (int i = 0; i < 24; i++) {
 		items[i]->draw();
@@ -119,9 +103,21 @@ bool Level::isWin() {
 	bool wined = true;
 	list<Target*>::iterator it;
 	for (it = targets.begin(); it != targets.end(); ++it) {
-		wined && (*it)->isSucceeded();
+		wined = wined && (*it)->isSucceeded();
 	}
 	return wined;
+}
+
+void Level::clearBlock(RelativePoint* p) {
+	if (p->getX() == 15) {
+		items[p->getY()] = new Item(new RelativePoint(15, p->getY()));
+	}
+	else if (p->getX() == -1) {
+		clearCache();
+	}
+	else {
+		game->clearBlock(p);
+	}
 }
 
 Level::~Level() {

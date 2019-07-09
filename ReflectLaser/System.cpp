@@ -2,10 +2,13 @@
 
 list<Button*> System::buttons = {};//按钮容器
 Level* System::game = new Level();//指示当前进行的游戏
+Level* System::levels[12] = {};
 bool System::musicOn = true;
+int System::chapters = 0;//指示当前进行的关卡
 
 void System::initialize() {
 	Picture::open();
+	System::resetLevel();
 	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
@@ -20,15 +23,6 @@ void System::initialize() {
 
 void System::add(Button* x) {
 	buttons.push_back(x);
-}
-
-void System::rid(Button* x) {
-	list<Button*>::iterator it;
-	for (it = buttons.begin(); it != buttons.end(); ++it) {
-		if (typeid(**it) == typeid(*x)) {
-			buttons.erase(it);
-		}
-	}
 }
 
 void System::clear() {
@@ -63,34 +57,59 @@ void System::forButtons() {
 }
 
 void System::refresh() {
-	System::rid(new BlockButton());//进入该函数后，将容器中已有的按钮删除
-	RelativePoint* p = new RelativePoint();
+	Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (chapters + 1) % 12);
+	Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
+	Button* BAntiClocked = new Rotate(new Point(640, 320), new Point(640 + 40, 320 + 40), false);
+	Button* BClocked = new Rotate(new Point(720, 320), new Point(720 + 40, 320 + 40), true);
+	clear();//将容器中已有的按钮删除
+	RelativePoint* p1 = new RelativePoint(0, 0);
 	for (int i = 0; i < 15; i++) {
-		p->setX(i);
+		p1->setX(i);
 		for (int j = 0; j < 15; j++) {
-			p->setY(j);
-			(*game->getMap())[*p]->clear();
-			Button* BBlock = new BlockButton((*System::game->getMap())[*p]);
-			System::add(BBlock);
+			p1->setY(j);
+			(*game->getMap())[*p1]->clear();
+			Button* BBlock = new BlockButton(game->getBlock(*p1));
+			add(BBlock);
 		}
 	}//将225个方块按钮放入容器
 	for (int i = 0; i < 24; i++) {
 		game->getItem(i)->clear();
-		Button* BItem = new BlockButton(System::game->getItem(i));
-		System::add(BItem);
+		Button* BItem = new BlockButton(game->getItem(i));
+		add(BItem);
 	}//将24个道具按钮放入容器
 	game->getCache()->clear();
+	add(BAntiClocked);
+	add(BClocked);
+	add(BNext);
+	add(BBack);
 	Picture::putPicture("Menu\\PlayingWindow");
 	game->draw();
 	if (game->isWin()) {
+		clear();
 		Picture::putPicture("Menu\\SuccessNotice", Point(250, 200));
 		Button* BClose = new Close(new Point(489, 368), new Point(489 + 54, 368 + 25));
+		Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (chapters + 1) % 12);
+		Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
+		add(BNext);
+		add(BBack);
 		add(BClose);
 	}
 }
 
 void System::music(string m) {
 	PlaySound(m.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+}
+
+void System::resetLevel() {
+	Level* l0 = new Level();
+	l0->setItem(0, new Mirror());
+	l0->setItem(1, new Mirror());
+	l0->setItem(2, new Mirror());
+	l0->addEmitter(new Emitter(new RelativePoint(3, 8), new Colour(Colour::COLOUR_RED), 2));
+	l0->addEmitter(new Emitter(new RelativePoint(12, 6), new Colour(Colour::COLOUR_BLUE), 6));
+	l0->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(7, 9)));
+	l0->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(8, 6)));
+	System::levels[0] = new Level(*l0);
 }
 
 //MainMenu类
@@ -113,6 +132,7 @@ void MainMenu::role() {
 Start::Start(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Start::role() {
+	System::resetLevel();
 	System::clear();//进入该函数后，将容器中已有的按钮删除
 	Picture::putPicture("Menu\\ChapterChoose");//绘制“关卡选择”界面
 	Button* BChapter[12];//实例化十二个关卡选择按钮
@@ -183,33 +203,11 @@ Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
 }
 
 void Chapter::role() {
-	Picture::putPicture("Menu\\PlayingWindow");//绘制“游戏”界面
 	if (System::musicOn) {
 		System::music("Music\\PlayingMusic.wav");
 	}
-	System::game = new Level("Level_" + to_string(chapters));
-	Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (chapters + 1) % 12);
-	Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
-	Button* BAntiClocked = new Rotate(new Point(640, 320), new Point(640 + 40, 320 + 40), false);
-	Button* BClocked = new Rotate(new Point(720, 320), new Point(720 + 40, 320 + 40), false);
-	System::clear();//将容器中已有的按钮删除
-	RelativePoint* p = new RelativePoint();
-	for (int i = 0; i < 15; i++) {
-		p->setX(i);
-		for (int j = 0; j < 15; j++) {
-			p->setY(j);
-			Button* BBlock = new BlockButton((*System::game->getMap())[*p]);
-			System::add(BBlock);
-		}
-	}//将225个方块按钮放入容器
-	for (int i = 0; i < 24; i++) {
-		Button* BItem = new BlockButton(System::game->getItem(i));
-		System::add(BItem);
-	}//将24个道具按钮放入容器
-	System::add(BAntiClocked);
-	System::add(BClocked);
-	System::add(BNext);
-	System::add(BBack);
+	System::game = new Level(*System::levels[chapters]);
+	System::chapters = chapters;
 	System::refresh();
 }
 
@@ -227,7 +225,31 @@ void Rotate::role() {
 Close::Close(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Close::role() {
-	System::rid(this);
+	Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (System::chapters + 1) % 12);
+	Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
+	Button* BAntiClocked = new Rotate(new Point(640, 320), new Point(640 + 40, 320 + 40), false);
+	Button* BClocked = new Rotate(new Point(720, 320), new Point(720 + 40, 320 + 40), true);
+	System::clear();//将容器中已有的按钮删除
+	RelativePoint* p = new RelativePoint();
+	for (int i = 0; i < 15; i++) {
+		p->setX(i);
+		for (int j = 0; j < 15; j++) {
+			p->setY(j);
+			(*System::game->getMap())[*p]->clear();
+			Button* BBlock = new BlockButton((*System::game->getMap())[*p]);
+			System::add(BBlock);
+		}
+	}//将225个方块按钮放入容器
+	for (int i = 0; i < 24; i++) {
+		System::game->getItem(i)->clear();
+		Button* BItem = new BlockButton(System::game->getItem(i));
+		System::add(BItem);
+	}//将24个道具按钮放入容器
+	System::game->getCache()->clear();
+	System::add(BAntiClocked);
+	System::add(BClocked);
+	System::add(BNext);
+	System::add(BBack);
 	Picture::putPicture("Menu\\PlayingWindow");
 	System::game->draw();
 }
@@ -246,16 +268,16 @@ void BlockButton::role() {
 		if (!System::game->getCache()->isEmpty()) {
 			System::game->getMap()->change(block->getPosition(), System::game->getCache());
 			System::game->clearCache();
+			System::refresh();
 		}
 	}
 	else if (block->canMove()) {
 		if (System::game->getCache()->isEmpty()) {
-			System::game->setCache(new Item(*dynamic_cast<Item*>(block)));
-			System::game->getMap()->clearBlock(block->getPosition());
+			RelativePoint* p = new RelativePoint(*block->getPosition());
+			System::game->setCache(dynamic_cast<Item*>(block));
+			System::game->clearBlock(p);
+			delete p;
+			System::refresh();
 		}
 	}
-}
-
-BlockButton::~BlockButton() {
-	delete block;
 }

@@ -22,20 +22,20 @@ private:
 public:
 	Level();
 	Level(Map* m, Item* it[], int n);//n为数组中元素个数
-	Level(string name);//从文件中加载
 	Level(const Level& l);
 	Map* getMap()const;
+	Block* getBlock(RelativePoint p)const;
 	Item* getItem(int i)const;
 	Item* getCache()const;
 	void setItem(int i, Item* it);
 	void setCache(Item* it);
-	void saveFile(string name);//保存到文件
 	void clear();//清空关卡数据
 	void clearCache();//清空缓存
 	void draw();//绘制关卡
 	void addTarget(Target* t);//添加目标
 	void addEmitter(Emitter* e);//添加发射器
 	bool isWin();//检测是否获胜
+	void clearBlock(RelativePoint* p);//清除方块内容
 	~Level();
 };
 

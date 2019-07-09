@@ -21,12 +21,11 @@ Block* Map::operator[](RelativePoint p)const {
 }
 
 void Map::change(RelativePoint* p, Block* b) {
-	game[p->getX()][p->getY()] = new Block(*b);
+	game[p->getX()][p->getY()] = b;
 	game[p->getX()][p->getY()]->setPosition(p);
 }
 
 void Map::clearBlock(RelativePoint* p) {
-	delete game[p->getX()][p->getY()];
 	game[p->getX()][p->getY()] = new Block(p);
 }
 
@@ -38,10 +37,22 @@ void Map::draw() {
 	}
 }
 
+void Map::clearUsed() {
+	used.clear();
+}
+
 void Map::light(list<Vector*> from) {
 	list<Vector*>::iterator it;
 	for (it = from.begin(); it != from.end(); ++it) {
-		light(game[(*it)->getPosition()->getX()][(*it)->getPosition()->getY()]->getLight(*it));
+		list<Vector*>::iterator us;
+		bool before = false;
+		for (us = used.begin(); us != used.end(); ++us) {
+			before = before || **us == **it;
+		}
+		if (!before) {
+			used.push_back(*it);
+			light(game[(*it)->getPosition()->getX()][(*it)->getPosition()->getY()]->getLight(*it));
+		}
 	}
 }
 

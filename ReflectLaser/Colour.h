@@ -7,7 +7,7 @@ private:
 	static Colour colours[8];
 public:
 	static Colour COLOUR_RED, COLOUR_GREEN, COLOUR_BLUE, COLOUR_CYAN, COLOUR_YELLOW, COLOUR_MAGENTA, COLOUR_BLACK, COLOUR_WHITE;//一共能表示的8种颜色
-	static int getColourNumber(Colour d);
+	static int getColourNumber(Colour* d);
 	static Colour getNumberColour(int i);
 	Colour(bool r = false, bool g = false, bool b = false);
 	bool operator==(Colour c);

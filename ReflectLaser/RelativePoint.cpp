@@ -13,7 +13,7 @@ RelativePoint::RelativePoint(const RelativePoint& p) {
 
 Point* RelativePoint::getActualPoint() {
 	if (this->getX() == 15) {
-		return new Point(620 + 40 * (this->getY() / 4), 40 + 40 * (this->getY() % 4));
+		return new Point(620 + 40 * (this->getY() % 4), 40 + 40 * (this->getY() / 4));
 	}
 	else if (this->getX() == -1) {
 		return new Point(680, 320);
@@ -21,4 +21,8 @@ Point* RelativePoint::getActualPoint() {
 	else {
 		return new Point(40 * this->getX(), 40 * this->getY());
 	}
+}
+
+bool RelativePoint::operator==(const RelativePoint& p)const {
+	return this->getX() == p.getX() && this->getY() == p.getY();
 }

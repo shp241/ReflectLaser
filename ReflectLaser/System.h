@@ -6,24 +6,32 @@
 #include <windows.h>
 #include "mmsystem.h"//导入声音头文件
 #include "Button.h"
+#include "DoubleMirror.h"
+#include "Emitter.h"
+#include "HalfMirror.h"
 #include "Level.h"
+#include "Mirror.h"
 #include "Picture.h"
+#include "Target.h"
+#include "Wall.h"
 using std::list;
 using std::string;
 
 class System {
 public:
+	static Level* levels[12];//存储所有关卡
 	static list<Button*> buttons;//按钮容器
 	static Level* game;//指示当前进行的游戏
+	static int chapters;//指示当前进行的关卡
 	static bool musicOn;//指示背景音乐开关
 	static void initialize();//初始化
 	static void add(Button* x);//向容器中添加按钮
-	static void rid(Button* x);//从容器中去除!某一类型的全部按钮!
 	static void clear();//清空容器中所有按钮
 	static void system();//执行程序主功能
 	static void forButtons();//检测鼠标点击按钮的主循环
 	static void refresh();//刷新关卡里的
 	static void music(string m);//播放文件名的音乐
+	static void resetLevel();//重置关卡
 };
 
 class MainMenu :public Button {
@@ -102,5 +110,5 @@ public:
 	BlockButton(Point* p0, Point* p1, Block* block);
 	BlockButton(Block* block = new Block(new RelativePoint(-1, 0)));
 	void role();
-	~BlockButton();
+	~BlockButton() = default;
 };

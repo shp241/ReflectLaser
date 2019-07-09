@@ -32,14 +32,14 @@ Point& Point::operator=(const Point& p) {
 	return *this;
 }
 
-Direction Direction::UP = Direction(0, 1);
-Direction Direction::UP_RIGHT = Direction(1, 1);
+Direction Direction::UP = Direction(0, -1);
+Direction Direction::UP_RIGHT = Direction(1, -1);
 Direction Direction::RIGHT = Direction(1, 0);
-Direction Direction::DOWN_RIGHT = Direction(-1, 1);
-Direction Direction::DOWN = Direction(0, -1);
-Direction Direction::DOWN_LEFT = Direction(-1, -1);
+Direction Direction::DOWN_RIGHT = Direction(1, 1);
+Direction Direction::DOWN = Direction(0, 1);
+Direction Direction::DOWN_LEFT = Direction(-1, 1);
 Direction Direction::LEFT = Direction(-1, 0);
-Direction Direction::UP_LEFT = Direction(-1, 1);
+Direction Direction::UP_LEFT = Direction(-1, -1);
 Direction Direction::directions[] = { UP, UP_RIGHT, RIGHT, DOWN_RIGHT, DOWN, DOWN_LEFT, LEFT, UP_LEFT };
 
 Direction::Direction(const Direction& d) {
@@ -65,24 +65,8 @@ int Direction::getY()const {
 	return y;
 }
 
-int cos(int angle) {
-	if (angle % 180 == 90) {
-		return 0;
-	}
-	else if ((angle - 90) % 360 <= 180) {
-		return -1;
-	}
-	else {
-		return 1;
-	}
-}
-
-int sin(int angle) {
-	return cos(angle + 90);
-}
-
 Direction Direction::rotate(int angle) {
-	return Direction(x * cos(angle) - y * sin(angle), x * sin(angle) + y * cos(angle));
+	return Direction(getDirectionNumber(*this)+angle/45);
 }
 
 bool Direction::operator==(Direction& d) {
@@ -98,5 +82,5 @@ int Direction::getDirectionNumber(Direction d) {
 	return 0;
 }
 Direction Direction::getNumberDirection(int i) {
-	return directions[i % 8];
+	return directions[(i+8) % 8];
 }

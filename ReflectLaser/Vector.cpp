@@ -24,6 +24,10 @@ RelativePoint* Vector::getPosition()const {
 	return this->p;
 }
 
+bool Vector::operator==(const Vector& v)const {
+	return *this->c == *v.c && *this->d == *v.d && *this->p == *v.p;
+}
+
 Vector::~Vector() {
 	delete c;
 	delete d;

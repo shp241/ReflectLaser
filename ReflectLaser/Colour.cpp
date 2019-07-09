@@ -16,9 +16,9 @@ Colour::Colour(bool r, bool g, bool b) {
 	this->B = b;
 }
 
-int Colour::getColourNumber(Colour d) {
+int Colour::getColourNumber(Colour* d) {
 	for (int i = 0; i < 8; i++) {
-		if (colours[i] == d) {
+		if (*d == colours[i]) {
 			return i;
 		}
 	}
@@ -30,7 +30,7 @@ Colour Colour::getNumberColour(int i) {
 }
 
 bool Colour::operator==(Colour c) {
-	return c.R == this->R && c.G == this->G && c.B == this->B;
+	return (c.R == this->R) && (c.G == this->G) && (c.B == this->B);
 }
 
 Colour Colour::operator+(Colour c)const {

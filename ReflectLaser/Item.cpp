@@ -4,16 +4,12 @@ Item::Item(RelativePoint* p, bool empty, int angle) :Block(p, empty, true) {
 	this->angle = angle;
 }
 
-Item::Item(const Item& it) : Block(it.getPosition(), it.isEmpty()) {
-	this->angle = it.angle;
-}
-
-Item::Item(const Item& it, RelativePoint* p) : Block(p, it.isEmpty()) {
+Item::Item(const Item& it) : Block(it.getPosition(), it.isEmpty(), true) {
 	this->angle = it.angle;
 }
 
 void Item::rotate(bool isClock) {
-	this->angle = (this->angle + isClock ? 1 : -1) % 8;
+	this->angle = (this->angle + (isClock ? 1 : 7)) % 8;
 }
 
 int Item::getAngle()const {
@@ -25,9 +21,10 @@ void Item::setAngle(int angle) {
 }
 
 void Item::draw()const {
-	Picture::putPicture("Block\\EmptyBlock", *getPosition()->getActualPoint());
+	Point p = *getPosition()->getActualPoint();
+	Picture::putPicture("Block\\EmptyBlock", p);
 	if (isEmpty()) {
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 4; i++) {
 			Vector* v0 = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(getVectorColour(i) + getVectorColour(i + 4)), new RelativePoint(*getPosition()));
 			Vector* v1 = new Vector(new Direction(Direction::getNumberDirection(i).rotate(180)), new Colour(getVectorColour(i) + getVectorColour(i + 4)), new RelativePoint(*getPosition()));
 			Picture::drawVector(v0);
