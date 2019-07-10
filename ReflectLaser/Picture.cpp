@@ -5,7 +5,7 @@ bool Picture::opening = false;
 
 void Picture::open(int w, int h) {
 	initgraph(w, h);
-	setlinestyle(PS_SOLID | PS_ENDCAP_FLAT, 3);
+	setlinestyle(PS_SOLID | PS_ENDCAP_ROUND, 3);
 	opening = true;
 }
 

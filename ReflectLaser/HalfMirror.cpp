@@ -42,7 +42,6 @@ list<Vector*> HalfMirror::getLight(Vector* from) {
 	RelativePoint* next = new RelativePoint((*this->getPosition())*(*direction));
 	if (next->getX() < 15 && next->getX() >= 0 && next->getY() < 15 && next->getY() >= 0) {
 		Vector* v = new Vector(direction, from->getColour(), next);
-
 		return list<Vector*>{v};
 	}
 	return list<Vector*>{};

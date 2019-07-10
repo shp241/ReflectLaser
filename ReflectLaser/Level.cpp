@@ -120,6 +120,18 @@ void Level::clearBlock(RelativePoint* p) {
 	}
 }
 
+void Level::setBlock(RelativePoint* p, Block* b) {
+	if (p->getX() == 15) {
+		setItem(p->getY(), dynamic_cast<Item*>(b));
+	}
+	else if (p->getX() == -1) {
+		setCache(dynamic_cast<Item*>(b));
+	}
+	else {
+		game->change(p, b);
+	}
+}
+
 Level::~Level() {
 	delete game;
 	for (int i = 0; i < 24; i++) {

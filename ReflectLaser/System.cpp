@@ -153,20 +153,6 @@ void System::resetLevel() {
 	{
 		c++;
 		for (int i = 0; i < 3; i++) {
-			levels[c]->setItem(i, new DoubleMirror());
-		}
-		levels[c]->addEmitter(new Emitter(new RelativePoint(1, 7), new Colour(Colour::COLOUR_GREEN), 2));
-		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(4, 4)));
-		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(8, 4)));
-		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(9, 3)));
-		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(6, 5)));
-		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(6, 11)));
-	}
-
-	//Level_4
-	{
-		c++;
-		for (int i = 0; i < 3; i++) {
 			levels[c]->setItem(i, new Mirror());
 		}
 		for (int i = 3; i < 4; i++) {
@@ -188,7 +174,7 @@ void System::resetLevel() {
 		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(4, 2)));
 	}
 
-	//Level_5
+	//Level_4
 	{
 		c++;
 		for (int i = 0; i < 1; i++) {
@@ -234,7 +220,214 @@ void System::resetLevel() {
 		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(5, 9)));
 	}
 
+	//Level_5
+	{
+		c++;
+		for (int i = 0; i < 7; i++) {
+			levels[c]->setItem(i, new HalfMirror());
+		}
+		for (int i = 7; i < 9; i++) {
+			levels[c]->setItem(i, new DoubleMirror());
+		}
+		for (int i = 0; i < 15; i++) {
+			levels[c]->getMap()->change(new RelativePoint(i, 3), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(i, 7), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(i, 11), new Wall());
+		}
+		levels[c]->getMap()->clearBlock(new RelativePoint(2, 3));
+		levels[c]->getMap()->clearBlock(new RelativePoint(12, 7));
+		levels[c]->getMap()->clearBlock(new RelativePoint(2, 11));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(14, 1), new Colour(Colour::COLOUR_BLUE), 6));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(14, 13), new Colour(Colour::COLOUR_RED), 6));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(2, 5)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(12, 9)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(9, 10)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(7, 4)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(8, 8)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(5, 10)));
+	}
+
 	//Level_6
+	{
+		c++;
+		for (int i = 0; i < 5; i++) {
+			levels[c]->setItem(i, new Mirror());
+		}
+		for (int i = 5; i < 7; i++) {
+			levels[c]->setItem(i, new HalfMirror());
+		}
+		levels[c]->addEmitter(new Emitter(new RelativePoint(6, 0), new Colour(Colour::COLOUR_BLUE), 4));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(14, 8), new Colour(Colour::COLOUR_GREEN), 6));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(8, 14), new Colour(Colour::COLOUR_WHITE), 0));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(0, 6), new Colour(Colour::COLOUR_RED), 2));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(8, 6)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(6, 6)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_WHITE), new RelativePoint(6, 8)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(8, 8)));
+	}
+
+	//Level_7
+	{
+		c++;
+		for (int i = 0; i < 1; i++) {
+			levels[c]->setItem(i, new Mirror());
+		}
+		for (int i = 1; i < 5; i++) {
+			levels[c]->setItem(i, new DoubleMirror());
+		}
+		levels[c]->addEmitter(new Emitter(new RelativePoint(7, 14), new Colour(Colour::COLOUR_GREEN), 0));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(1, 2)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(1, 5)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(3, 9)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(3, 12)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(7, 2)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(7, 12)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(11, 1)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(11, 5)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(13, 9)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(5, 5)));
+	}
+
+	//Level_8
+	{
+		c++;
+		for (int i = 0; i < 4; i++) {
+			levels[c]->setItem(i, new Mirror());
+		}
+		for (int i = 4; i < 10; i++) {
+			levels[c]->setItem(i, new HalfMirror());
+		}
+		for (int i = 0; i < 5; i++) {
+			levels[c]->getMap()->change(new RelativePoint(i, 4), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(i, 10), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(4, i), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(10, i), new Wall());
+		}
+		for (int i = 10; i < 15; i++) {
+			levels[c]->getMap()->change(new RelativePoint(i, 4), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(i, 10), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(4, i), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(10, i), new Wall());
+		}
+		levels[c]->getMap()->clearBlock(new RelativePoint(4, 2));
+		levels[c]->getMap()->clearBlock(new RelativePoint(10, 1));
+		levels[c]->getMap()->clearBlock(new RelativePoint(3, 4));
+		levels[c]->getMap()->clearBlock(new RelativePoint(11, 4));
+		levels[c]->getMap()->clearBlock(new RelativePoint(2, 10));
+		levels[c]->getMap()->clearBlock(new RelativePoint(12, 10));
+		levels[c]->getMap()->clearBlock(new RelativePoint(4, 11));
+		levels[c]->getMap()->clearBlock(new RelativePoint(10, 12));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(7, 0), new Colour(Colour::COLOUR_BLUE), 4));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(2, 1)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(2, 3)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(1, 12)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(3, 13)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(11, 2)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(12, 3)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(11, 13)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(13, 13)));
+	}
+
+	//Level_9
+	{
+		c++;
+		for (int i = 0; i < 7; i++) {
+			levels[c]->setItem(i, new Mirror());
+		}
+		for (int i = 7; i < 10; i++) {
+			levels[c]->setItem(i, new HalfMirror());
+		}
+		for (int i = 5; i < 10; i++) {
+			levels[c]->getMap()->change(new RelativePoint(i, 4), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(i, 10), new Wall());
+		}
+		levels[c]->getMap()->change(new RelativePoint(6, 5), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(8, 5), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(6, 9), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(8, 9), new Wall());
+		levels[c]->getMap()->clearBlock(new RelativePoint(7, 4));
+		levels[c]->getMap()->clearBlock(new RelativePoint(7, 10));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(7, 0), new Colour(Colour::COLOUR_BLUE), 4));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(0, 7), new Colour(Colour::COLOUR_GREEN), 2));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(14, 7), new Colour(Colour::COLOUR_WHITE), 6));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(7, 14), new Colour(Colour::COLOUR_RED), 0));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_WHITE), new RelativePoint(4, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_WHITE), new RelativePoint(6, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_WHITE), new RelativePoint(8, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_WHITE), new RelativePoint(10, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(9, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(7, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(5, 7)));
+	}
+
+	//Level_10
+	{
+		c++;
+		for (int i = 0; i < 7; i++) {
+			levels[c]->setItem(i, new HalfMirror());
+		}
+		for (int i = 2; i < 13; i++) {
+			levels[c]->getMap()->change(new RelativePoint(i, 2), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(i, 12), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(2, i), new Wall());
+			levels[c]->getMap()->change(new RelativePoint(12, i), new Wall());
+		}
+		levels[c]->getMap()->change(new RelativePoint(4, 5), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(4, 9), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(5, 4), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(5, 6), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(5, 8), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(5, 10), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(6, 5), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(6, 9), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(8, 5), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(8, 9), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(9, 4), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(9, 6), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(9, 8), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(9, 10), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(10, 5), new Wall());
+		levels[c]->getMap()->change(new RelativePoint(10, 9), new Wall());
+		levels[c]->getMap()->clearBlock(new RelativePoint(3, 2));
+		levels[c]->getMap()->clearBlock(new RelativePoint(11, 2));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(3, 0), new Colour(Colour::COLOUR_GREEN), 4));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(11, 0), new Colour(Colour::COLOUR_BLUE), 4));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(7, 5)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(7, 9)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(5, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_GREEN), new RelativePoint(9, 7)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_CYAN), new RelativePoint(5, 5)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_CYAN), new RelativePoint(5, 9)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_CYAN), new RelativePoint(9, 5)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_CYAN), new RelativePoint(9, 9)));
+	}
+
+	//Level_11
+	{
+		c++;
+		for (int i = 0; i < 4; i++) {
+			levels[c]->setItem(i, new Mirror());
+		}
+		for (int i = 4; i < 8; i++) {
+			levels[c]->setItem(i, new HalfMirror());
+		}
+		levels[c]->addEmitter(new Emitter(new RelativePoint(0, 7), new Colour(Colour::COLOUR_BLUE), 2));
+		levels[c]->addEmitter(new Emitter(new RelativePoint(8, 14), new Colour(Colour::COLOUR_RED), 0));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(8, 2)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(5, 3)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(10, 6)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(4, 8)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(9, 11)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_BLUE), new RelativePoint(6, 12)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(5, 4)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(9, 4)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(6, 6)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(8, 6)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(6, 8)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(8, 8)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(5, 10)));
+		levels[c]->addTarget(new Target(new Colour(Colour::COLOUR_RED), new RelativePoint(9, 10)));
+	}
 }
 
 //MainMenu类
@@ -242,6 +435,9 @@ MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void MainMenu::role() {
 	System::clear();
+	if (System::musicOn) {
+		System::music("Music\\MenuMusic.wav");
+	}
 	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
@@ -391,7 +587,7 @@ BlockButton::BlockButton(Block* block) : Button(new Point(*block->getPosition()-
 void BlockButton::role() {
 	if (block->isEmpty()) {
 		if (!System::game->getCache()->isEmpty()) {
-			System::game->getMap()->change(block->getPosition(), System::game->getCache());
+			System::game->setBlock(block->getPosition(), System::game->getCache());
 			System::game->clearCache();
 			System::refresh();
 		}

@@ -36,6 +36,7 @@ public:
 	void addEmitter(Emitter* e);//添加发射器
 	bool isWin();//检测是否获胜
 	void clearBlock(RelativePoint* p);//清除方块内容
+	void setBlock(RelativePoint* p, Block* b);//改变方块内容
 	~Level();
 };
 

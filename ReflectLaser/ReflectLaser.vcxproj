@@ -82,6 +82,13 @@
     <Image Include="Images\Block\Emitter\Emitter_3_5.png" />
     <Image Include="Images\Block\Emitter\Emitter_3_6.png" />
     <Image Include="Images\Block\Emitter\Emitter_3_7.png" />
+    <Image Include="Images\Block\Emitter\Emitter_7_1.png" />
+    <Image Include="Images\Block\Emitter\Emitter_7_2.png" />
+    <Image Include="Images\Block\Emitter\Emitter_7_3.png" />
+    <Image Include="Images\Block\Emitter\Emitter_7_4.png" />
+    <Image Include="Images\Block\Emitter\Emitter_7_5.png" />
+    <Image Include="Images\Block\Emitter\Emitter_7_6.png" />
+    <Image Include="Images\Block\Emitter\Emitter_7_7.png" />
     <Image Include="Images\Block\EmptyBlock.png" />
     <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_0.png" />
     <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_1.png" />
