@@ -585,7 +585,7 @@ BlockButton::BlockButton(Block* block) : Button(new Point(*block->getPosition()-
 }
 
 void BlockButton::role() {
-	if (block->isEmpty()) {
+	if (block->isEmpty() && block->canMove()) {
 		if (!System::game->getCache()->isEmpty()) {
 			System::game->setBlock(block->getPosition(), System::game->getCache());
 			System::game->clearCache();

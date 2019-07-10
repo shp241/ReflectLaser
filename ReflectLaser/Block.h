@@ -16,7 +16,7 @@ private:
 	bool moved;//ture则表示该地图块可移动
 	Colour vectors[8];//存放8个方向的向量的颜色
 public:
-	Block(RelativePoint* p, bool empty = true, bool moved = false);
+	Block(RelativePoint* p, bool empty = true, bool moved = true);
 	Block(const Block& b);
 	RelativePoint* getPosition()const;
 	void setPosition(RelativePoint* p);
