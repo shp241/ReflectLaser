@@ -48,7 +48,7 @@ void System::forButtons() {
 			for (it = buttons.begin(); it != buttons.end(); ++it) {
 				if ((*it)->ifClick(m.x, m.y)) {
 					(*it)->role();
-					Sleep(100);
+					Sleep(10);
 					break;
 				}
 			}
