@@ -313,7 +313,7 @@ void System::resetLevel() {
 		levels[c]->getMap()->clearBlock(new RelativePoint(10, 1));
 		levels[c]->getMap()->clearBlock(new RelativePoint(3, 4));
 		levels[c]->getMap()->clearBlock(new RelativePoint(11, 4));
-		levels[c]->getMap()->clearBlock(new RelativePoint(2, 10));
+		levels[c]->getMap()->clearBlock(new RelativePoint(1, 10));
 		levels[c]->getMap()->clearBlock(new RelativePoint(12, 10));
 		levels[c]->getMap()->clearBlock(new RelativePoint(4, 11));
 		levels[c]->getMap()->clearBlock(new RelativePoint(10, 12));
