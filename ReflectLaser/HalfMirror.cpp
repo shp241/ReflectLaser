@@ -3,7 +3,7 @@
 HalfMirror::HalfMirror(RelativePoint* p, int angle) :Item(p, false, angle) {}
 
 void HalfMirror::draw()const {
-	Picture::putPicture("Block\\Item\\HalfMirror\\HalfMirror_" + to_string(this->getAngle()),
+	Picture::putPicture("HalfMirror_" + to_string(this->getAngle()),
 		*getPosition()->getActualPoint());
 	for (int i = 0; i < 8; i++) {
 		Vector* v = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(getVectorColour(i)), new RelativePoint(*getPosition()));

@@ -28,7 +28,7 @@ bool Block::canMove()const {
 }
 
 void Block::draw()const {
-	Picture::putPicture("Block\\EmptyBlock", *p->getActualPoint());
+	Picture::putPicture("EmptyBlock", *p->getActualPoint());
 	if (empty) {
 		for (int i = 0; i < 4; i++) {
 			Vector* v0 = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(vectors[i] + vectors[i + 4]), new RelativePoint(*p));

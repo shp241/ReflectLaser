@@ -22,7 +22,7 @@ void Item::setAngle(int angle) {
 
 void Item::draw()const {
 	Point p = *getPosition()->getActualPoint();
-	Picture::putPicture("Block\\EmptyBlock", p);
+	Picture::putPicture("EmptyBlock", p);
 	if (isEmpty()) {
 		for (int i = 0; i < 4; i++) {
 			Vector* v0 = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(getVectorColour(i) + getVectorColour(i + 4)), new RelativePoint(*getPosition()));

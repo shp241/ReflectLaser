@@ -15,7 +15,7 @@ bool Target::isSucceeded()const {
 void Target::draw()const {
 	string s = isSucceeded() ? "Succeeded_" : "Target_";
 	int i = Colour::getColourNumber(colour);
-	Picture::putPicture("Block\\Target\\" + s + to_string(Colour::getColourNumber(colour)),
+	Picture::putPicture(s + to_string(Colour::getColourNumber(colour)),
 		*getPosition()->getActualPoint());
 	for (int i = 0; i < 4; i++) {
 		Vector* v0 = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(getVectorColour(i) + getVectorColour(i + 4)), new RelativePoint(*getPosition()));

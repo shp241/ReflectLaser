@@ -21,7 +21,7 @@ Vector* Emitter::getVector()const {
 
 void Emitter::draw()const {
 	string s = to_string(Colour::getColourNumber(vector->getColour()));
-	Picture::putPicture("Block\\Emitter\\Emitter_" + s + "_" + to_string(angle),
+	Picture::putPicture("Emitter_" + s + "_" + to_string(angle),
 		*getPosition()->getActualPoint());
 }
 

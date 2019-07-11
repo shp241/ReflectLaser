@@ -1,4 +1,5 @@
 #include "System.h"
+#include "resource.h"
 
 list<Button*> System::buttons = {};//按钮容器
 Level* System::game = new Level();//指示当前进行的游戏
@@ -9,7 +10,7 @@ int System::chapters = 0;//指示当前进行的关卡
 void System::initialize() {
 	Picture::open();
 	System::resetLevel();
-	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
+	Picture::putPicture("MainWindow");//绘制主页面的背景
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
 	Button* BHelp = new Help(new Point(400, 380), new Point(400 + 250, 380 + 80));
@@ -18,7 +19,7 @@ void System::initialize() {
 	System::add(BOption);
 	System::add(BHelp);
 	System::add(BExit);
-	System::music("Music\\MenuMusic.wav");
+	System::music("MenuMusic_wav");
 }
 
 void System::add(Button* x) {
@@ -82,11 +83,11 @@ void System::refresh() {
 	add(BClocked);
 	add(BNext);
 	add(BBack);
-	Picture::putPicture("Menu\\PlayingWindow");
+	Picture::putPicture("PlayingWindow");
 	game->draw();
 	if (game->isWin()) {
 		clear();
-		Picture::putPicture("Menu\\SuccessNotice", Point(250, 200));
+		Picture::putPicture("SuccessNotice", Point(250, 200));
 		Button* BClose = new Close(new Point(489, 368), new Point(489 + 54, 368 + 25));
 		Button* BNext = new Chapter(new Point(640, 400), new Point(640 + 120, 400 + 40), (chapters + 1) % 12);
 		Button* BBack = new Start(new Point(640, 460), new Point(640 + 120, 460 + 40));
@@ -97,7 +98,17 @@ void System::refresh() {
 }
 
 void System::music(string m) {
-	PlaySound(m.c_str(), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+	int i;
+	if (m == "MenuMusic_wav") {
+		i = MenuMusic_wav;
+	}
+	if (m == "Null_wav") {
+		i = Null_wav;
+	}
+	if (m == "PlayingMusic_wav") {
+		i = PlayingMusic_wav;
+	}
+	PlaySound((LPCSTR)i, NULL, SND_RESOURCE | SND_ASYNC | SND_LOOP);
 }
 
 void System::resetLevel() {
@@ -436,9 +447,9 @@ MainMenu::MainMenu(Point* p0, Point* p1) :Button(p0, p1) {}
 void MainMenu::role() {
 	System::clear();
 	if (System::musicOn) {
-		System::music("Music\\MenuMusic.wav");
+		System::music("MenuMusic_wav");
 	}
-	Picture::putPicture("Menu\\MainWindow");//绘制主页面的背景
+	Picture::putPicture("MainWindow");//绘制主页面的背景
 	Button* BStart = new Start(new Point(400, 180), new Point(400 + 250, 180 + 80));//实例化四个主菜单按钮
 	Button* BOption = new Option(new Point(400, 280), new Point(400 + 250, 280 + 80));
 	Button* BHelp = new Help(new Point(400, 380), new Point(400 + 250, 380 + 80));
@@ -455,7 +466,7 @@ Start::Start(Point* p0, Point* p1) :Button(p0, p1) {}
 void Start::role() {
 	System::resetLevel();
 	System::clear();//进入该函数后，将容器中已有的按钮删除
-	Picture::putPicture("Menu\\ChapterChoose");//绘制“关卡选择”界面
+	Picture::putPicture("ChapterChoose");//绘制“关卡选择”界面
 	Button* BChapter[12];//实例化十二个关卡选择按钮
 	Button* BMenu = new MainMenu(new Point(0, 0), new Point(150, 100));
 	System::add(BMenu);
@@ -479,8 +490,8 @@ Option::Option(Point* p0, Point* p1) :Button(p0, p1) {}
 
 void Option::role() {
 	System::clear();
-	Picture::putPicture("Menu\\Option");//绘制“选项”界面
-	Button* BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), System::musicOn ? "Music\\MenuMusic.wav" : "Music\\Null.wav");
+	Picture::putPicture("Option");//绘制“选项”界面
+	Button* BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), System::musicOn ? "MenuMusic_wav" : "Null_wav");
 	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));
 	System::add(BMenu);
 	System::add(BMusic);
@@ -495,10 +506,10 @@ void Music::role() {
 	System::clear();//清空容器
 	System::musicOn = !System::musicOn;
 	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化一个主菜单按钮
-	Button* BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), System::musicOn ? "Music\\Null.wav" : "Music\\MenuMusic.wav");//在刚刚的音乐按钮位置实例化一个音乐按钮
+	Button* BMusic = new Music(new Point(450, 100), new Point(450 + 250, 100 + 80), System::musicOn ? "Null_wav" : "MenuMusic_wav");//在刚刚的音乐按钮位置实例化一个音乐按钮
 	System::add(BMenu);//放入容器
 	System::add(BMusic);
-	System::music(!System::musicOn ? "Music\\Null.wav" : "Music\\MenuMusic.wav");
+	System::music(!System::musicOn ? "Null_wav" : "MenuMusic_wav");
 }
 
 //Help类
@@ -506,7 +517,7 @@ Help::Help(Point* p0, Point* p1) : Button(p0, p1) {}
 
 void Help::role() {
 	System::clear();//进入该函数后，将容器中已有的按钮删除
-	Picture::putPicture("Menu\\Help");//绘制关卡选择界面的背景
+	Picture::putPicture("Help");//绘制关卡选择界面的背景
 	Button* BMenu = new MainMenu(new Point(450, 480), new Point(450 + 250, 480 + 80));//实例化主菜单按钮
 	System::add(BMenu);
 }
@@ -525,7 +536,7 @@ Chapter::Chapter(Point* p0, Point* p1, int chapters) :Button(p0, p1) {
 
 void Chapter::role() {
 	if (System::musicOn) {
-		System::music("Music\\PlayingMusic.wav");
+		System::music("PlayingMusic_wav");
 	}
 	System::game = new Level(*System::levels[chapters]);
 	System::chapters = chapters;
@@ -571,7 +582,7 @@ void Close::role() {
 	System::add(BClocked);
 	System::add(BNext);
 	System::add(BBack);
-	Picture::putPicture("Menu\\PlayingWindow");
+	Picture::putPicture("PlayingWindow");
 	System::game->draw();
 }
 

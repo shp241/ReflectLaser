@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resources">
-      <UniqueIdentifier>{ab51e268-6a36-427d-aaf9-8794db2a86ad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CPP">
       <UniqueIdentifier>{1ff1c6ae-0e57-429d-aca7-79515f606449}</UniqueIdentifier>
     </Filter>
     <Filter Include="H">
       <UniqueIdentifier>{f603771b-3ec1-47c6-ba1a-6c47048c3036}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Image">
+      <UniqueIdentifier>{1a732cb2-48af-4f68-a551-1bfc7b5052e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Muisc">
+      <UniqueIdentifier>{33114d4b-38c6-4720-b674-43c0edb65356}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Button.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
@@ -62,6 +64,9 @@
       <Filter>CPP</Filter>
     </ClCompile>
     <ClCompile Include="HalfMirror.cpp">
+      <Filter>CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
       <Filter>CPP</Filter>
     </ClCompile>
   </ItemGroup>
@@ -117,228 +122,264 @@
     <ClInclude Include="HalfMirror.h">
       <Filter>H</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>H</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Images\Menu\ChapterChoose.png">
-      <Filter>Resources</Filter>
+    <ResourceCompile Include="ReflectLaser.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Images\ChapterChoose.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Menu\Help.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Menu\MainWindow.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Menu\Option.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Menu\PlayingWindow.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Menu\SuccessNotice.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\EmptyBlock.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_0.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\DoubleMirror_7.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\Mirror\Mirror_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_0.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_1_7.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_1_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_0.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_2_7.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_2_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_0.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_3_7.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_3_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_0.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Emitter_7_7.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\EmptyBlock.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Succeeded_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_0.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\HalfMirror_7.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Help.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\MainWindow.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Target\Target_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_0.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Mirror_7.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Option.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\PlayingWindow.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Item\DoubleMirror\DoubleMirror_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_0.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_7_1.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_1.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_7_2.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_2.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_7_3.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_3.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_7_4.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_4.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_7_5.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_5.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_7_6.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_6.png">
+      <Filter>Image</Filter>
     </Image>
-    <Image Include="Images\Block\Emitter\Emitter_7_7.png">
-      <Filter>Resources</Filter>
+    <Image Include="Images\Succeeded_7.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\SuccessNotice.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_0.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_1.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_2.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_3.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_4.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_5.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_6.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Target_7.png">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="Images\Wall.png">
+      <Filter>Image</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="Music\MenuMusic.wav">
-      <Filter>Resources</Filter>
-    </Media>
-    <Media Include="Music\PlayingMusic.wav">
-      <Filter>Resources</Filter>
+      <Filter>Muisc</Filter>
     </Media>
     <Media Include="Music\Null.wav">
-      <Filter>Resources</Filter>
+      <Filter>Muisc</Filter>
+    </Media>
+    <Media Include="Music\PlayingMusic.wav">
+      <Filter>Muisc</Filter>
     </Media>
   </ItemGroup>
 </Project>

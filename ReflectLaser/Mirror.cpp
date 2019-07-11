@@ -5,7 +5,7 @@ Mirror::Mirror(RelativePoint* p, int angle) :Item(p, false, angle) {}
 Mirror::Mirror(const Mirror& m) : Item(m.getPosition(), false, m.getAngle()) {}
 
 void Mirror::draw()const {
-	Picture::putPicture("Block\\Item\\Mirror\\Mirror_" + to_string(this->getAngle()),
+	Picture::putPicture("Mirror_" + to_string(this->getAngle()),
 		*getPosition()->getActualPoint());
 	for (int i = 0; i < 8; i++) {
 		Vector* v = new Vector(new Direction(Direction::getNumberDirection(i)), new Colour(getVectorColour(i)), new RelativePoint(*getPosition()));
